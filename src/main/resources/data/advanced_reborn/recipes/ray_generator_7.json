@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "ABA",
+    "CAC"
+  ],
+  "key": {
+    "A": {
+      "item": "advanced_reborn:ray_generator_6"
+    },
+    "B": {
+      "item": "techreborn:advanced_machine_casing"
+    },
+    "C": {
+      "tag": "c:advanced_alloy_plates"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:ray_generator_7",
+    "count": 1
+  }
+}

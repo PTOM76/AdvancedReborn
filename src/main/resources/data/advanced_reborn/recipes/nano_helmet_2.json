@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CBC",
+    "CAC"
+  ],
+  "key": {
+    "A": {
+      "item": "ag4tr:nv_goggles"
+    },
+    "B": {
+      "item": "techreborn:energy_crystal"
+    },
+    "C": {
+      "tag": "c:carbon_plates"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:nano_helmet",
+    "count": 1
+  }
+}

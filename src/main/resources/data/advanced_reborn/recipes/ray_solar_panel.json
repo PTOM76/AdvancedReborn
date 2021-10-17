@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "techreborn:advanced_circuit"
+    },
+    {
+      "item": "techreborn:basic_solar_panel"
+    }
+  ],
+  "result": {
+    "item": "advanced_reborn:ray_solar_panel",
+    "count": 1
+  }
+}

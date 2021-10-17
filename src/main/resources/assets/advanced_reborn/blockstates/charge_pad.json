@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "facing=north,using=false": { "model": "advanced_reborn:block/charge_pad" },
+        "facing=south,using=false": { "model": "advanced_reborn:block/charge_pad", "y": 180 },
+        "facing=west,using=false":  { "model": "advanced_reborn:block/charge_pad", "y": 270 },
+        "facing=east,using=false":  { "model": "advanced_reborn:block/charge_pad", "y": 90 },
+        "facing=north,using=true": { "model": "advanced_reborn:block/charge_pad_using" },
+        "facing=south,using=true": { "model": "advanced_reborn:block/charge_pad_using", "y": 180 },
+        "facing=west,using=true":  { "model": "advanced_reborn:block/charge_pad_using", "y": 270 },
+        "facing=east,using=true":  { "model": "advanced_reborn:block/charge_pad_using", "y": 90 }
+    }
+}

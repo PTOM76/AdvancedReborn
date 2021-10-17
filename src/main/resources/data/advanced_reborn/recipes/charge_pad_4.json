@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "FRF",
+    "FCF"
+  ],
+  "key": {
+    "R": {
+      "item": "techreborn:lithium_ion_battery"
+    },
+    "C": {
+      "item": "advanced_reborn:charge_pad_3"
+    },
+    "I": {
+      "item": "techreborn:glassfiber_cable"
+    },
+    "F": {
+      "tag": "c:advanced_alloy_plates"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:charge_pad_4",
+    "count": 1
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "FRF",
+    "FCF"
+  ],
+  "key": {
+    "R": {
+      "item": "techreborn:red_cell_battery"
+    },
+    "C": {
+      "item": "advanced_reborn:charge_pad"
+    },
+    "I": {
+      "item": "techreborn:insulated_hv_cable"
+    },
+    "F": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:charge_pad_2",
+    "count": 1
+  }
+}

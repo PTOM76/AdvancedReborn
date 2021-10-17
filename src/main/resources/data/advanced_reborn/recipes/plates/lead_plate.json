@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "techreborn:forge_hammers"
+    },
+    {
+      "tag": "c:lead_ingots"
+    }
+  ],
+  "result": {
+    "item": "techreborn:lead_plate",
+    "count": 1
+  }
+}

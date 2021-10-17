@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "ml.pkom.advancedreborn.mixins",
+  "mixins": [
+    "MachineBaseBlockEntityAccessor",
+    "LivingEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

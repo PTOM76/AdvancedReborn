@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "ABA",
+    "CAC"
+  ],
+  "key": {
+    "A": {
+      "item": "advanced_reborn:ray_generator"
+    },
+    "B": {
+      "item": "techreborn:electronic_circuit"
+    },
+    "C": {
+      "tag": "c:carbon_plates"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:ray_generator_2",
+    "count": 1
+  }
+}

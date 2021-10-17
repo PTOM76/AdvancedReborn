@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "advanced_reborn:blocks/ray_generator/top",
+        "down": "advanced_reborn:blocks/ray_generator/bottom",
+        "up": "advanced_reborn:blocks/ray_generator/top",
+        "north": "advanced_reborn:blocks/ray_generator/side_1",
+        "east": "advanced_reborn:blocks/ray_generator/side_1",
+        "south": "advanced_reborn:blocks/ray_generator/side_1",
+        "west": "advanced_reborn:blocks/ray_generator/side_1"
+    }
+}

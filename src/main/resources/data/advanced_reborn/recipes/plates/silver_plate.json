@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "techreborn:forge_hammers"
+    },
+    {
+      "tag": "c:silver_ingots"
+    }
+  ],
+  "result": {
+    "item": "techreborn:silver_plate",
+    "count": 1
+  }
+}

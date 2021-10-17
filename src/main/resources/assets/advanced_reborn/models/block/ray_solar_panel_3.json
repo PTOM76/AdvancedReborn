@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "advanced_reborn:blocks/ray_solar_panel/3/top",
+        "down": "advanced_reborn:blocks/ray_solar_panel/3/bottom",
+        "up": "advanced_reborn:blocks/ray_solar_panel/3/top",
+        "north": "advanced_reborn:blocks/ray_solar_panel/3/side",
+        "east": "advanced_reborn:blocks/ray_solar_panel/3/side",
+        "south": "advanced_reborn:blocks/ray_solar_panel/3/side",
+        "west": "advanced_reborn:blocks/ray_solar_panel/3/side"
+    }
+}

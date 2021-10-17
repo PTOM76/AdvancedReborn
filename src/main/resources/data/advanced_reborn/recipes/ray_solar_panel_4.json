@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "advanced_reborn:ray_solar_panel_3"
+    },
+    "B": {
+      "item": "techreborn:hv_transformer"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:ray_solar_panel_4",
+    "count": 1
+  }
+}

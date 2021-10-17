@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C C",
+    "IAI",
+    " I "
+  ],
+  "key": {
+    "A": {
+      "item": "techreborn:advanced_circuit"
+    },
+    "C": {
+      "item": "techreborn:copper_cable"
+    },
+    "I": {
+      "item": "techreborn:insulated_hv_cable"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:config_wrench",
+    "count": 1
+  }
+}

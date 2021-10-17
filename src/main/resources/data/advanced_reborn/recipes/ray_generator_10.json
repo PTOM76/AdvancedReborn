@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "ABA",
+    "CAC"
+  ],
+  "key": {
+    "A": {
+      "item": "advanced_reborn:ray_generator_9"
+    },
+    "B": {
+      "item": "advanced_reborn:ray_generator_7"
+    },
+    "C": {
+      "tag": "c:iridium_alloy_plates"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:ray_generator_10",
+    "count": 1
+  }
+}

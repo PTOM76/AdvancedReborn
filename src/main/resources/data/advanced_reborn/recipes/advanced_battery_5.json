@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "advanced_reborn:advanced_battery_4"
+    },
+    "B": {
+      "item": "techreborn:advanced_machine_casing"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:advanced_battery_5",
+    "count": 1
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CBC",
+    "C C",
+    "C C"
+  ],
+  "key": {
+    "B": {
+      "item": "techreborn:energy_crystal"
+    },
+    "C": {
+      "tag": "c:carbon_plates"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:nano_leggings",
+    "count": 1
+  }
+}

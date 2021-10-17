@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "advanced_reborn",
+  "version": "${version}",
+  "name": "Advanced Reborn",
+  "description": "This is TR's Addon.",
+  "authors": [
+    "Pitan"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/advancedreborn",
+    "sources": "https://github.com/PTOM76/advancedreborn",
+    "issues": "https://github.com/PTOM76/advancedreborn/issues"
+  },
+
+  "license": "MPL-2.0",
+  "icon": "assets/advanced_reborn/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ml.pkom.advancedreborn.AdvancedReborn"
+    ],
+    "client": [
+      "ml.pkom.advancedreborn.AdvancedRebornClient"
+    ]
+  },
+  "mixins": [
+    "advanced_reborn.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": "*"
+  }
+}

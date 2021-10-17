@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "advanced_reborn:advanced_battery_2"
+    },
+    "B": {
+      "item": "techreborn:mv_transformer"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:advanced_battery_3",
+    "count": 1
+  }
+}

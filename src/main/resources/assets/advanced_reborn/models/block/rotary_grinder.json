@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "top": "advanced_reborn:blocks/rotary_grinder/top_off",
+        "front": "advanced_reborn:blocks/rotary_grinder/front_off",
+        "side": "advanced_reborn:blocks/rotary_grinder/side"
+    }
+}
