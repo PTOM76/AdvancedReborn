@@ -1,8 +1,6 @@
 package ml.pkom.advancedreborn;
 
-import ml.pkom.advancedreborn.blocks.ChargePad;
-import ml.pkom.advancedreborn.blocks.RaySolar;
-import ml.pkom.advancedreborn.blocks.RotaryGrinder;
+import ml.pkom.advancedreborn.blocks.*;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
@@ -18,6 +16,7 @@ public class Blocks {
     public static Block CHARGE_PAD_MK_2 = new ChargePad(baseSetting, 16);
     public static Block CHARGE_PAD_MK_3 = new ChargePad(baseSetting, 64);
     public static Block CHARGE_PAD_MK_4 = new ChargePad(baseSetting, 128);
+    public static Block CHARGE_PAD_MK_FINAL = new ChargePadFinal(baseSetting, 256);
 
     public static Block RAY_SOLAR_1 = new RaySolar(baseSetting, 1, false);
     public static Block RAY_SOLAR_2 = new RaySolar(baseSetting, 8, false);
@@ -35,12 +34,19 @@ public class Blocks {
     public static Block RAY_GENERATOR_9 = new RaySolar(baseSetting, 131072, true);
     public static Block RAY_GENERATOR_10 = new RaySolar(baseSetting, 532480, true);
 
+    public static Block INDUSTRIAL_TNT = new IndustrialTNT(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.TNT));
+
+    public static Block LIGHT = new Block(FabricBlockSettings.of(Material.METAL).strength(1.5F, 4).breakByTool(FabricToolTags.PICKAXES, 0).breakByHand(true).luminance((state) -> 15));
+
+    //public static Block COPPER_PICKAXE_TURTLE = new
+
     public static void init() {
         //Registry.register(Registry.BLOCK, AdvancedReborn.createID("rotary_grinder"), ROTARY_GRINDER);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad"), CHARGE_PAD_MK_1);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad_2"), CHARGE_PAD_MK_2);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad_3"), CHARGE_PAD_MK_3);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad_4"), CHARGE_PAD_MK_4);
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad_final"), CHARGE_PAD_MK_FINAL);
 
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_solar_panel"), RAY_SOLAR_1);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_solar_panel_2"), RAY_SOLAR_2);
@@ -56,5 +62,9 @@ public class Blocks {
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_8"), RAY_GENERATOR_8);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_9"), RAY_GENERATOR_9);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_10"), RAY_GENERATOR_10);
+
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("industrial_tnt"), INDUSTRIAL_TNT);
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("light"), LIGHT);
+
     }
 }

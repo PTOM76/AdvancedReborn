@@ -1,0 +1,19 @@
+{
+  "type": "computercraft:impostor_shaped",
+  "group": "computercraft:turtle_advanced",
+  "pattern": [
+    "#T"
+  ],
+  "key": {
+    "#": {
+      "item": "computercraft:turtle_advanced"
+    },
+    "T": {
+      "item": "techreborn:peridot_pickaxe"
+    }
+  },
+  "result": {
+    "item": "computercraft:turtle_advanced",
+    "nbt": "{RightUpgrade:\"techreborn:peridot_pickaxe\"}"
+  }
+}

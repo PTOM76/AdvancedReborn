@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BAB",
+    "BAB",
+    "BAB"
+
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:tnt"
+    },
+    "B": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:industrial_tnt",
+    "count": 4
+  }
+}

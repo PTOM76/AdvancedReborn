@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:stained_glass"
+    },
+    "B": {
+      "item": "minecraft:glowstone"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:light",
+    "count": 4
+  }
+}

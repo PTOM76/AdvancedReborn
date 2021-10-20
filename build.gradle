@@ -11,11 +11,10 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
+	mavenLocal()
+	mavenCentral()
+	maven { url 'https://jitpack.io' }
+	maven { url "https://maven.shedaniel.me/" }
 }
 
 dependencies {
@@ -31,8 +30,13 @@ dependencies {
 	modImplementation 'RebornCore:RebornCore-1.16:+'
 	modImplementation 'TechReborn:TechReborn-1.16:+'
 
-	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
-	// You may need to force-disable transitiveness on them.
+
+	// CC: Restitched
+	runtimeOnly 'com.electronwill.night-config:core:3.6.3'
+	runtimeOnly 'com.electronwill.night-config:toml:3.6.3'
+	modRuntime "me.shedaniel.cloth.api:cloth-api:1.5.50"
+
+	modImplementation "com.github.Merith-TK:cc-restitched:${project.cc_version}"
 }
 
 processResources {

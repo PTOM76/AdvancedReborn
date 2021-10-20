@@ -6,6 +6,7 @@
     "block.advanced_reborn.charge_pad_2": "Charge Pad MK-Ⅱ",
     "block.advanced_reborn.charge_pad_3": "Charge Pad MK-Ⅲ",
     "block.advanced_reborn.charge_pad_4": "Charge Pad MK-Ⅳ",
+    "block.advanced_reborn.charge_pad_final": "Charge Pad MK-Final",
     "block.advanced_reborn.ray_solar_panel": "Ray Solar Panel (1 EU/t)",
     "block.advanced_reborn.ray_solar_panel_2": "Ray Solar Panel (8 EU/t)",
     "block.advanced_reborn.ray_solar_panel_3": "Ray Solar Panel (64 EU/t)",
@@ -32,5 +33,36 @@
     "item.advanced_reborn.advanced_battery_3": "Advanced Battery (5,120,000 EU)",
     "item.advanced_reborn.advanced_battery_4": "Advanced Battery (40,960,000 EU)",
     "item.advanced_reborn.advanced_battery_5": "Advanced Battery (327,680,000 EU)",
-    "item.advanced_reborn.config_wrench": "Config Wrench"
+    "item.advanced_reborn.config_wrench": "Config Wrench",
+    "item.advanced_reborn.dynamite": "Dynamite",
+    "item.advanced_reborn.sticky_dynamite": "Sticky Dynamite",
+    "item.advanced_reborn.industrial_dynamite": "Industrial Dynamite",
+    "item.advanced_reborn.industrial_sticky_dynamite": "Industrial Sticky Dynamite",
+    "block.advanced_reborn.industrial_tnt": "Industrial TNT",
+    "block.advanced_reborn.light": "Light",
+
+    "_comment": "ComputerCraft",
+    "upgrade.techreborn.ruby_sword.adjective": "Melee",
+    "upgrade.techreborn.ruby_spade.adjective": "Digging",
+    "upgrade.techreborn.ruby_pickaxe.adjective": "Mining",
+    "upgrade.techreborn.ruby_axe.adjective": "Felling",
+    "upgrade.techreborn.ruby_hoe.adjective": "Farming",
+
+    "upgrade.techreborn.sapphire_sword.adjective": "Melee",
+    "upgrade.techreborn.sapphire_spade.adjective": "Digging",
+    "upgrade.techreborn.sapphire_pickaxe.adjective": "Mining",
+    "upgrade.techreborn.sapphire_axe.adjective": "Felling",
+    "upgrade.techreborn.sapphire_hoe.adjective": "Farming",
+
+    "upgrade.techreborn.peridot_sword.adjective": "Melee",
+    "upgrade.techreborn.peridot_spade.adjective": "Digging",
+    "upgrade.techreborn.peridot_pickaxe.adjective": "Mining",
+    "upgrade.techreborn.peridot_axe.adjective": "Felling",
+    "upgrade.techreborn.peridot_hoe.adjective": "Farming",
+
+    "upgrade.techreborn.bronze_sword.adjective": "Melee",
+    "upgrade.techreborn.bronze_spade.adjective": "Digging",
+    "upgrade.techreborn.bronze_pickaxe.adjective": "Mining",
+    "upgrade.techreborn.bronze_axe.adjective": "Felling",
+    "upgrade.techreborn.bronze_hoe.adjective": "Farming"
 }

@@ -1,21 +1,28 @@
 package ml.pkom.advancedreborn.items;
 
+import ml.pkom.advancedreborn.AdvancedRebornClient;
 import ml.pkom.advancedreborn.Items;
 import ml.pkom.advancedreborn.mixins.MachineBaseBlockEntityAccessor;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import reborncore.common.blockentity.FluidConfiguration;
 import reborncore.common.blockentity.MachineBaseBlockEntity;
 import reborncore.common.blockentity.RedstoneConfiguration;
 import reborncore.common.blockentity.SlotConfiguration;
+import techreborn.items.tool.WrenchItem;
+
+import java.util.List;
 
 public class ConfigWrench extends Item {
     public ConfigWrench(Settings settings) {
@@ -76,5 +83,12 @@ public class ConfigWrench extends Item {
         stack.setTag(tag);
         context.getPlayer().sendMessage(new LiteralText("Saved Configuration to The Config Wrench."), false);
         return ActionResult.SUCCESS;
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(new LiteralText("Save TR Machine configurations to Wrench when Right Click with TR Machine."));
+        tooltip.add(new LiteralText("Load TR Machine configurations from Wrench when Left Click with TR Machine."));
+        super.appendTooltip(stack, world, tooltip, context);
     }
 }

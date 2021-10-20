@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "advanced_reborn:blocks/industrial_tnt/top",
+    "bottom": "advanced_reborn:blocks/industrial_tnt/bottom",
+    "side": "advanced_reborn:blocks/industrial_tnt/side"
+  }
+}

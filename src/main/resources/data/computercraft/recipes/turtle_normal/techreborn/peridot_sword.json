@@ -1,0 +1,19 @@
+{
+  "type": "computercraft:impostor_shaped",
+  "group": "computercraft:turtle_normal",
+  "pattern": [
+    "#T"
+  ],
+  "key": {
+    "#": {
+      "item": "computercraft:turtle_normal"
+    },
+    "T": {
+      "item": "techreborn:peridot_sword"
+    }
+  },
+  "result": {
+    "item": "computercraft:turtle_normal",
+    "nbt": "{RightUpgrade:\"techreborn:peridot_sword\"}"
+  }
+}

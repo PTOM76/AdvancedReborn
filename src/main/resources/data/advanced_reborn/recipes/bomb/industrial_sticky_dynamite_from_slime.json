@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+
+  ],
+  "key": {
+    "A": {
+      "item": "advanced_reborn:industrial_dynamite"
+    },
+    "B": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:industrial_sticky_dynamite",
+    "count": 8
+  }
+}
