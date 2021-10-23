@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.registry.Registry;
 
 public class Blocks {
@@ -34,11 +35,16 @@ public class Blocks {
     public static Block RAY_GENERATOR_9 = new RaySolar(baseSetting, 131072, true);
     public static Block RAY_GENERATOR_10 = new RaySolar(baseSetting, 532480, true);
 
+    public static Block CANNING_MACHINE = new CanningMachine(baseSetting);
+
+    public static Block CARDBOARD_BOX = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByHand(true).breakByTool(FabricToolTags.AXES, 0).strength(1, 3));
+    public static Block CARDBOARD_BOX_MINEZON = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByHand(true).breakByTool(FabricToolTags.AXES, 0).strength(1, 3));
+    public static Block CARDBOARD_BOX_MINETARO = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByHand(true).breakByTool(FabricToolTags.AXES, 0).strength(1, 3));
+    public static Block CARDBOARD_BOX_NOTHING = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByHand(true).breakByTool(FabricToolTags.AXES, 0).strength(1, 3));
+
     public static Block INDUSTRIAL_TNT = new IndustrialTNT(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.TNT));
 
     public static Block LIGHT = new Block(FabricBlockSettings.of(Material.METAL).strength(1.5F, 4).breakByTool(FabricToolTags.PICKAXES, 0).breakByHand(true).luminance((state) -> 15));
-
-    //public static Block COPPER_PICKAXE_TURTLE = new
 
     public static void init() {
         //Registry.register(Registry.BLOCK, AdvancedReborn.createID("rotary_grinder"), ROTARY_GRINDER);
@@ -63,8 +69,14 @@ public class Blocks {
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_9"), RAY_GENERATOR_9);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_10"), RAY_GENERATOR_10);
 
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("canning_machine"), CANNING_MACHINE);
+
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("industrial_tnt"), INDUSTRIAL_TNT);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("light"), LIGHT);
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("cardboard_box"), CARDBOARD_BOX);
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("cardboard_box_minetaro"), CARDBOARD_BOX_MINETARO);
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("cardboard_box_minezon"), CARDBOARD_BOX_MINEZON);
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("cardboard_box_nothing_logo"), CARDBOARD_BOX_NOTHING);
 
     }
 }

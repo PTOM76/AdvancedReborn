@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "advanced_reborn:block/cardboard_box_nothing_logo" },
+        "facing=south": { "model": "advanced_reborn:block/cardboard_box_nothing_logo", "y": 180 },
+        "facing=west":  { "model": "advanced_reborn:block/cardboard_box_nothing_logo", "y": 270 },
+        "facing=east":  { "model": "advanced_reborn:block/cardboard_box_nothing_logo", "y": 90 }
+    }
+}

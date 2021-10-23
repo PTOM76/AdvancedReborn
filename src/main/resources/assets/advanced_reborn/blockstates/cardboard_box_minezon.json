@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "advanced_reborn:block/cardboard_box_minezon" },
+        "facing=south": { "model": "advanced_reborn:block/cardboard_box_minezon", "y": 180 },
+        "facing=west":  { "model": "advanced_reborn:block/cardboard_box_minezon", "y": 270 },
+        "facing=east":  { "model": "advanced_reborn:block/cardboard_box_minezon", "y": 90 }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "advanced_reborn:blocks/cardboard_box/default",
+        "down": "advanced_reborn:blocks/cardboard_box/bottom",
+        "up": "advanced_reborn:blocks/cardboard_box/top",
+        "north": "advanced_reborn:blocks/cardboard_box/sides/minezon",
+        "east": "advanced_reborn:blocks/cardboard_box/side",
+        "south": "advanced_reborn:blocks/cardboard_box/sides/minezon",
+        "west": "advanced_reborn:blocks/cardboard_box/side"
+    }
+}

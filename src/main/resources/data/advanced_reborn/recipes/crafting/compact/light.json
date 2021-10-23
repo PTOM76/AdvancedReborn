@@ -1,17 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "AAA",
-    "ABA",
-    "AAA"
-
+    "BBB",
+    "BAB",
+    "BBB"
   ],
   "key": {
     "A": {
-      "item": "minecraft:stained_glass"
+      "item": "minecraft:glowstone"
     },
     "B": {
-      "item": "minecraft:glowstone"
+      "item": "minecraft:white_stained_glass_pane"
     }
   },
   "result": {

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RER",
+    "RFR",
+    "RRR"
+  ],
+  "key": {
+    "R": {
+      "tag": "c:refined_iron_ingots"
+    },
+    "F": {
+      "item": "techreborn:basic_machine_frame"
+    },
+    "E": {
+      "item": "techreborn:electric_circuit"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:canning_machine",
+    "count": 1
+  }
+}

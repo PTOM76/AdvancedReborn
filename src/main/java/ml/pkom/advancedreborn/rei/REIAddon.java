@@ -1,0 +1,57 @@
+package ml.pkom.advancedreborn.rei;
+
+import me.shedaniel.rei.api.*;
+import me.shedaniel.rei.api.plugins.REIPluginV0;
+import ml.pkom.advancedreborn.AdvancedReborn;
+import ml.pkom.advancedreborn.Blocks;
+import ml.pkom.advancedreborn.Recipes;
+import ml.pkom.advancedreborn.rei.machine.TwoInputRightOutputCategory;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.util.Identifier;
+import reborncore.common.crafting.RebornRecipe;
+import reborncore.common.crafting.RebornRecipeType;
+import reborncore.common.crafting.RecipeManager;
+import techreborn.compat.rei.MachineRecipeDisplay;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+public class REIAddon implements REIPluginV0 {
+
+    public static Identifier PLUGIN = AdvancedReborn.createID("advanced_plugin");
+
+    public static Map<RebornRecipeType<?>, ItemConvertible> iconMap = new HashMap<>();
+
+    public REIAddon() {
+        iconMap.put(Recipes.CANNING_MACHINE, Blocks.CANNING_MACHINE);
+    }
+
+    public Identifier getPluginIdentifier() {
+        return PLUGIN;
+    }
+
+    public void registerPluginCategories(RecipeHelper recipeHelper) {
+        recipeHelper.registerCategory(new TwoInputRightOutputCategory<>(Recipes.CANNING_MACHINE));
+    }
+
+    public void registerRecipeDisplays(RecipeHelper recipeHelper) {
+        RecipeManager.getRecipeTypes(AdvancedReborn.MOD_ID).forEach(rebornRecipeType -> registerMachineRecipe(recipeHelper, rebornRecipeType));
+    }
+
+    public <R extends RebornRecipe> void registerMachineRecipe(RecipeHelper recipeHelper, RebornRecipeType<R> recipeType) {
+        Function<R, RecipeDisplay> recipeDisplay = r -> new MachineRecipeDisplay<>((RebornRecipe) r);
+        recipeHelper.registerRecipes(recipeType.getName(), (Predicate<Recipe>) recipe -> {
+            if (recipe instanceof RebornRecipe) {
+                return ((RebornRecipe) recipe).getRebornRecipeType() == recipeType;
+            }
+            return false;
+        }, recipeDisplay);
+    }
+
+    public void registerOthers(RecipeHelper recipeHelper) {
+        recipeHelper.registerWorkingStations(Recipes.CANNING_MACHINE.getName(), EntryStack.create(Blocks.CANNING_MACHINE));
+    }
+}

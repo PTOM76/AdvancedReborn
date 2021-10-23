@@ -32,8 +32,11 @@ public class AdvancedReborn implements ModInitializer {
         Blocks.init();
         Entities.init();
         Tiles.init();
+        Recipes.init();
         Particles.init();
+        ScreenHandlers.init();
         ARDispenserBehavior.init();
+        Network.init();
     }
 
     public static List<RaySolar> solars = new ArrayList<>();

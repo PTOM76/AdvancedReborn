@@ -33,6 +33,8 @@
     "item.advanced_reborn.advanced_battery_3": "上級バッテリー (5,120,000 EU)",
     "item.advanced_reborn.advanced_battery_4": "上級バッテリー (40,960,000 EU)",
     "item.advanced_reborn.advanced_battery_5": "上級バッテリー (327,680,000 EU)",
+    "item.advanced_reborn.duct_tape": "ガムテープ",
+    "item.advanced_reborn.cardboard_sheet": "ダンボールシート",
     "item.advanced_reborn.config_wrench": "コンフィグレンチ",
     "item.advanced_reborn.dynamite": "ダイナマイト",
     "item.advanced_reborn.sticky_dynamite": "粘着ダイナマイト",
@@ -40,7 +42,18 @@
     "item.advanced_reborn.industrial_sticky_dynamite": "工業用粘着ダイナマイト",
     "block.advanced_reborn.industrial_tnt": "工業用TNT",
     "block.advanced_reborn.light": "ライト",
-    
+    "block.advanced_reborn.cardboard_box": "ダンボール箱",
+    "block.advanced_reborn.cardboard_box_minezon": "ダンボール箱 (Minezon)",
+    "block.advanced_reborn.cardboard_box_minetaro": "ダンボール箱 (マインタロウ)",
+    "block.advanced_reborn.cardboard_box_nothing_logo": "ダンボール箱 (ロゴなし)",
+    "block.advanced_reborn.canning_machine": "缶詰マシン",
+
+    "item.advanced_reborn.empty_can": "空き缶",
+    "item.advanced_reborn.fuel_can": "燃料缶",
+    "item.advanced_reborn.fish_can": "魚缶",
+    "item.advanced_reborn.food_can": "食料缶詰",
+    "item.advanced_reborn.bread_can": "パン缶",
+
     "_comment": "ComputerCraft",
     "upgrade.techreborn.ruby_sword.adjective": "メーレー",
     "upgrade.techreborn.ruby_spade.adjective": "ディギング",

@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "techreborn:block/machines/tier0_machines/machine_top",
+        "down": "techreborn:block/machines/tier0_machines/machine_bottom",
+        "up": "advanced_reborn:blocks/canning_machine/top",
+        "north": "advanced_reborn:blocks/canning_machine/front_on",
+        "east": "techreborn:block/machines/tier0_machines/machine_side",
+        "south": "techreborn:block/machines/tier0_machines/machine_side",
+        "west": "techreborn:block/machines/tier0_machines/machine_side"
+    }
+}

@@ -5,6 +5,7 @@ import ml.pkom.advancedreborn.items.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
 import team.reborn.energy.EnergyTier;
@@ -66,8 +67,26 @@ public class Items {
     public static Item INDUSTRIAL_STICKY_DYNAMITE = new Dynamite(baseSettings,true, true);
     public static Item INDUSTRIAL_TNT = new BlockItem(Blocks.INDUSTRIAL_TNT, baseSettings);
 
-    // ライト、足場(鉄) 強化石材
+    // ライト、足場(鉄) 強化石材  ネーミングマシン
     public static Item LIGHT = new BlockItem(Blocks.LIGHT, baseSettings);
+
+    public static Item CANNING_MACHINE = new BlockItem(Blocks.CANNING_MACHINE, baseSettings);
+    public static Item CARDBOARD_BOX = new BlockItem(Blocks.CARDBOARD_BOX, baseSettings);
+    public static Item CARDBOARD_BOX_MINETARO = new BlockItem(Blocks.CARDBOARD_BOX_MINETARO, baseSettings);
+    public static Item CARDBOARD_BOX_MINEZON = new BlockItem(Blocks.CARDBOARD_BOX_MINEZON, baseSettings);
+    public static Item CARDBOARD_BOX_NOTHING = new BlockItem(Blocks.CARDBOARD_BOX_NOTHING, baseSettings);
+
+    // 缶
+    public static Item EMPTY_CAN = new Item(baseSettings);
+    public static Item FUEL_CAN = new FuelCanItem(new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(64).recipeRemainder(EMPTY_CAN));
+    public static Item FOOD_CAN = new FoodCanItem(new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(64).recipeRemainder(EMPTY_CAN).food(new FoodComponent.Builder().snack().hunger(2).build()));
+    //public static Item FISH_CAN = new Item(new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(128).recipeRemainder(EMPTY_CAN).food(new FoodComponent.Builder().snack().hunger(2).build()));
+    //public static Item BREAD_CAN = new Item(new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(128).recipeRemainder(EMPTY_CAN).food(new FoodComponent.Builder().snack().hunger(2).build()));
+
+
+    // 素材アイテム
+    public static Item DUCT_TAPE = new Item(baseSettings);
+    public static Item CARDBOARD_SHEET = new Item(baseSettings);
 
     public static Item ADD_ITEMS = new AddItems(baseSettings);
 
@@ -94,6 +113,8 @@ public class Items {
         Registry.register(Registry.ITEM, AdvancedReborn.createID("ray_generator_9"), RAY_GENERATOR_9);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("ray_generator_10"), RAY_GENERATOR_10);
 
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("canning_machine"), CANNING_MACHINE);
+
         Registry.register(Registry.ITEM, AdvancedReborn.createID("config_wrench"), CONFIG_WRENCH);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("forge_hammer"), FORGE_HAMMER);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("advanced_forge_hammer"), ADVANCED_FORGE_HAMMER);
@@ -103,6 +124,10 @@ public class Items {
         Registry.register(Registry.ITEM, AdvancedReborn.createID("industrial_sticky_dynamite"), INDUSTRIAL_STICKY_DYNAMITE);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("industrial_tnt"), INDUSTRIAL_TNT);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("light"), LIGHT);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("cardboard_box"), CARDBOARD_BOX);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("cardboard_box_minetaro"), CARDBOARD_BOX_MINETARO);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("cardboard_box_minezon"), CARDBOARD_BOX_MINEZON);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("cardboard_box_nothing_logo"), CARDBOARD_BOX_NOTHING);
 
         Registry.register(Registry.ITEM, AdvancedReborn.createID("advanced_battery"), ADVANCED_BATTERY);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("advanced_battery_2"), ADVANCED_BATTERY_2);
@@ -114,6 +139,12 @@ public class Items {
         Registry.register(Registry.ITEM, AdvancedReborn.createID("nano_chestplate"), NANO_SUIT_BODY_ARMOR);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("nano_leggings"), NANO_SUIT_LEGGINGS);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("nano_boots"), NANO_SUIT_BOOTS);
+
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("empty_can"), EMPTY_CAN);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("fuel_can"), FUEL_CAN);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("food_can"), FOOD_CAN);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("cardboard_sheet"), CARDBOARD_SHEET);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("duct_tape"), DUCT_TAPE);
 
         Registry.register(Registry.ITEM, AdvancedReborn.createID("z_add_items"), ADD_ITEMS);
 

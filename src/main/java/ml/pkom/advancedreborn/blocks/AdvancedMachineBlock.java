@@ -25,8 +25,6 @@ public abstract class AdvancedMachineBlock extends BlockMachineBase {
 
     public abstract BlockEntity createBlockEntity(TileCreateEvent event);
 
-
-    @Override
     public IMachineGuiHandler getGui() {
         return null;
     }

@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "facing=north,active=false": { "model": "advanced_reborn:block/canning_machine" },
+        "facing=south,active=false": { "model": "advanced_reborn:block/canning_machine", "y": 180 },
+        "facing=west,active=false":  { "model": "advanced_reborn:block/canning_machine", "y": 270 },
+        "facing=east,active=false":  { "model": "advanced_reborn:block/canning_machine", "y": 90 },
+        "facing=north,active=true": { "model": "advanced_reborn:block/canning_machine_on" },
+        "facing=south,active=true": { "model": "advanced_reborn:block/canning_machine_on", "y": 180 },
+        "facing=west,active=true":  { "model": "advanced_reborn:block/canning_machine_on", "y": 270 },
+        "facing=east,active=true":  { "model": "advanced_reborn:block/canning_machine_on", "y": 90 }
+    }
+}

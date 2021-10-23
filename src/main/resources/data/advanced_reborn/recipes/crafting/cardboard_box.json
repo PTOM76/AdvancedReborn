@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "ABA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "advanced_reborn:cardboard_sheet"
+    },
+    "B": {
+      "item": "advanced_reborn:duct_tape"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:cardboard_box",
+    "count": 1
+  }
+}

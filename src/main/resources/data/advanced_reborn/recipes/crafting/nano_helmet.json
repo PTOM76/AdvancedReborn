@@ -6,7 +6,7 @@
   ],
   "key": {
     "A": {
-      "tag": "minecraft:glass"
+      "item": "minecraft:glass"
     },
     "B": {
       "item": "techreborn:energy_crystal"
