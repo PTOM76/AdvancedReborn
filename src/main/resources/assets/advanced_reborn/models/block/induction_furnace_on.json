@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "top": "advanced_reborn:blocks/induction_furnace/top_on",
+        "front": "advanced_reborn:blocks/induction_furnace/front_on",
+        "side": "advanced_reborn:blocks/induction_furnace/side"
+    }
+}

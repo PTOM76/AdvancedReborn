@@ -6,6 +6,6 @@ import net.minecraft.item.Item;
 public class FuelCanItem extends Item {
     public FuelCanItem(Settings settings) {
         super(settings);
-        FuelRegistry.INSTANCE.add(this, 3200);
+        FuelRegistry.INSTANCE.add(this, 2000);
     }
 }

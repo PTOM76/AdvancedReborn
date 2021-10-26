@@ -12,7 +12,6 @@ public class Blocks {
 
     public static FabricBlockSettings baseSetting = FabricBlockSettings.of(Material.METAL).requiresTool().breakByTool(FabricToolTags.PICKAXES, 0).strength(2, 8);
 
-    public static Block ROTARY_GRINDER = new RotaryGrinder(baseSetting);
     public static Block CHARGE_PAD_MK_1 = new ChargePad(baseSetting, 4);
     public static Block CHARGE_PAD_MK_2 = new ChargePad(baseSetting, 16);
     public static Block CHARGE_PAD_MK_3 = new ChargePad(baseSetting, 64);
@@ -35,6 +34,11 @@ public class Blocks {
     public static Block RAY_GENERATOR_9 = new RaySolar(baseSetting, 131072, true);
     public static Block RAY_GENERATOR_10 = new RaySolar(baseSetting, 532480, true);
 
+
+    public static Block INDUCTION_FURNACE = new InductionFurnace(baseSetting);
+    public static Block ROTARY_GRINDER = new RotaryGrinder(baseSetting);
+    public static Block CENTRIFUGAL_EXTRACTOR = new CentrifugalExtractor(baseSetting);
+    public static Block SINGULARITY_COMPRESSOR = new SingularityCompressor(baseSetting);
     public static Block CANNING_MACHINE = new CanningMachine(baseSetting);
 
     public static Block CARDBOARD_BOX = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByHand(true).breakByTool(FabricToolTags.AXES, 0).strength(1, 3));
@@ -47,7 +51,6 @@ public class Blocks {
     public static Block LIGHT = new Block(FabricBlockSettings.of(Material.METAL).strength(1.5F, 4).breakByTool(FabricToolTags.PICKAXES, 0).breakByHand(true).luminance((state) -> 15));
 
     public static void init() {
-        //Registry.register(Registry.BLOCK, AdvancedReborn.createID("rotary_grinder"), ROTARY_GRINDER);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad"), CHARGE_PAD_MK_1);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad_2"), CHARGE_PAD_MK_2);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad_3"), CHARGE_PAD_MK_3);
@@ -69,6 +72,10 @@ public class Blocks {
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_9"), RAY_GENERATOR_9);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_10"), RAY_GENERATOR_10);
 
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("induction_furnace"), INDUCTION_FURNACE);
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("rotary_grinder"), ROTARY_GRINDER);
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("centrifugal_extractor"), CENTRIFUGAL_EXTRACTOR);
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("singularity_compressor"), SINGULARITY_COMPRESSOR);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("canning_machine"), CANNING_MACHINE);
 
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("industrial_tnt"), INDUSTRIAL_TNT);

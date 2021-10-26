@@ -16,7 +16,6 @@ public class Items {
     public static FabricItemSettings baseSettingsMaxOne = new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(1);
     public static FabricItemSettings nothingSettings = new FabricItemSettings();
 
-    public static Item ROTARY_GRINDER = new BlockItem(Blocks.ROTARY_GRINDER, baseSettings);
     public static Item CHARGE_PAD_MK_1 = new BlockItem(Blocks.CHARGE_PAD_MK_1, baseSettings);
     public static Item CHARGE_PAD_MK_2 = new BlockItem(Blocks.CHARGE_PAD_MK_2, baseSettings);
     public static Item CHARGE_PAD_MK_3 = new BlockItem(Blocks.CHARGE_PAD_MK_3, baseSettings);
@@ -37,6 +36,12 @@ public class Items {
     public static Item RAY_GENERATOR_8 = new BlockItem(Blocks.RAY_GENERATOR_8, baseSettings);
     public static Item RAY_GENERATOR_9 = new BlockItem(Blocks.RAY_GENERATOR_9, baseSettings);
     public static Item RAY_GENERATOR_10 = new BlockItem(Blocks.RAY_GENERATOR_10, baseSettings);
+
+    public static Item INDUCTION_FURNACE = new BlockItem(Blocks.INDUCTION_FURNACE, baseSettings);
+    public static Item ROTARY_GRINDER = new BlockItem(Blocks.ROTARY_GRINDER, baseSettings);
+    public static Item CENTRIFUGAL_EXTRACTOR = new BlockItem(Blocks.CENTRIFUGAL_EXTRACTOR, baseSettings);
+    public static Item SINGULARITY_COMPRESSOR = new BlockItem(Blocks.SINGULARITY_COMPRESSOR, baseSettings);
+    public static Item CANNING_MACHINE = new BlockItem(Blocks.CANNING_MACHINE, baseSettings);
 
     public static Item CONFIG_WRENCH = new ConfigWrench(baseSettingsMaxOne);
     public static Item FORGE_HAMMER;
@@ -70,7 +75,6 @@ public class Items {
     // ライト、足場(鉄) 強化石材  ネーミングマシン
     public static Item LIGHT = new BlockItem(Blocks.LIGHT, baseSettings);
 
-    public static Item CANNING_MACHINE = new BlockItem(Blocks.CANNING_MACHINE, baseSettings);
     public static Item CARDBOARD_BOX = new BlockItem(Blocks.CARDBOARD_BOX, baseSettings);
     public static Item CARDBOARD_BOX_MINETARO = new BlockItem(Blocks.CARDBOARD_BOX_MINETARO, baseSettings);
     public static Item CARDBOARD_BOX_MINEZON = new BlockItem(Blocks.CARDBOARD_BOX_MINEZON, baseSettings);
@@ -91,7 +95,6 @@ public class Items {
     public static Item ADD_ITEMS = new AddItems(baseSettings);
 
     public static void init() {
-        //Registry.register(Registry.ITEM, AdvancedReborn.createID("rotary_grinder"), ROTARY_GRINDER);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("charge_pad"), CHARGE_PAD_MK_1);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("charge_pad_2"), CHARGE_PAD_MK_2);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("charge_pad_3"), CHARGE_PAD_MK_3);
@@ -113,6 +116,10 @@ public class Items {
         Registry.register(Registry.ITEM, AdvancedReborn.createID("ray_generator_9"), RAY_GENERATOR_9);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("ray_generator_10"), RAY_GENERATOR_10);
 
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("induction_furnace"), INDUCTION_FURNACE);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("rotary_grinder"), ROTARY_GRINDER);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("centrifugal_extractor"), CENTRIFUGAL_EXTRACTOR);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("singularity_compressor"), SINGULARITY_COMPRESSOR);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("canning_machine"), CANNING_MACHINE);
 
         Registry.register(Registry.ITEM, AdvancedReborn.createID("config_wrench"), CONFIG_WRENCH);

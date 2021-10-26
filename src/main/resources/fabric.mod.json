@@ -25,7 +25,7 @@
       "ml.pkom.advancedreborn.AdvancedRebornClient"
     ],
     "rei_plugins_v0": [
-      "ml.pkom.advancedreborn.rei.REIAddon"
+      "ml.pkom.advancedreborn.addons.rei.REIAddon"
     ]
   },
   "mixins": [

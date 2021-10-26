@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRR",
+    "RMR",
+    "RFR"
+  ],
+  "key": {
+    "R": {
+      "tag": "c:copper_ingots"
+    },
+    "M": {
+      "item": "techreborn:electric_furnace"
+    },
+    "F": {
+      "item": "techreborn:advanced_machine_frame"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:induction_furnace",
+    "count": 1
+  }
+}

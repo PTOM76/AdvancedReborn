@@ -28,4 +28,16 @@ public abstract class AdvancedMachineBlock extends BlockMachineBase {
     public IMachineGuiHandler getGui() {
         return null;
     }
+
+    // 初期設置時にスロットの設定をするとエラーの出る問題をここで対策 →結局解決
+    /*public void onPlaced(World worldIn, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+        super.onPlaced(worldIn, pos, state, placer, stack);
+        BlockEntity blockEntity = worldIn.getBlockEntity(pos);
+        if (!(blockEntity instanceof MachineBaseBlockEntity)) return;
+        MachineBaseBlockEntity tile = (MachineBaseBlockEntity) blockEntity;
+        MachineBaseBlockEntityAccessor accessor = (MachineBaseBlockEntityAccessor) tile;
+        accessor.setSlotConfiguration(new SlotConfiguration(tile.getOptionalInventory().get()));
+    }
+
+     */
 }

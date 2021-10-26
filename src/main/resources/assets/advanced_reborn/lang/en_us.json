@@ -1,7 +1,10 @@
 {
     "itemGroup.advanced_reborn.item_group": "Advanced Reborn",
 
+    "block.advanced_reborn.induction_furnace": "Induction Furnace",
     "block.advanced_reborn.rotary_grinder": "Rotary Grinder",
+    "block.advanced_reborn.centrifugal_extractor": "Centrifugal Extractor",
+    "block.advanced_reborn.singularity_compressor": "Singularity Compressor",
     "block.advanced_reborn.charge_pad": "Charge Pad",
     "block.advanced_reborn.charge_pad_2": "Charge Pad MK-Ⅱ",
     "block.advanced_reborn.charge_pad_3": "Charge Pad MK-Ⅲ",
@@ -53,6 +56,8 @@
     "item.advanced_reborn.fish_can": "Fish Can",
     "item.advanced_reborn.food_can": "Canned Food",
     "item.advanced_reborn.bread_can": "Bread Can",
+
+    "advanced_reborn.advanced_machine.text.speed": "Speed: %s",
 
     "_comment": "ComputerCraft",
     "upgrade.techreborn.ruby_sword.adjective": "Melee",

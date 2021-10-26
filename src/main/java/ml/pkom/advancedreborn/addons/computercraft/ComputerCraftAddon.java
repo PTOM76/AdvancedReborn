@@ -1,4 +1,4 @@
-package ml.pkom.advancedreborn.computercraft;
+package ml.pkom.advancedreborn.addons.computercraft;
 
 import dan200.computercraft.api.ComputerCraftAPI;
 import dan200.computercraft.api.turtle.ITurtleUpgrade;

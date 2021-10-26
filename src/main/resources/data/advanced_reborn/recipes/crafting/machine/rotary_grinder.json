@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRR",
+    "RMR",
+    "RFR"
+  ],
+  "key": {
+    "R": {
+      "tag": "c:refined_iron_ingots"
+    },
+    "M": {
+      "item": "techreborn:grinder"
+    },
+    "F": {
+      "item": "techreborn:advanced_machine_frame"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:rotary_grinder",
+    "count": 1
+  }
+}

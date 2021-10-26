@@ -1,6 +1,5 @@
 package ml.pkom.advancedreborn.items;
 
-import ml.pkom.advancedreborn.AdvancedRebornClient;
 import ml.pkom.advancedreborn.Items;
 import ml.pkom.advancedreborn.mixins.MachineBaseBlockEntityAccessor;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
@@ -20,7 +19,6 @@ import reborncore.common.blockentity.FluidConfiguration;
 import reborncore.common.blockentity.MachineBaseBlockEntity;
 import reborncore.common.blockentity.RedstoneConfiguration;
 import reborncore.common.blockentity.SlotConfiguration;
-import techreborn.items.tool.WrenchItem;
 
 import java.util.List;
 

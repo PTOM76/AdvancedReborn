@@ -32,7 +32,7 @@ public class RaySolarTile extends PowerAcceptorBlockEntity {
             return;
         }
 
-        if (world.isClient) {
+        if (world.isClient()) {
             return;
         }
         if ((!world.isRaining() && !world.isThundering() && world.isDay() && world.isSkyVisible(pos.up())) || solar.isRayGenerator) {

@@ -1,5 +1,6 @@
 package ml.pkom.advancedreborn.blocks;
 
+import ml.pkom.advancedreborn.GuiTypes;
 import ml.pkom.advancedreborn.event.TileCreateEvent;
 import ml.pkom.advancedreborn.tile.RotaryGrinderTile;
 import net.minecraft.block.entity.BlockEntity;
@@ -11,13 +12,11 @@ public class RotaryGrinder extends AdvancedMachineBlock {
         super(settings);
     }
 
-    @Override
     public BlockEntity createBlockEntity(TileCreateEvent event) {
         return new RotaryGrinderTile(event);
     }
 
-    @Override
     public IMachineGuiHandler getGui() {
-        return super.getGui();
+        return GuiTypes.ROTARY_GRINDER;
     }
 }

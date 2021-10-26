@@ -27,7 +27,7 @@ public class AdvancedReborn implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ModManager.init();
+        ModManager.beforeInit();
         Items.init();
         Blocks.init();
         Entities.init();
@@ -37,6 +37,7 @@ public class AdvancedReborn implements ModInitializer {
         ScreenHandlers.init();
         ARDispenserBehavior.init();
         Network.init();
+        ModManager.afterInit();
     }
 
     public static List<RaySolar> solars = new ArrayList<>();

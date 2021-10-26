@@ -1,26 +1,30 @@
 package ml.pkom.advancedreborn;
 
-import reborncore.common.config.Config;
+import me.shedaniel.autoconfig.ConfigData;
+import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 
-public class AdvancedRebornConfig {
-    @Config(config = "machines", category = "rotary_grinder", key = "RotaryGrinderMaxInput", comment = "Rotary Grinder Max Input (Value in EU)")
-    public static int rotaryGrinderMaxInput = 64;
+@Config(name = "advanced_reborn")
+public class AdvancedRebornConfig implements ConfigData {
 
-    @Config(config = "machines", category = "rotary_grinder", key = "RotaryGrinderMaxEnergy", comment = "Rotary Grinder Max Energy (Value in EU)")
-    public static int rotaryGrinderMaxEnergy = 5000;
+    @Comment("Add Tech Reborn's ore-based tool turtle and more.")
+    @ConfigEntry.Category("linkComputerCraft")
+    public boolean linkComputerCraft = true;
 
-    @Config(config = "machines", category = "canning_machine", key = "CanningMachineMaxInput", comment = "Canning Machine Max Input (Value in EU)")
-    public static int canningMachineMaxInput = 32;
+    @Comment("Rotary Grinder, Centrifugal Extractor, Singularity Compressor Max Input (Value in EU)")
+    @ConfigEntry.Category("advanced_machine")
+    public int advancedMachineMaxInput = 256;
 
-    @Config(config = "machines", category = "canning_machine", key = "CanningMachineMaxEnergy", comment = "Canning Machine Max Energy (Value in EU)")
-    public static int canningMachineMaxEnergy = 1000;
+    @Comment("Rotary Grinder, Centrifugal Extractor, Singularity Compressor Max Energy (Value in EU)")
+    @ConfigEntry.Category("advanced_machine")
+    public int advancedMachineMaxEnergy = 10000;
 
-    @Config(config = "machines", category = "charge_pad", key = "ChargePadMaxEnergy", comment = "Rotary Grinder Max Energy (Value in EU)")
-    public static int chargePadMaxEnergy = 5000;
+    @Comment("Canning Machine Max Input (Value in EU)")
+    @ConfigEntry.Category("canning_machine")
+    public int canningMachineMaxInput = 32;
 
-    @Config(config = "machines", category = "charge_pad", key = "ChargePadMax", comment = "Rotary Grinder Max Energy (Value in EU)")
-    public static int chargePadMaxInput = 5000;
-
-    @Config(config = "machines", category = "charge_pad", key = "ChargePadMaxEnergy", comment = "Rotary Grinder Max Energy (Value in EU)")
-    public static int chargePadMaxOutput = 5000;
+    @Comment("Canning Machine Max Energy (Value in EU)")
+    @ConfigEntry.Category("canning_machine")
+    public int canningMachineMaxEnergy = 1000;
 }

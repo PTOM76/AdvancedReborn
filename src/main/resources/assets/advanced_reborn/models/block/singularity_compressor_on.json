@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "top": "advanced_reborn:blocks/singularity_compressor/top_on",
+        "front": "advanced_reborn:blocks/singularity_compressor/front_on",
+        "side": "advanced_reborn:blocks/singularity_compressor/side"
+    }
+}

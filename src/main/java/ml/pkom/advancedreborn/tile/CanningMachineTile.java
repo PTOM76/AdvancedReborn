@@ -1,7 +1,7 @@
 package ml.pkom.advancedreborn.tile;
 
 import ml.pkom.advancedreborn.*;
-import ml.pkom.advancedreborn.blocks.CanningMachine;
+import ml.pkom.advancedreborn.addons.autoconfig.AutoConfigAddon;
 import ml.pkom.advancedreborn.event.TileCreateEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -16,16 +16,13 @@ import reborncore.api.recipe.IRecipeCrafterProvider;
 import reborncore.client.screen.BuiltScreenHandlerProvider;
 import reborncore.client.screen.builder.BuiltScreenHandler;
 import reborncore.client.screen.builder.ScreenHandlerBuilder;
+import reborncore.common.blocks.BlockMachineBase;
 import reborncore.common.powerSystem.PowerAcceptorBlockEntity;
 import reborncore.common.recipes.RecipeCrafter;
 import reborncore.common.util.RebornInventory;
 import team.reborn.energy.EnergySide;
 
 public class CanningMachineTile extends PowerAcceptorBlockEntity implements IToolDrop, InventoryProvider, IRecipeCrafterProvider, BuiltScreenHandlerProvider {
-
-    public double getBaseMaxInput() {
-        return AdvancedRebornConfig.canningMachineMaxInput;
-    }
 
     public Block toolDrop;
     public int energySlot;
@@ -64,11 +61,15 @@ public class CanningMachineTile extends PowerAcceptorBlockEntity implements IToo
     }
 
     public double getBaseMaxPower() {
-        return AdvancedRebornConfig.canningMachineMaxEnergy;
+        return AutoConfigAddon.getConfig().canningMachineMaxEnergy;
     }
 
     public double getBaseMaxOutput() {
         return 0;
+    }
+
+    public double getBaseMaxInput() {
+        return AutoConfigAddon.getConfig().canningMachineMaxInput;
     }
 
     public boolean canProvideEnergy(EnergySide side) {
@@ -91,14 +92,14 @@ public class CanningMachineTile extends PowerAcceptorBlockEntity implements IToo
     }
 
     public void tick() {
+        super.tick();
         if (world == null || world.isClient) {
             return;
         }
         charge(energySlot);
         BlockState state = getWorld().getBlockState(getPos());
-        CanningMachine block = (CanningMachine) state.getBlock();
+        BlockMachineBase block = (BlockMachineBase) state.getBlock();
         block.setActive(!inventory.getStack(0).isEmpty() && !inventory.getStack(1).isEmpty(), world, getPos());
-        super.tick();
     }
 
     public Inventory getInventory() {

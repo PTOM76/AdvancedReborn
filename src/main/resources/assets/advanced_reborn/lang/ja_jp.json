@@ -1,7 +1,10 @@
 {
     "itemGroup.advanced_reborn.item_group": "Advanced Reborn",
 
+    "block.advanced_reborn.induction_furnace": "誘導加熱炉",
     "block.advanced_reborn.rotary_grinder": "回転式粉砕機",
+    "block.advanced_reborn.centrifugal_extractor": "遠心抽出機",
+    "block.advanced_reborn.singularity_compressor": "特異点圧縮機",
     "block.advanced_reborn.charge_pad": "充電パッド",
     "block.advanced_reborn.charge_pad_2": "充電パッド MK-Ⅱ",
     "block.advanced_reborn.charge_pad_3": "充電パッド MK-Ⅲ",
@@ -53,6 +56,8 @@
     "item.advanced_reborn.fish_can": "魚缶",
     "item.advanced_reborn.food_can": "食料缶詰",
     "item.advanced_reborn.bread_can": "パン缶",
+
+    "advanced_reborn.advanced_machine.text.speed": "Speed: %s",
 
     "_comment": "ComputerCraft",
     "upgrade.techreborn.ruby_sword.adjective": "メーレー",

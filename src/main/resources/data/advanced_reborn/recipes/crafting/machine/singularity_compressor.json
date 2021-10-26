@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRR",
+    "RMR",
+    "RFR"
+  ],
+  "key": {
+    "R": {
+      "item": "minecraft:obsidian"
+    },
+    "M": {
+      "item": "techreborn:compressor"
+    },
+    "F": {
+      "item": "techreborn:advanced_machine_frame"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:singularity_compressor",
+    "count": 1
+  }
+}

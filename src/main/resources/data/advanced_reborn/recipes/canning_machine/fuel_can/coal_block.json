@@ -1,0 +1,19 @@
+﻿{
+  "type": "advanced_reborn:canning_machine",
+  "power": 3,
+  "time": 150,
+  "ingredients": [
+    {
+      "item": "minecraft:coal_block"
+    },
+    {
+      "item": "advanced_reborn:empty_can"
+    }
+  ],
+  "results": [
+    {
+      "item": "advanced_reborn:fuel_can",
+      "count": 9
+    }
+  ]
+}

@@ -1,27 +1,36 @@
-package ml.pkom.advancedreborn.screen;
+package ml.pkom.advancedreborn.gui;
 
-import ml.pkom.advancedreborn.tile.CanningMachineTile;
+import ml.pkom.advancedreborn.tile.SingularityCompressorTile;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.TranslatableText;
 import reborncore.client.gui.builder.GuiBase;
 import reborncore.client.gui.guibuilder.GuiBuilder;
 import reborncore.client.screen.builder.BuiltScreenHandler;
 
-public class GuiCanningMachine extends GuiBase<BuiltScreenHandler> {
+public class GuiSingularityCompressor extends GuiBase<BuiltScreenHandler> {
 
-    public CanningMachineTile tile;
-    public GuiCanningMachine(int syncId, PlayerEntity player, CanningMachineTile tile) {
+    public SingularityCompressorTile tile;
+    public GuiSingularityCompressor(int syncId, PlayerEntity player, SingularityCompressorTile tile) {
         super(player, tile, tile.createScreenHandler(syncId, player));
         this.tile = tile;
+    }
+
+    public boolean isConfigEnabled() {
+        return true;
+    }
+
+    public void init() {
+        super.init();
     }
 
     public void drawBackground(MatrixStack matrixStack, float lastFrameDuration, int mouseX, int mouseY) {
         super.drawBackground(matrixStack, lastFrameDuration, mouseX, mouseY);
         Layer layer = Layer.BACKGROUND;
-        drawSlot(matrixStack, 55, 35, layer);
-        drawSlot(matrixStack, 55, 55, layer);
+        drawSlot(matrixStack, 55, 45, layer);
         drawOutputSlot(matrixStack, 101, 45, layer);
         drawSlot(matrixStack, 8, 72, layer);
+        drawText(matrixStack, new TranslatableText("advanced_reborn.advanced_machine.text.speed", tile.getHeatPer() + "%"), 75, 70, 0, layer);
     }
 
     public void drawForeground(MatrixStack matrixStack, int mouseX, int mouseY) {

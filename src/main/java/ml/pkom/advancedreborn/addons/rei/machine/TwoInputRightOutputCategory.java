@@ -1,4 +1,4 @@
-package ml.pkom.advancedreborn.rei.machine;
+package ml.pkom.advancedreborn.addons.rei.machine;
 
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
@@ -23,12 +23,11 @@ public class TwoInputRightOutputCategory<R extends RebornRecipe> extends Abstrac
     @Override
     public List<Widget> setupDisplay(MachineRecipeDisplay<R> recipeDisplay, Rectangle bounds) {
         List<Widget> widgets = super.setupDisplay(recipeDisplay, bounds);
-        widgets.add(Widgets.createSlot(new Point(bounds.x + 46, bounds.y + 26)).entries(getInput(recipeDisplay, 0)).markInput());
-        widgets.add(Widgets.createSlot(new Point(bounds.x + 46, bounds.y + 26 + 20)).entries(getInput(recipeDisplay, 1)).markInput());
+        widgets.add(Widgets.createSlot(new Point(bounds.x + 46, bounds.y + 26 - 10)).entries(getInput(recipeDisplay, 0)).markInput());
+        widgets.add(Widgets.createSlot(new Point(bounds.x + 46, bounds.y + 26 + 10)).entries(getInput(recipeDisplay, 1)).markInput());
         widgets.add(Widgets.createResultSlotBackground(new Point(bounds.x + 46 + 46, bounds.y + 26)));
         widgets.add(Widgets.createSlot(new Point(bounds.x + 46 + 46, bounds.y + 26)).entries(getOutput(recipeDisplay, 0)).disableBackground().markOutput());
         widgets.add(ReiPlugin.createProgressBar(bounds.x + 46 + 21, bounds.y + 30, recipeDisplay.getTime() * 50, GuiBuilder.ProgressDirection.RIGHT));
-        widgets.add(ReiPlugin.createProgressBar(bounds.x + 46 + 71, bounds.y + 30, recipeDisplay.getTime() * 50, GuiBuilder.ProgressDirection.LEFT));
 
         widgets.add(Widgets.createLabel(new Point(bounds.getMaxX() - 5, bounds.y + 5), new TranslatableText("techreborn.jei.recipe.processing.time.3", new DecimalFormat("###.##").format(recipeDisplay.getTime() / 20.0)))
                 .shadow(false)

@@ -14,6 +14,7 @@ import net.minecraft.client.particle.EmotionParticle;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
@@ -24,7 +25,6 @@ public class AdvancedRebornClient implements ClientModInitializer {
 
     public static MinecraftClient client = MinecraftClient.getInstance();
 
-    @Override
     public void onInitializeClient() {
         GuiTypes.init();
         ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register(((atlasTexture, registry) -> {
@@ -40,13 +40,11 @@ public class AdvancedRebornClient implements ClientModInitializer {
 
         ClientSidePacketRegistry.INSTANCE.register(Defines.SPAWN_PACKET_ID, (ctx, byteBuf) -> {
             EntityType<?> et = Registry.ENTITY_TYPE.get(byteBuf.readVarInt());
-
             UUID uuid = byteBuf.readUuid();
             int entityId = byteBuf.readVarInt();
             Vec3d pos = EntitySpawnPacket.PacketBufUtil.readVec3d(byteBuf);
             float pitch = EntitySpawnPacket.PacketBufUtil.readAngle(byteBuf);
             float yaw = EntitySpawnPacket.PacketBufUtil.readAngle(byteBuf);
-
             ctx.getTaskQueue().execute(() -> {
                 if (client.world == null) return;
                 Entity entity = et.create(client.world);
