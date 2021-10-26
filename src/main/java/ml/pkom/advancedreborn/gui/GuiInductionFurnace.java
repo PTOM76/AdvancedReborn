@@ -15,6 +15,8 @@ public class GuiInductionFurnace extends GuiBase<BuiltScreenHandler> {
     public GuiInductionFurnace(int syncId, PlayerEntity player, InductionFurnaceTile tile) {
         super(player, tile, tile.createScreenHandler(syncId, player));
         this.tile = tile;
+        backgroundWidth = 176;
+        backgroundHeight = 166;
     }
 
     public boolean isConfigEnabled() {

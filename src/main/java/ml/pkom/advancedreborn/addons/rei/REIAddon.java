@@ -55,6 +55,7 @@ public class REIAddon implements REIPluginV0 {
 
     public void registerOthers(RecipeHelper recipeHelper) {
         recipeHelper.registerWorkingStations(Recipes.CANNING_MACHINE.getName(), EntryStack.create(Blocks.CANNING_MACHINE));
+        recipeHelper.registerWorkingStations(new Identifier("minecraft", "smelting"), EntryStack.create(Blocks.INDUCTION_FURNACE));
         recipeHelper.registerWorkingStations(ModRecipes.GRINDER.getName(), EntryStack.create(Blocks.ROTARY_GRINDER));
         recipeHelper.registerWorkingStations(ModRecipes.EXTRACTOR.getName(), EntryStack.create(Blocks.CENTRIFUGAL_EXTRACTOR));
         recipeHelper.registerWorkingStations(ModRecipes.COMPRESSOR.getName(), EntryStack.create(Blocks.SINGULARITY_COMPRESSOR));

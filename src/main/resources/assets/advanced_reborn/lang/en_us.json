@@ -82,5 +82,8 @@
     "upgrade.techreborn.bronze_spade.adjective": "Digging",
     "upgrade.techreborn.bronze_pickaxe.adjective": "Mining",
     "upgrade.techreborn.bronze_axe.adjective": "Felling",
-    "upgrade.techreborn.bronze_hoe.adjective": "Farming"
+    "upgrade.techreborn.bronze_hoe.adjective": "Farming",
+
+    "_comment2": "REI",
+    "advanced_reborn:canning_machine": "Canning Machine"
 }

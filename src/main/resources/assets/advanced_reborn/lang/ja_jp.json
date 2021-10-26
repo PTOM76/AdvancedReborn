@@ -82,5 +82,8 @@
     "upgrade.techreborn.bronze_spade.adjective": "ディギング",
     "upgrade.techreborn.bronze_pickaxe.adjective": "マイニング",
     "upgrade.techreborn.bronze_axe.adjective": "フェリング",
-    "upgrade.techreborn.bronze_hoe.adjective": "ファーミング"
+    "upgrade.techreborn.bronze_hoe.adjective": "ファーミング",
+
+    "_comment2": "REI",
+    "advanced_reborn:canning_machine": "缶詰マシン"
 }

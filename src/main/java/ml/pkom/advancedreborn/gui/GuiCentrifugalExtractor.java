@@ -15,6 +15,8 @@ public class GuiCentrifugalExtractor extends GuiBase<BuiltScreenHandler> {
     public GuiCentrifugalExtractor(int syncId, PlayerEntity player, CentrifugalExtractorTile tile) {
         super(player, tile, tile.createScreenHandler(syncId, player));
         this.tile = tile;
+        backgroundWidth = 177;
+        backgroundHeight = 167;
     }
 
     public boolean isConfigEnabled() {
