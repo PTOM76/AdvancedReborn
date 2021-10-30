@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "top": "advanced_reborn:blocks/renaming_machine/top",
+        "front": "advanced_reborn:blocks/renaming_machine/front_on",
+        "side": "advanced_reborn:blocks/renaming_machine/side"
+    }
+}

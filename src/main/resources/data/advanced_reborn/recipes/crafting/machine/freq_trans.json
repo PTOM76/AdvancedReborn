@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "techreborn:insulated_copper_cable"
+    },
+    "B": {
+      "item": "techreborn:electronic_circuit"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:freq_trans",
+    "count": 1
+  }
+}

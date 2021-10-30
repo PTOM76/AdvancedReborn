@@ -5,6 +5,7 @@ import me.shedaniel.rei.api.plugins.REIPluginV0;
 import ml.pkom.advancedreborn.AdvancedReborn;
 import ml.pkom.advancedreborn.Blocks;
 import ml.pkom.advancedreborn.Recipes;
+import ml.pkom.advancedreborn.addons.autoconfig.AutoConfigAddon;
 import ml.pkom.advancedreborn.addons.rei.machine.TwoInputRightOutputCategory;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.util.Identifier;
@@ -14,6 +15,7 @@ import reborncore.common.crafting.RecipeManager;
 import techreborn.compat.rei.MachineRecipeDisplay;
 import techreborn.compat.rei.ReiPlugin;
 import techreborn.init.ModRecipes;
+import techreborn.init.TRContent;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -54,10 +56,18 @@ public class REIAddon implements REIPluginV0 {
     }
 
     public void registerOthers(RecipeHelper recipeHelper) {
-        recipeHelper.registerWorkingStations(Recipes.CANNING_MACHINE.getName(), EntryStack.create(Blocks.CANNING_MACHINE));
-        recipeHelper.registerWorkingStations(new Identifier("minecraft", "smelting"), EntryStack.create(Blocks.INDUCTION_FURNACE));
-        recipeHelper.registerWorkingStations(ModRecipes.GRINDER.getName(), EntryStack.create(Blocks.ROTARY_GRINDER));
-        recipeHelper.registerWorkingStations(ModRecipes.EXTRACTOR.getName(), EntryStack.create(Blocks.CENTRIFUGAL_EXTRACTOR));
-        recipeHelper.registerWorkingStations(ModRecipes.COMPRESSOR.getName(), EntryStack.create(Blocks.SINGULARITY_COMPRESSOR));
+        if (AutoConfigAddon.getConfig().linkReiWithTR) registerOthersTR(recipeHelper);
+        if (AutoConfigAddon.getConfig().linkReiWithAR) {
+            recipeHelper.registerWorkingStations(Recipes.CANNING_MACHINE.getName(), EntryStack.create(Blocks.CANNING_MACHINE));
+            recipeHelper.registerWorkingStations(ModRecipes.GRINDER.getName(), EntryStack.create(Blocks.ROTARY_GRINDER));
+            recipeHelper.registerWorkingStations(ModRecipes.EXTRACTOR.getName(), EntryStack.create(Blocks.CENTRIFUGAL_EXTRACTOR));
+            recipeHelper.registerWorkingStations(ModRecipes.COMPRESSOR.getName(), EntryStack.create(Blocks.SINGULARITY_COMPRESSOR));
+            recipeHelper.registerWorkingStations(BuiltinPlugin.SMELTING, EntryStack.create(Blocks.INDUCTION_FURNACE));
+        }
+    }
+
+    public void registerOthersTR(RecipeHelper recipeHelper) {
+        recipeHelper.registerWorkingStations(BuiltinPlugin.SMELTING, EntryStack.create(TRContent.Machine.IRON_FURNACE));
+        recipeHelper.registerWorkingStations(BuiltinPlugin.SMELTING, EntryStack.create(TRContent.Machine.ELECTRIC_FURNACE));
     }
 }

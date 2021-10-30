@@ -40,6 +40,8 @@ public class Blocks {
     public static Block CENTRIFUGAL_EXTRACTOR = new CentrifugalExtractor(baseSetting);
     public static Block SINGULARITY_COMPRESSOR = new SingularityCompressor(baseSetting);
     public static Block CANNING_MACHINE = new CanningMachine(baseSetting);
+    public static Block RENAMING_MACHINE = new RenamingMachine(baseSetting);
+    public static Block TELEPORTER = new Teleporter(baseSetting);
 
     public static Block CARDBOARD_BOX = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByHand(true).breakByTool(FabricToolTags.AXES, 0).strength(1, 3));
     public static Block CARDBOARD_BOX_MINEZON = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByHand(true).breakByTool(FabricToolTags.AXES, 0).strength(1, 3));
@@ -77,6 +79,8 @@ public class Blocks {
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("centrifugal_extractor"), CENTRIFUGAL_EXTRACTOR);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("singularity_compressor"), SINGULARITY_COMPRESSOR);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("canning_machine"), CANNING_MACHINE);
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("renaming_machine"), RENAMING_MACHINE);
+        Registry.register(Registry.BLOCK, AdvancedReborn.createID("teleporter"), TELEPORTER);
 
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("industrial_tnt"), INDUSTRIAL_TNT);
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("light"), LIGHT);

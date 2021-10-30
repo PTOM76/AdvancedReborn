@@ -9,6 +9,7 @@ import java.util.function.Supplier;
 
 public class GuiTypes {
     public static GuiType<CanningMachineTile> CANNING_MACHINE = register(AdvancedReborn.MOD_ID + "__canning_machine", () -> () -> GuiCanningMachine::new);
+    public static GuiType<RenamingMachineTile> RENAMING_MACHINE = register(AdvancedReborn.MOD_ID + "__renaming_machine", () -> () -> GuiRenamingMachine::new);
     public static GuiType<InductionFurnaceTile> INDUCTION_FURNACE = register(AdvancedReborn.MOD_ID + "__induction_furnace_machine", () -> () -> GuiInductionFurnace::new);
     public static GuiType<RotaryGrinderTile> ROTARY_GRINDER = register(AdvancedReborn.MOD_ID + "__rotary_grinder_machine", () -> () -> GuiRotaryGrinder::new);
     public static GuiType<CentrifugalExtractorTile> CENTRIFUGAL_EXTRACTOR = register(AdvancedReborn.MOD_ID + "__centrifugal_extractor_machine", () -> () -> GuiCentrifugalExtractor::new);

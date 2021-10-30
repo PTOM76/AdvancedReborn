@@ -28,6 +28,7 @@ public class ConfigWrench extends Item {
         AttackBlockCallback.EVENT.register((player, world, hand, pos, direction) -> {
             ItemStack stack = player.getStackInHand(hand);
             if (stack.getItem().equals(Items.CONFIG_WRENCH)) {
+                if (world.isClient()) return ActionResult.PASS;
                 BlockEntity tile = world.getBlockEntity(pos);
                 if (tile instanceof MachineBaseBlockEntity) {
                     if (!stack.hasTag()) return ActionResult.FAIL;

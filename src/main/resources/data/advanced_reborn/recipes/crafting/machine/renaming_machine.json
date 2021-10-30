@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRR",
+    "RMR",
+    "RFR"
+  ],
+  "key": {
+    "R": {
+      "tag": "c:refined_iron_ingots"
+    },
+    "M": {
+      "item": "minecraft:anvil"
+    },
+    "F": {
+      "item": "techreborn:basic_machine_frame"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:renaming_machine",
+    "count": 1
+  }
+}

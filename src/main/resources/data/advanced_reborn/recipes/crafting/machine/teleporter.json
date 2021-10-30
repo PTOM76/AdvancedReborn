@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BAB",
+    "CDC",
+    "BEB"
+  ],
+  "key": {
+    "A": {
+      "item": "advanced_reborn:freq_trans"
+    },
+    "B": {
+      "item": "techreborn:advanced_circuit"
+    },
+    "C": {
+      "item": "techreborn:glassfiber_cable"
+    },
+    "D": {
+      "item": "techreborn:advanced_machine_casing"
+    },
+    "E": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:teleporter",
+    "count": 1
+  }
+}

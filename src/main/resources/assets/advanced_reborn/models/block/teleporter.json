@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "advanced_reborn:blocks/teleporter/top",
+        "down": "advanced_reborn:blocks/teleporter/bottom",
+        "up": "advanced_reborn:blocks/teleporter/top",
+        "north": "advanced_reborn:blocks/teleporter/side",
+        "east": "advanced_reborn:blocks/teleporter/side",
+        "south": "advanced_reborn:blocks/teleporter/side",
+        "west": "advanced_reborn:blocks/teleporter/side"
+    }
+}
