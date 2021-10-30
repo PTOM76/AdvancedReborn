@@ -50,7 +50,7 @@ public class IndustrialTNT extends TntBlock {
     public void onDestroyedByExplosion(World world, BlockPos pos, Explosion explosion) {
         if (!world.isClient) {
             IndustrialTNTEntity tntEntity = new IndustrialTNTEntity(world, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, explosion.getCausingEntity());
-            tntEntity.setFuse(world.random.nextInt(tntEntity.getFuseTimer() / 4) + tntEntity.getFuseTimer() / 8);
+            tntEntity.setFuse(world.random.nextInt(tntEntity.getFuse() / 4) + tntEntity.getFuse() / 8);
             world.spawnEntity(tntEntity);
         }
     }

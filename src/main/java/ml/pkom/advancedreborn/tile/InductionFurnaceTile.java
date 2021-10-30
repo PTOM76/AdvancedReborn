@@ -17,16 +17,18 @@ import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.SmeltingRecipe;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.world.World;
 import reborncore.api.IToolDrop;
 import reborncore.api.blockentity.InventoryProvider;
 import reborncore.client.screen.BuiltScreenHandlerProvider;
 import reborncore.client.screen.builder.BuiltScreenHandler;
 import reborncore.client.screen.builder.ScreenHandlerBuilder;
+import reborncore.common.blockentity.MachineBaseBlockEntity;
 import reborncore.common.blocks.BlockMachineBase;
 import reborncore.common.recipes.RecipeCrafter;
 import reborncore.common.util.ItemUtils;
 import reborncore.common.util.RebornInventory;
-import team.reborn.energy.EnergySide;
 
 import java.util.Optional;
 
@@ -46,32 +48,25 @@ public class InductionFurnaceTile extends HeatMachineTile implements IToolDrop, 
     private int cookTimeTotal;
     final int EnergyPerTick = 1;
 
-    public InductionFurnaceTile(BlockEntityType<?> type) {
-        super(type);
+    public InductionFurnaceTile(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+        super(type, pos, state);
         toolDrop = Blocks.INDUCTION_FURNACE;
         energySlot = 4;
         inventory = new RebornInventory<>(5, "InductionFurnaceTile", 64, this);
         checkTier();
     }
 
-    public InductionFurnaceTile() {
-        this(Tiles.INDUCTION_FURNACE_TILE);
-    }
-
     public InductionFurnaceTile(BlockPos pos, BlockState state) {
         this(Tiles.INDUCTION_FURNACE_TILE, pos, state);
-    }
-
-    public InductionFurnaceTile(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-        this();
     }
 
     public InductionFurnaceTile(TileCreateEvent event) {
         this(event.getBlockPos(), event.getBlockState());
     }
 
+
     public BuiltScreenHandler createScreenHandler(int syncID, PlayerEntity player) {
-        return new ScreenHandlerBuilder(AdvancedReborn.MOD_ID + "__induction_furnace_machine").player(player.inventory).inventory().hotbar().addInventory()
+        return new ScreenHandlerBuilder(AdvancedReborn.MOD_ID + "__induction_furnace_machine").player(player.getInventory()).inventory().hotbar().addInventory()
                 .blockEntity(this).slot(0, 55 - 18, 45).slot(1, 55, 45).outputSlot(2, 101, 45).outputSlot(3, 101 + 18, 45).energySlot(4, 8, 72).syncEnergyValue()
                 .sync(this::getCookTime, this::setCookTime).sync(this::getCookTimeTotal, this::setCookTimeTotal).addInventory().create(this, syncID);
     }
@@ -83,9 +78,8 @@ public class InductionFurnaceTile extends HeatMachineTile implements IToolDrop, 
         return IInventory.of(list);
     }
 
-    //
     private void setInvDirty(boolean isDirty) {
-        inventory.setChanged(isDirty);
+        inventory.setHashChanged(isDirty);
     }
 
     private boolean isInvDirty() {
@@ -265,8 +259,8 @@ public class InductionFurnaceTile extends HeatMachineTile implements IToolDrop, 
         this.cookTimeTotal = cookTimeTotal;
     }
 
-    public void tick() {
-        super.tick();
+    public void tick(World world, BlockPos pos, BlockState state, MachineBaseBlockEntity blockEntity2) {
+        super.tick(world, pos, state, blockEntity2);
         charge(2);
 
         if (world == null || world.isClient) {
@@ -319,7 +313,7 @@ public class InductionFurnaceTile extends HeatMachineTile implements IToolDrop, 
         }
 
         if (crafting) {
-            if (getStored(EnergySide.UNKNOWN) > getEuPerTick(EnergyPerTick)) {
+            if (getStored() > getEuPerTick(EnergyPerTick)) {
                 useEnergy(getEuPerTick(EnergyPerTick));
                 cookTime++;
                 if (cookTime == 1 || cookTime % 20 == 0 && RecipeCrafter.soundHanlder != null) {
@@ -330,19 +324,19 @@ public class InductionFurnaceTile extends HeatMachineTile implements IToolDrop, 
         setInvDirty(false);
     }
 
-    public double getBaseMaxPower() {
+    public long getBaseMaxPower() {
         return AutoConfigAddon.getConfig().advancedMachineMaxEnergy;
     }
 
-    public double getBaseMaxOutput() {
+    public long getBaseMaxOutput() {
         return 0;
     }
 
-    public double getBaseMaxInput() {
+    public long getBaseMaxInput() {
         return AutoConfigAddon.getConfig().advancedMachineMaxInput;
     }
 
-    public boolean canProvideEnergy(EnergySide side) {
+    public boolean canProvideEnergy(Direction side) {
         return false;
     }
 

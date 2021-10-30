@@ -36,7 +36,7 @@ public class GuiRenamingMachine extends GuiBase<BuiltScreenHandler> {
         getFieldBox().setFocusUnlocked(false);
         getFieldBox().setTextFieldFocused(true);
         getFieldBox().setMaxLength(2048);
-        addChild(getFieldBox());
+        addSelectableChild(getFieldBox());
     }
 
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
@@ -81,7 +81,7 @@ public class GuiRenamingMachine extends GuiBase<BuiltScreenHandler> {
         drawOutputSlot(matrixStack, 101, 45, layer);
         drawSlot(matrixStack, 8, 72, layer);
         getFieldBox().render(matrixStack, mouseX, mouseY, lastFrameDuration);
-        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
     public void drawForeground(MatrixStack matrixStack, int mouseX, int mouseY) {

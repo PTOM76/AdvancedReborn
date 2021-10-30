@@ -8,7 +8,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
-import team.reborn.energy.EnergyTier;
+import reborncore.common.powerSystem.RcEnergyTier;
 import techreborn.config.TechRebornConfig;
 
 public class Items {
@@ -62,11 +62,11 @@ public class Items {
     public static Item NANO_SUIT_BOOTS = new NanoSuitItem(NanoArmorMaterial.NANO, EquipmentSlot.FEET, baseSettingsMaxOne);
 
     // 強化バッテリー
-    public static Item ADVANCED_BATTERY = new AdvancedBattery(baseSettingsMaxOne, 8 * TechRebornConfig.redCellBatteryMaxCharge, EnergyTier.HIGH);
-    public static Item ADVANCED_BATTERY_2 = new AdvancedBattery(baseSettingsMaxOne, 64 * TechRebornConfig.redCellBatteryMaxCharge, EnergyTier.HIGH);
-    public static Item ADVANCED_BATTERY_3 = new AdvancedBattery(baseSettingsMaxOne, 512 * TechRebornConfig.redCellBatteryMaxCharge, EnergyTier.HIGH);
-    public static Item ADVANCED_BATTERY_4 = new AdvancedBattery(baseSettingsMaxOne, 4096 * TechRebornConfig.redCellBatteryMaxCharge, EnergyTier.HIGH);
-    public static Item ADVANCED_BATTERY_5 = new AdvancedBattery(baseSettingsMaxOne, 32768 * TechRebornConfig.redCellBatteryMaxCharge, EnergyTier.EXTREME);
+    public static Item ADVANCED_BATTERY = new AdvancedBattery(baseSettingsMaxOne, 8 * TechRebornConfig.redCellBatteryMaxCharge, RcEnergyTier.HIGH);
+    public static Item ADVANCED_BATTERY_2 = new AdvancedBattery(baseSettingsMaxOne, 64 * TechRebornConfig.redCellBatteryMaxCharge, RcEnergyTier.HIGH);
+    public static Item ADVANCED_BATTERY_3 = new AdvancedBattery(baseSettingsMaxOne, 512 * TechRebornConfig.redCellBatteryMaxCharge, RcEnergyTier.HIGH);
+    public static Item ADVANCED_BATTERY_4 = new AdvancedBattery(baseSettingsMaxOne, 4096 * TechRebornConfig.redCellBatteryMaxCharge, RcEnergyTier.HIGH);
+    public static Item ADVANCED_BATTERY_5 = new AdvancedBattery(baseSettingsMaxOne, 32768 * TechRebornConfig.redCellBatteryMaxCharge, RcEnergyTier.EXTREME);
 
     // ダイナマイト (予定: 時限爆弾)
     public static Item DYNAMITE = new Dynamite(baseSettings);

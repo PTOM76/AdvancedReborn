@@ -6,8 +6,7 @@
     "ExplosionAccessor",
     "LivingEntityMixin",
     "MachineBaseBlockEntityAccessor",
-    "TechRebornMixin",
-    "TntEntityAccessor"
+    "TechRebornMixin"
   ],
   "injectors": {
     "defaultRequire": 1

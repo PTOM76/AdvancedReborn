@@ -3,19 +3,13 @@ package ml.pkom.advancedreborn.blocks;
 import ml.pkom.advancedreborn.GuiTypes;
 import ml.pkom.advancedreborn.event.TileCreateEvent;
 import ml.pkom.advancedreborn.tile.CanningMachineTile;
-import net.minecraft.block.BlockState;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 import reborncore.api.blockentity.IMachineGuiHandler;
 
 public class CanningMachine extends AdvancedMachineBlock {
 
-    public CanningMachine(Settings settings) {
+    public CanningMachine(FabricBlockSettings settings) {
         super(settings);
     }
 

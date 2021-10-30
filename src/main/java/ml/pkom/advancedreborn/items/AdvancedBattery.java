@@ -16,21 +16,21 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import reborncore.common.powerSystem.PowerSystem;
+import reborncore.common.powerSystem.RcEnergyItem;
+import reborncore.common.powerSystem.RcEnergyTier;
 import reborncore.common.util.ItemDurabilityExtensions;
 import reborncore.common.util.ItemUtils;
-import team.reborn.energy.EnergyHolder;
-import team.reborn.energy.EnergyTier;
 import techreborn.items.BatteryItem;
 import techreborn.utils.InitUtils;
 import techreborn.utils.MessageIDs;
 
 import java.util.List;
 
-public class AdvancedBattery extends Item implements EnergyHolder, ItemDurabilityExtensions {
+public class AdvancedBattery extends Item implements RcEnergyItem, ItemDurabilityExtensions {
     private final int maxEnergy;
-    private final EnergyTier tier;
+    private final RcEnergyTier tier;
 
-    public AdvancedBattery(Settings settings, int maxEnergy, EnergyTier tier) {
+    public AdvancedBattery(Settings settings, int maxEnergy, RcEnergyTier tier) {
         super(settings);
         this.maxEnergy = maxEnergy;
         this.tier = tier;
@@ -70,11 +70,11 @@ public class AdvancedBattery extends Item implements EnergyHolder, ItemDurabilit
         InitUtils.initPoweredItems(this, stacks);
     }
 
-    public double getMaxStoredPower() {
+    public long getEnergyCapacity() {
         return maxEnergy;
     }
 
-    public EnergyTier getTier() {
+    public RcEnergyTier getTier() {
         return tier;
     }
 

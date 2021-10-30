@@ -1,17 +1,18 @@
 package ml.pkom.advancedreborn.blocks;
 
+import ml.pkom.advancedreborn.api.Energy;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import team.reborn.energy.Energy;
-import team.reborn.energy.EnergyHandler;
+import team.reborn.energy.api.base.SimpleBatteryItem;
 
 public class ChargePadFinal extends ChargePad {
 
-    public ChargePadFinal(Settings settings, int multiple) {
+    public ChargePadFinal(FabricBlockSettings settings, int multiple) {
         super(settings, multiple);
     }
 
@@ -20,16 +21,16 @@ public class ChargePadFinal extends ChargePad {
         if (!(entity instanceof PlayerEntity)) return;
         PlayerEntity player = (PlayerEntity) entity;
         boolean needCharge = false;
-        for (int i = 0; i < player.inventory.size(); i++) {
-            ItemStack invStack = player.inventory.getStack(i);
+        for (int i = 0; i < player.getInventory().size(); i++) {
+            ItemStack invStack = player.getInventory().getStack(i);
 
             if (invStack.isEmpty()) {
                 continue;
             }
 
-            if (Energy.valid(invStack)) {
-                EnergyHandler energy = Energy.of(invStack);
-                if (energy.getEnergy() >= energy.getMaxStored()) continue;
+            if (Energy.isHolder(invStack)) {
+                SimpleBatteryItem energy = Energy.of(invStack);
+                if (energy.getStoredEnergy(invStack) >= energy.getEnergyCapacity()) continue;
                 needCharge = true;
             }
         }

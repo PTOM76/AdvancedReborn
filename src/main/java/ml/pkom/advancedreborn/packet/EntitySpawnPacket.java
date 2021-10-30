@@ -18,11 +18,11 @@ public class EntitySpawnPacket {
         PacketByteBuf byteBuf = new PacketByteBuf(Unpooled.buffer());
         byteBuf.writeVarInt(Registry.ENTITY_TYPE.getRawId(entity.getType()));
         byteBuf.writeUuid(entity.getUuid());
-        byteBuf.writeVarInt(entity.getEntityId());
+        byteBuf.writeVarInt(entity.getId());
 
         PacketBufUtil.writeVec3d(byteBuf, entity.getPos());
-        PacketBufUtil.writeAngle(byteBuf, entity.pitch);
-        PacketBufUtil.writeAngle(byteBuf, entity.yaw);
+        PacketBufUtil.writeAngle(byteBuf, entity.getPitch());
+        PacketBufUtil.writeAngle(byteBuf, entity.getYaw());
         return ServerSidePacketRegistry.INSTANCE.toPacket(packetID, byteBuf);
     }
 

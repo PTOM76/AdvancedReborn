@@ -1,6 +1,8 @@
 package ml.pkom.advancedreborn.blocks;
 
 import ml.pkom.advancedreborn.Particles;
+import ml.pkom.advancedreborn.api.Energy;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -21,7 +23,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import reborncore.common.blockentity.MachineBaseBlockEntity;
-import team.reborn.energy.Energy;
 import techreborn.blockentity.storage.energy.EnergyStorageBlockEntity;
 
 import java.util.Random;
@@ -45,7 +46,7 @@ public class ChargePad extends Block {
         return state.get(USING) ? 15 : 0;
     }
 
-    public ChargePad(Settings settings, int multiple) {
+    public ChargePad(FabricBlockSettings settings, int multiple) {
         super(settings);
         setDefaultState(getDefaultState().with(FACING, Direction.NORTH).with(USING, false));
         this.multiple = multiple;
@@ -98,20 +99,20 @@ public class ChargePad extends Block {
             //System.out.println("EU: " + eu + ", OutputEU: " + outputEU);
             long storageEU = outputEU;
             PlayerEntity player = (PlayerEntity) entity;
-            for (int i = 0; i < player.inventory.size(); i++) {
+            for (int i = 0; i < player.getInventory().size(); i++) {
                 if (storageEU <= 0) {
                     break;
                 }
-                ItemStack invStack = player.inventory.getStack(i);
+                ItemStack invStack = player.getInventory().getStack(i);
 
                 if (invStack.isEmpty()) {
                     continue;
                 }
 
-                if (Energy.valid(invStack)) {
-                    double energy = Energy.of(invStack).getEnergy();
-                    Energy.of(invStack).set(energy + storageEU);
-                    storageEU -= Energy.of(invStack).getEnergy() - energy;
+                if (Energy.isHolder(invStack)) {
+                    long energy = Energy.of(invStack).getStoredEnergy(invStack);
+                    Energy.of(invStack).setStoredEnergy(invStack, energy + storageEU);
+                    storageEU -= Energy.of(invStack).getStoredEnergy(invStack) - energy;
                 }
             }
             tile.setEnergy(eu - outputEU);

@@ -1,10 +1,6 @@
 package ml.pkom.advancedreborn.entities;
 
-import ml.pkom.advancedreborn.AdvancedReborn;
-import ml.pkom.advancedreborn.Defines;
 import ml.pkom.advancedreborn.entities.itnt.IndustrialExplosion;
-import ml.pkom.advancedreborn.mixins.TntEntityAccessor;
-import ml.pkom.advancedreborn.packet.EntitySpawnPacket;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
@@ -41,10 +37,9 @@ public class IndustrialTNTEntity extends TntEntity {
         if (onGround) {
             setVelocity(this.getVelocity().multiply(0.7D, -0.5D, 0.7D));
         }
-        TntEntityAccessor accessor = ((TntEntityAccessor)this);
-        accessor.setFuseTimer(accessor.getFuseTimer() - 1);
-        if (accessor.getFuseTimer() <= 0) {
-            remove();
+        setFuse(getFuse() - 1);
+        if (getFuse() <= 0) {
+            kill();
             if (!world.isClient) {
                 iExplode();
             }

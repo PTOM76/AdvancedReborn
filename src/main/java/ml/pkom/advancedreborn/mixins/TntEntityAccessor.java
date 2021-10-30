@@ -6,11 +6,9 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(TntEntity.class)
 public interface TntEntityAccessor {
-    @Accessor(value = "fuseTimer")
-    public void setFuseTimer(int timer);
+    //@Accessor(value = "fuseTimer")
+    //public void setFuseTimer(int timer);
 
-    @Accessor(value = "fuseTimer")
-    public int getFuseTimer();
-
-
+    //@Accessor(value = "fuseTimer")
+    //public int getFuseTimer();
 }

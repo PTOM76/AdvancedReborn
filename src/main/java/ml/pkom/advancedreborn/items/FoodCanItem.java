@@ -34,19 +34,19 @@ public class FoodCanItem extends Item {
         }
         if (playerEntity != null) {
             playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
-            if (!playerEntity.abilities.creativeMode) {
+            if (!playerEntity.getAbilities().creativeMode) {
                 //stack.decrement(1);
                 playerEntity.eatFood(world, stack);
             }
         }
 
-        if (playerEntity == null || !playerEntity.abilities.creativeMode) {
+        if (playerEntity == null || !playerEntity.getAbilities().creativeMode) {
             if (stack.isEmpty()) {
                 return new ItemStack(Items.EMPTY_CAN);
             }
 
             if (playerEntity != null) {
-                playerEntity.inventory.insertStack(new ItemStack(Items.EMPTY_CAN));
+                playerEntity.getInventory().insertStack(new ItemStack(Items.EMPTY_CAN));
                 if (playerEntity.canConsume(false)) finishUsing(stack, world, user);
             }
         }

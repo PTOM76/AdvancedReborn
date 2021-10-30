@@ -1,6 +1,7 @@
 package ml.pkom.advancedreborn.mixins;
 
 import ml.pkom.advancedreborn.Items;
+import ml.pkom.advancedreborn.api.Energy;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -14,8 +15,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import team.reborn.energy.Energy;
-import team.reborn.energy.EnergyHandler;
+import team.reborn.energy.api.base.SimpleBatteryItem;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
@@ -24,7 +24,7 @@ public abstract class LivingEntityMixin extends Entity {
     }
 
     @Inject(method = "handleFallDamage", at = @At("HEAD"), cancellable = true)
-    public void injectFallDamage(float fallDistance, float damageMultiplier, CallbackInfoReturnable<Boolean> info) {
+    public void injectFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource, CallbackInfoReturnable<Boolean> info) {
         if (world.isClient()) return;
         if (!((Object)this instanceof PlayerEntity)) return;
         PlayerEntity player = (PlayerEntity) (Object) this;
@@ -35,9 +35,9 @@ public abstract class LivingEntityMixin extends Entity {
                 int userDamage = vanillaPlayerDamage / 5;
                 int bootDamage = (int) Math.round(vanillaPlayerDamage * 0.4375);
                 if (bootDamage > 0) {
-                    EnergyHandler energy = Energy.of(stack);
-                    if (energy.getEnergy() <= 800 * vanillaPlayerDamage) return;
-                    energy.use(800 * vanillaPlayerDamage);
+                    SimpleBatteryItem energy = Energy.of(stack);
+                    if (energy.getStoredEnergy(stack) <= 800 * vanillaPlayerDamage) return;
+                    energy.tryUseEnergy(stack, 800 * vanillaPlayerDamage);
                 }
                 if (userDamage > 0) {
                     this.damage(DamageSource.FALL, (float) userDamage);

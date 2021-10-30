@@ -33,8 +33,8 @@ public class AdvancedRebornClient implements ClientModInitializer {
 
         ParticleFactoryRegistry.getInstance().register(Particles.ENERGY, EmotionParticle.HeartFactory::new);
 
-        EntityRendererRegistry.INSTANCE.register(Entities.DYNAMITE, (manager, context) -> new FlyingItemEntityRenderer<>(manager, context.getItemRenderer()));
-        EntityRendererRegistry.INSTANCE.register(Entities.I_TNT, (manager, context) -> new IndustrialTNTEntityRenderer(manager));
+        EntityRendererRegistry.INSTANCE.register(Entities.DYNAMITE, (context) -> new FlyingItemEntityRenderer(context));
+        EntityRendererRegistry.INSTANCE.register(Entities.I_TNT, (context) -> new IndustrialTNTEntityRenderer(context));
 
         ScreenRegistry.register(ScreenHandlers.CARDBOARD_BOX_SCREEN_HANDLER, CardboardBoxScreen::new);
 
@@ -51,9 +51,9 @@ public class AdvancedRebornClient implements ClientModInitializer {
                 if (entity == null) return;
                 entity.updateTrackedPosition(pos);
                 entity.setPos(pos.x, pos.y, pos.z);
-                entity.pitch = pitch;
-                entity.yaw = yaw;
-                entity.setEntityId(entityId);
+                entity.setYaw(pitch);
+                entity.setYaw(yaw);
+                entity.setId(entityId);
                 entity.setUuid(uuid);
                 client.world.addEntity(entityId, entity);
             });

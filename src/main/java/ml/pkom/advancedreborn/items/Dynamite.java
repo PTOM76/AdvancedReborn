@@ -49,10 +49,10 @@ public class Dynamite extends Item {
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
-        if (!user.abilities.creativeMode) stack.decrement(1);
+        if (!user.getAbilities().creativeMode) stack.decrement(1);
         if (!world.isClient()) {
             DynamiteEntity dynamiteEntity = new DynamiteEntity(world, user);
-            dynamiteEntity.setProperties(user, user.pitch, user.yaw, 0.0F, 1.5F, 1.0F);
+            dynamiteEntity.setProperties(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
             dynamiteEntity.setItem(stack);
             dynamiteEntity.setSticky(isSticky);
             dynamiteEntity.setIndustrial(isIndustrial);

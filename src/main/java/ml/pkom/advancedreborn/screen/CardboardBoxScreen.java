@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.nbt.NbtCompound;
@@ -26,13 +27,16 @@ public class CardboardBoxScreen extends HandledScreen<CardboardBoxScreenHandler>
     }
 
     public void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
-        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.setShaderTexture(0, TEXTURE);
+        if (client == null) return;
         client.getTextureManager().bindTexture(TEXTURE);
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
         getNoteBox().render(matrices, mouseX, mouseY, delta);
-        RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
     public void init() {
@@ -43,7 +47,7 @@ public class CardboardBoxScreen extends HandledScreen<CardboardBoxScreenHandler>
         getNoteBox().setFocusUnlocked(false);
         getNoteBox().setTextFieldFocused(true);
         getNoteBox().setMaxLength(2048);
-        addChild(getNoteBox());
+        addSelectableChild(getNoteBox());
     }
 
     public void onClose() {

@@ -3,17 +3,17 @@ package ml.pkom.advancedreborn.tile;
 import ml.pkom.advancedreborn.Tiles;
 import ml.pkom.advancedreborn.addons.autoconfig.AutoConfigAddon;
 import ml.pkom.advancedreborn.event.TileCreateEvent;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.predicate.entity.EntityPredicates;
-import net.minecraft.util.Tickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import techreborn.blockentity.storage.energy.EnergyStorageBlockEntity;
 
@@ -21,32 +21,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class TeleporterTile extends BlockEntity implements Tickable {
+public class TeleporterTile extends BlockEntity implements BlockEntityTicker<TeleporterTile> {
 
     private static VoxelShape SHAPE_RANGE = VoxelShapes.cuboid(-2, -2, -2, 3, 3, 3);
     private BlockPos teleportPos = null;
 
-    public TeleporterTile(BlockEntityType<?> type) {
-        super(type);
-    }
-
-    public TeleporterTile() {
-        this(Tiles.TELEPORTER_TILE);
+    public TeleporterTile(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+        super(type, pos, state);
     }
 
     public TeleporterTile(BlockPos pos, BlockState state) {
         this(Tiles.TELEPORTER_TILE, pos, state);
     }
 
-    public TeleporterTile(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-        this();
-    }
-
     public TeleporterTile(TileCreateEvent event) {
         this(event.getBlockPos(), event.getBlockState());
     }
 
-    public void tick() {
+    public void tick(World world, BlockPos pos, BlockState state, TeleporterTile tile) {
         if (!AutoConfigAddon.getConfig().teleporterEnabled) return;
         if (world == null) return;
         if (world.isClient()) return;
@@ -138,8 +130,8 @@ public class TeleporterTile extends BlockEntity implements Tickable {
         return super.writeNbt(nbt);
     }
 
-    public void fromTag(BlockState state, NbtCompound tag) {
-        super.fromTag(state, tag);
+    public void readNbt(NbtCompound tag) {
+        super.readNbt(tag);
         if (tag.contains("tpX") && tag.contains("tpY") && tag.contains("tpZ")) teleportPos = new BlockPos(tag.getDouble("tpX"), tag.getDouble("tpY"), tag.getDouble("tpZ"));
     }
 }

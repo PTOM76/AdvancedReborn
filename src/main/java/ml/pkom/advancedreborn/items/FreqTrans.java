@@ -27,8 +27,8 @@ public class FreqTrans extends Item {
                 if (world.isClient()) return ActionResult.PASS;
                 BlockEntity tile = world.getBlockEntity(pos);
                 if (tile instanceof TeleporterTile) {
-                    if (!stack.hasTag()) return ActionResult.FAIL;
-                    NbtCompound tag = stack.getTag();
+                    if (!stack.hasNbt()) return ActionResult.FAIL;
+                    NbtCompound tag = stack.getNbt();
                     if (!tag.contains("tpX") || !tag.contains("tpY") || !tag.contains("tpZ")) return ActionResult.FAIL;
                     TeleporterTile machine = (TeleporterTile) tile;
                     machine.setTeleportPos(new BlockPos(tag.getDouble("tpX"), tag.getDouble("tpY"), tag.getDouble("tpZ")));
@@ -49,14 +49,14 @@ public class FreqTrans extends Item {
         if (world.isClient()) return ActionResult.SUCCESS;
         TeleporterTile machine = (TeleporterTile) tile;
         ItemStack stack = context.getPlayer().getStackInHand(context.getHand());
-        NbtCompound tag = stack.getTag();
+        NbtCompound tag = stack.getNbt();
         if (tag == null) {
             tag = new NbtCompound();
         }
         tag.putDouble("tpX", machine.getX());
         tag.putDouble("tpY", machine.getY());
         tag.putDouble("tpZ", machine.getZ());
-        stack.setTag(tag);
+        stack.setNbt(tag);
         context.getPlayer().sendMessage(new LiteralText("Saved Machine's Pos to The Frequency Transmitter.(" + tag.getDouble("tpX") + "," + tag.getDouble("tpY") + "," + tag.getDouble("tpZ") + ")"), false);
         return ActionResult.SUCCESS;
     }
@@ -64,8 +64,8 @@ public class FreqTrans extends Item {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(new LiteralText("Save pos to Wrench when Right Click with Teleporter."));
         tooltip.add(new LiteralText("Load pos from Wrench when Left Click with Teleporter."));
-        if (stack.hasTag()) {
-            NbtCompound nbt = stack.getTag();
+        if (stack.hasNbt()) {
+            NbtCompound nbt = stack.getNbt();
             if (nbt != null) if (nbt.contains("tpX") && nbt.contains("tpY") && nbt.contains("tpZ"))
                 tooltip.add(new LiteralText("Pos(" + nbt.getDouble("tpX") + "," + nbt.getDouble("tpY") + "," + nbt.getDouble("tpZ") + ")"));
         }

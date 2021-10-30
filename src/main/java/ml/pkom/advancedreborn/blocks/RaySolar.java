@@ -1,9 +1,9 @@
 package ml.pkom.advancedreborn.blocks;
 
 import ml.pkom.advancedreborn.AdvancedReborn;
-import ml.pkom.advancedreborn.Tiles;
 import ml.pkom.advancedreborn.event.TileCreateEvent;
 import ml.pkom.advancedreborn.tile.RaySolarTile;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
@@ -16,7 +16,7 @@ public class RaySolar extends Block implements BlockEntityProvider {
     public boolean isRayGenerator = false;
     public int energy = 1;
 
-    public RaySolar(Settings settings, int energy, boolean allowNight) {
+    public RaySolar(FabricBlockSettings settings, int energy, boolean allowNight) {
         super(settings);
         if (!AdvancedReborn.solars.contains(this)) AdvancedReborn.solars.add(this);
         this.isRayGenerator = allowNight;

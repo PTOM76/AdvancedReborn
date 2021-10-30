@@ -2,6 +2,7 @@ package ml.pkom.advancedreborn.blocks;
 
 import ml.pkom.advancedreborn.event.TileCreateEvent;
 import ml.pkom.advancedreborn.tile.TeleporterTile;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
@@ -12,7 +13,7 @@ import net.minecraft.world.BlockView;
 public class Teleporter extends BlockWithEntity {
 
 
-    public Teleporter(Settings settings) {
+    public Teleporter(FabricBlockSettings settings) {
         super(settings);
     }
 

@@ -1,7 +1,6 @@
 package ml.pkom.advancedreborn.tile;
 
 import ml.pkom.advancedreborn.AdvancedReborn;
-import ml.pkom.advancedreborn.AdvancedRebornConfig;
 import ml.pkom.advancedreborn.Blocks;
 import ml.pkom.advancedreborn.Tiles;
 import ml.pkom.advancedreborn.addons.autoconfig.AutoConfigAddon;
@@ -14,15 +13,17 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.world.World;
 import reborncore.api.IToolDrop;
 import reborncore.api.blockentity.InventoryProvider;
 import reborncore.api.recipe.IRecipeCrafterProvider;
 import reborncore.client.screen.BuiltScreenHandlerProvider;
 import reborncore.client.screen.builder.BuiltScreenHandler;
 import reborncore.client.screen.builder.ScreenHandlerBuilder;
+import reborncore.common.blockentity.MachineBaseBlockEntity;
 import reborncore.common.recipes.RecipeCrafter;
 import reborncore.common.util.RebornInventory;
-import team.reborn.energy.EnergySide;
 import techreborn.init.ModRecipes;
 
 public class CentrifugalExtractorTile extends HeatMachineTile implements IToolDrop, InventoryProvider, IRecipeCrafterProvider, BuiltScreenHandlerProvider {
@@ -32,8 +33,8 @@ public class CentrifugalExtractorTile extends HeatMachineTile implements IToolDr
     public RebornInventory<?> inventory;
     public RecipeCrafter crafter;
 
-    public CentrifugalExtractorTile(BlockEntityType<?> type) {
-        super(type);
+    public CentrifugalExtractorTile(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+        super(type, pos, state);
         toolDrop = Blocks.CENTRIFUGAL_EXTRACTOR;
         energySlot = 4;
         inventory = new RebornInventory<>(5, "CentrifugalExtractorTile", 64, this);
@@ -41,16 +42,8 @@ public class CentrifugalExtractorTile extends HeatMachineTile implements IToolDr
         checkTier();
     }
 
-    public CentrifugalExtractorTile() {
-        this(Tiles.CENTRIFUGAL_EXTRACTOR_TILE);
-    }
-
     public CentrifugalExtractorTile(BlockPos pos, BlockState state) {
         this(Tiles.CENTRIFUGAL_EXTRACTOR_TILE, pos, state);
-    }
-
-    public CentrifugalExtractorTile(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-        this();
     }
 
     public CentrifugalExtractorTile(TileCreateEvent event) {
@@ -58,24 +51,24 @@ public class CentrifugalExtractorTile extends HeatMachineTile implements IToolDr
     }
 
     public BuiltScreenHandler createScreenHandler(int syncID, PlayerEntity player) {
-        return new ScreenHandlerBuilder(AdvancedReborn.MOD_ID + "__centrifugal_extractor_machine").player(player.inventory).inventory().hotbar().addInventory()
+        return new ScreenHandlerBuilder(AdvancedReborn.MOD_ID + "__centrifugal_extractor_machine").player(player.getInventory()).inventory().hotbar().addInventory()
                 .blockEntity(this).slot(0, 55, 45).outputSlot(1, 101 + 18 * 2, 45).outputSlot(2, 101 + 18, 45).outputSlot(3, 101, 45).energySlot(4, 8, 72).syncEnergyValue()
                 .syncCrafterValue().addInventory().create(this, syncID);
     }
 
-    public double getBaseMaxPower() {
+    public long getBaseMaxPower() {
         return AutoConfigAddon.getConfig().advancedMachineMaxEnergy;
     }
 
-    public double getBaseMaxOutput() {
+    public long getBaseMaxOutput() {
         return 0;
     }
 
-    public double getBaseMaxInput() {
+    public long getBaseMaxInput() {
         return AutoConfigAddon.getConfig().advancedMachineMaxInput;
     }
 
-    public boolean canProvideEnergy(EnergySide side) {
+    public boolean canProvideEnergy(Direction side) {
         return false;
     }
 
@@ -94,8 +87,8 @@ public class CentrifugalExtractorTile extends HeatMachineTile implements IToolDr
         return new ItemStack(toolDrop, 1);
     }
 
-    public void tick() {
-        super.tick();
+    public void tick(World world, BlockPos pos, BlockState state, MachineBaseBlockEntity blockEntity2) {
+        super.tick(world, pos, state, blockEntity2);
         if (world == null || world.isClient) {
             return;
         }

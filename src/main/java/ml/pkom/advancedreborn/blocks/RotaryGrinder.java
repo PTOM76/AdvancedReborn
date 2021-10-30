@@ -3,12 +3,13 @@ package ml.pkom.advancedreborn.blocks;
 import ml.pkom.advancedreborn.GuiTypes;
 import ml.pkom.advancedreborn.event.TileCreateEvent;
 import ml.pkom.advancedreborn.tile.RotaryGrinderTile;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.entity.BlockEntity;
 import reborncore.api.blockentity.IMachineGuiHandler;
 
 public class RotaryGrinder extends AdvancedMachineBlock {
 
-    public RotaryGrinder(Settings settings) {
+    public RotaryGrinder(AbstractBlock.Settings settings) {
         super(settings);
     }
 

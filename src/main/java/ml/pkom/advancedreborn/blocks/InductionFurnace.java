@@ -2,14 +2,14 @@ package ml.pkom.advancedreborn.blocks;
 
 import ml.pkom.advancedreborn.GuiTypes;
 import ml.pkom.advancedreborn.event.TileCreateEvent;
-import ml.pkom.advancedreborn.tile.CentrifugalExtractorTile;
 import ml.pkom.advancedreborn.tile.InductionFurnaceTile;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.entity.BlockEntity;
 import reborncore.api.blockentity.IMachineGuiHandler;
 
 public class InductionFurnace extends AdvancedMachineBlock {
 
-    public InductionFurnace(Settings settings) {
+    public InductionFurnace(FabricBlockSettings settings) {
         super(settings);
     }
 

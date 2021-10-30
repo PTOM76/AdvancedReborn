@@ -91,7 +91,7 @@ public class CardboardBox extends BlockWithEntity {
                     nbtCompound.putString("note" ,tile.getNote());
                 }
                 if (!nbtCompound.isEmpty()) {
-                    itemStack.putSubTag("BlockEntityTag", nbtCompound);
+                    itemStack.setSubNbt("BlockEntityTag", nbtCompound);
                 }
                 if (tile.hasCustomName()) {
                     itemStack.setCustomName(tile.getCustomName());
@@ -154,7 +154,7 @@ public class CardboardBox extends BlockWithEntity {
         CardboardBoxTile tile = (CardboardBoxTile)world.getBlockEntity(pos);
         NbtCompound nbtCompound = tile.writeInventoryNbt(new NbtCompound());
         if (!nbtCompound.isEmpty()) {
-            itemStack.putSubTag("BlockEntityTag", nbtCompound);
+            itemStack.setSubNbt("BlockEntityTag", nbtCompound);
         }
 
         return itemStack;
@@ -163,7 +163,7 @@ public class CardboardBox extends BlockWithEntity {
     @Environment(EnvType.CLIENT)
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         super.appendTooltip(stack, world, tooltip, options);
-        NbtCompound nbtCompound = stack.getSubTag("BlockEntityTag");
+        NbtCompound nbtCompound = stack.getSubNbt("BlockEntityTag");
         if (nbtCompound != null) {
             if (nbtCompound.contains("note")) {
                 tooltip.add(new LiteralText(nbtCompound.getString("note")));

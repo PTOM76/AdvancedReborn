@@ -1,6 +1,5 @@
 package ml.pkom.advancedreborn.entities;
 
-import ml.pkom.advancedreborn.AdvancedReborn;
 import ml.pkom.advancedreborn.Defines;
 import ml.pkom.advancedreborn.Entities;
 import ml.pkom.advancedreborn.entities.itnt.IndustrialExplosion;
@@ -118,7 +117,7 @@ public class DynamiteEntity extends ThrownItemEntity {
         if (stopped) {
             fuseTimer--;
             if (fuseTimer <= 0) {
-                remove();
+                kill();
                 if (!world.isClient()) {
                     explode();
                 }
