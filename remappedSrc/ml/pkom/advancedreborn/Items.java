@@ -42,7 +42,10 @@ public class Items {
     public static Item CENTRIFUGAL_EXTRACTOR = new BlockItem(Blocks.CENTRIFUGAL_EXTRACTOR, baseSettings);
     public static Item SINGULARITY_COMPRESSOR = new BlockItem(Blocks.SINGULARITY_COMPRESSOR, baseSettings);
     public static Item CANNING_MACHINE = new BlockItem(Blocks.CANNING_MACHINE, baseSettings);
+    public static Item RENAMING_MACHINE = new BlockItem(Blocks.RENAMING_MACHINE, baseSettings);
+    public static Item TELEPORTER = new BlockItem(Blocks.TELEPORTER, baseSettings);
 
+    public static Item FREQ_TRANS = new FreqTrans(baseSettingsMaxOne);
     public static Item CONFIG_WRENCH = new ConfigWrench(baseSettingsMaxOne);
     public static Item FORGE_HAMMER;
     public static Item ADVANCED_FORGE_HAMMER;
@@ -121,7 +124,10 @@ public class Items {
         Registry.register(Registry.ITEM, AdvancedReborn.createID("centrifugal_extractor"), CENTRIFUGAL_EXTRACTOR);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("singularity_compressor"), SINGULARITY_COMPRESSOR);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("canning_machine"), CANNING_MACHINE);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("renaming_machine"), RENAMING_MACHINE);
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("teleporter"), TELEPORTER);
 
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("freq_trans"), FREQ_TRANS);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("config_wrench"), CONFIG_WRENCH);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("forge_hammer"), FORGE_HAMMER);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("advanced_forge_hammer"), ADVANCED_FORGE_HAMMER);

@@ -39,7 +39,7 @@ public class NanoSuitItem extends TRArmourItem implements EnergyHolder, ItemStac
                 if (stackEnergy == 0) {
                     continue;
                 }
-                System.out.println(amount);
+                //System.out.println(amount);
                 double damageToAbsorb = Math.min(stackEnergy, amount * 2500);
                 Energy.of(stack).use(damageToAbsorb);
             }
@@ -97,7 +97,7 @@ public class NanoSuitItem extends TRArmourItem implements EnergyHolder, ItemStac
     public void tickArmor(ItemStack stack, PlayerEntity player) {
         if (stack.getItem().equals(Items.NANO_SUIT_HELMET)) {
             if (Energy.of(stack).getEnergy() > 0) {
-                player.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 200, 3));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300, 3));
             }
         }
     }

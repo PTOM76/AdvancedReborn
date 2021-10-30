@@ -37,7 +37,7 @@ public class CardboardBoxScreen extends HandledScreen<CardboardBoxScreenHandler>
 
     public void init() {
         super.init();
-        noteBox = new TextFieldWidget(textRenderer, x + 80,  y + 7, 88, 9, new LiteralText(""));
+        noteBox = new TextFieldWidget(textRenderer, x + 98,  y + 7, 70, 9, new LiteralText(""));
         getNoteBox().setText(handler.tmpNote);
         getNoteBox().setDrawsBackground(false);
         getNoteBox().setFocusUnlocked(false);
@@ -62,6 +62,11 @@ public class CardboardBoxScreen extends HandledScreen<CardboardBoxScreenHandler>
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
         if (getNoteBox().keyPressed(keyCode, scanCode, modifiers)) return true;
         return super.keyPressed(keyCode, scanCode, modifiers);
+    }
+
+    public void removed() {
+        super.removed();
+        client.keyboard.setRepeatEvents(false);
     }
 
     public TextFieldWidget getNoteBox() {
