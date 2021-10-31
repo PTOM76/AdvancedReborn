@@ -11,7 +11,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 
-public class RaySolar extends Block implements BlockEntityProvider {
+public class RaySolar extends AdvancedMachineBlock {
 
     public boolean isRayGenerator = false;
     public int energy = 1;

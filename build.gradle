@@ -43,8 +43,8 @@ dependencies {
 
 	// Mod Menu
 	// 1.16 => 1.16.19
-	// 1.17 => 2.0.12
-	modImplementation "com.terraformersmc:modmenu:2.0.12"
+	// 1.17 => 2.0.14
+	modImplementation "com.terraformersmc:modmenu:2.0.14"
 
 	// Cloth Config API
 	// 1.16 => 4.11.26

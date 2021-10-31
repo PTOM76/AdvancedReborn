@@ -10,7 +10,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 
-public class Teleporter extends BlockWithEntity {
+public class Teleporter extends AdvancedMachineBlock {
 
 
     public Teleporter(FabricBlockSettings settings) {

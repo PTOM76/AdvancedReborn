@@ -6,12 +6,17 @@ import ml.pkom.advancedreborn.blocks.RaySolar;
 import ml.pkom.advancedreborn.event.TileCreateEvent;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+import reborncore.api.IToolDrop;
 import reborncore.common.blockentity.MachineBaseBlockEntity;
 import reborncore.common.powerSystem.PowerAcceptorBlockEntity;
 
-public class RaySolarTile extends PowerAcceptorBlockEntity {
+public class RaySolarTile extends PowerAcceptorBlockEntity implements IToolDrop {
 
     public RaySolar solar = (RaySolar) Blocks.RAY_SOLAR_1;
     public long energy = 1;
@@ -49,18 +54,23 @@ public class RaySolarTile extends PowerAcceptorBlockEntity {
         }
     }
 
-    @Override
+    protected boolean canProvideEnergy(@Nullable Direction side) {
+        return true;
+    }
+
     public long getBaseMaxPower() {
         return energy * 8;
     }
 
-    @Override
     public long getBaseMaxOutput() {
         return energy * 4;
     }
 
-    @Override
     public long getBaseMaxInput() {
         return energy * 4;
+    }
+
+    public ItemStack getToolDrop(PlayerEntity p0) {
+        return new ItemStack(solar);
     }
 }
