@@ -59,10 +59,10 @@ public class CardboardBoxTile extends BlockEntity implements IInventory, SidedIn
         return !note.equals("");
     }
 
-    public NbtCompound writeNbt(NbtCompound nbt) {
+    public void writeNbt(NbtCompound nbt) {
         Inventories.writeNbt(nbt, inventory);
         nbt.putString("note", getNote());
-        return super.writeNbt(nbt);
+        super.writeNbt(nbt);
     }
 
     public void readNbt(NbtCompound tag) {

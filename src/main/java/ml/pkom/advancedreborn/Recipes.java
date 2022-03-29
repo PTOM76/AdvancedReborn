@@ -7,7 +7,7 @@ import reborncore.common.crafting.RebornRecipeType;
 import reborncore.common.crafting.RecipeManager;
 
 public class Recipes {
-    public static RebornRecipeType<RebornRecipe> CANNING_MACHINE = RecipeManager.newRecipeType(RebornRecipe::new, AdvancedReborn.createID("canning_machine"));
+    public static RebornRecipeType<RebornRecipe> CANNING_MACHINE = RecipeManager.newRecipeType(AdvancedReborn.createID("canning_machine"));
 
     public static RebornRecipeType<?> byName(Identifier identifier) {
         return (RebornRecipeType<?>) Registry.RECIPE_SERIALIZER.get(identifier);

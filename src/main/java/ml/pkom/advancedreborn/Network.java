@@ -17,7 +17,7 @@ public class Network {
                 if (!data.contains("y")) return;
                 if (!data.contains("z")) return;
                 if (!data.contains("note")) return;
-                BlockEntity blockEntity = player.getServerWorld().getBlockEntity(new BlockPos(data.getDouble("x"), data.getDouble("y"), data.getDouble("z")));
+                BlockEntity blockEntity = player.getWorld().getBlockEntity(new BlockPos(data.getDouble("x"), data.getDouble("y"), data.getDouble("z")));
                 if (!(blockEntity instanceof CardboardBoxTile)) return;
                 CardboardBoxTile tile = (CardboardBoxTile) blockEntity;
                 tile.setNote(data.getString("note"));
@@ -31,7 +31,7 @@ public class Network {
                 if (!data.contains("y")) return;
                 if (!data.contains("z")) return;
                 if (!data.contains("name")) return;
-                BlockEntity blockEntity = player.getServerWorld().getBlockEntity(new BlockPos(data.getDouble("x"), data.getDouble("y"), data.getDouble("z")));
+                BlockEntity blockEntity = player.getWorld().getBlockEntity(new BlockPos(data.getDouble("x"), data.getDouble("y"), data.getDouble("z")));
                 if (!(blockEntity instanceof RenamingMachineTile)) return;
                 RenamingMachineTile tile = (RenamingMachineTile) blockEntity;
                 tile.setName(data.getString("name"));

@@ -21,12 +21,12 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import reborncore.api.IToolDrop;
 import reborncore.api.blockentity.InventoryProvider;
-import reborncore.client.screen.BuiltScreenHandlerProvider;
-import reborncore.client.screen.builder.BuiltScreenHandler;
 import reborncore.client.screen.builder.ScreenHandlerBuilder;
 import reborncore.common.blockentity.MachineBaseBlockEntity;
 import reborncore.common.blocks.BlockMachineBase;
 import reborncore.common.recipes.RecipeCrafter;
+import reborncore.common.screen.BuiltScreenHandler;
+import reborncore.common.screen.BuiltScreenHandlerProvider;
 import reborncore.common.util.ItemUtils;
 import reborncore.common.util.RebornInventory;
 
@@ -316,8 +316,8 @@ public class InductionFurnaceTile extends HeatMachineTile implements IToolDrop, 
             if (getStored() > getEuPerTick(EnergyPerTick)) {
                 useEnergy(getEuPerTick(EnergyPerTick));
                 cookTime++;
-                if (cookTime == 1 || cookTime % 20 == 0 && RecipeCrafter.soundHanlder != null) {
-                    RecipeCrafter.soundHanlder.playSound(false, this);
+                if (cookTime == 1 || cookTime % 20 == 0 && RecipeCrafter.soundHandler != null) {
+                    RecipeCrafter.soundHandler.playSound(false, this);
                 }
             }
         }

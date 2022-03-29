@@ -52,7 +52,7 @@ public class Dynamite extends Item {
         if (!user.getAbilities().creativeMode) stack.decrement(1);
         if (!world.isClient()) {
             DynamiteEntity dynamiteEntity = new DynamiteEntity(world, user);
-            dynamiteEntity.setProperties(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
+            dynamiteEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
             dynamiteEntity.setItem(stack);
             dynamiteEntity.setSticky(isSticky);
             dynamiteEntity.setIndustrial(isIndustrial);

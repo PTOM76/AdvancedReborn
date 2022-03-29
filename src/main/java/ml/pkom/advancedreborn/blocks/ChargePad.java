@@ -21,6 +21,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.tick.OrderedTick;
 import org.jetbrains.annotations.Nullable;
 import reborncore.common.blockentity.MachineBaseBlockEntity;
 import techreborn.blockentity.storage.energy.EnergyStorageBlockEntity;
@@ -120,7 +121,7 @@ public class ChargePad extends Block {
             double rZ = random.nextInt(9) * 0.1;
             ((ServerWorld)world).spawnParticles(Particles.ENERGY, pos.getX() + 0.1 + rX, pos.getY() + 0.25, pos.getZ() + 0.1 + rZ, 1, 0, 0.3, 0, 0);
             world.setBlockState(pos, state.with(USING, true));
-            world.getBlockTickScheduler().schedule(pos, this, 5);
+            world.createAndScheduleBlockTick(pos, this, 5);
             world.updateComparators(pos, this);
         }
     }

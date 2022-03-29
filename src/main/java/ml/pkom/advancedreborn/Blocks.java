@@ -2,7 +2,6 @@ package ml.pkom.advancedreborn;
 
 import ml.pkom.advancedreborn.blocks.*;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
@@ -10,7 +9,7 @@ import net.minecraft.util.registry.Registry;
 
 public class Blocks {
 
-    public static FabricBlockSettings baseSetting = FabricBlockSettings.of(Material.METAL).requiresTool().breakByTool(FabricToolTags.PICKAXES, 0).strength(2, 8);
+    public static FabricBlockSettings baseSetting = FabricBlockSettings.of(Material.METAL).requiresTool().strength(2, 8);
 
     public static Block CHARGE_PAD_MK_1 = new ChargePad(baseSetting, 4);
     public static Block CHARGE_PAD_MK_2 = new ChargePad(baseSetting, 16);
@@ -43,14 +42,17 @@ public class Blocks {
     public static Block RENAMING_MACHINE = new RenamingMachine(baseSetting);
     public static Block TELEPORTER = new Teleporter(baseSetting);
 
-    public static Block CARDBOARD_BOX = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByHand(true).breakByTool(FabricToolTags.AXES, 0).strength(1, 3));
-    public static Block CARDBOARD_BOX_MINEZON = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByHand(true).breakByTool(FabricToolTags.AXES, 0).strength(1, 3));
-    public static Block CARDBOARD_BOX_MINETARO = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByHand(true).breakByTool(FabricToolTags.AXES, 0).strength(1, 3));
-    public static Block CARDBOARD_BOX_NOTHING = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByHand(true).breakByTool(FabricToolTags.AXES, 0).strength(1, 3));
+    //breakByHand
+    public static Block CARDBOARD_BOX = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(1, 3));
+    public static Block CARDBOARD_BOX_MINEZON = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(1, 3));
+    public static Block CARDBOARD_BOX_MINETARO = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(1, 3));
+    public static Block CARDBOARD_BOX_NOTHING = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(1, 3));
+
+    public static Block LIGHT = new Block(FabricBlockSettings.of(Material.METAL).strength(1.5F, 4).luminance((state) -> 15));
+    // breakByHand
 
     public static Block INDUSTRIAL_TNT = new IndustrialTNT(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.TNT));
 
-    public static Block LIGHT = new Block(FabricBlockSettings.of(Material.METAL).strength(1.5F, 4).breakByTool(FabricToolTags.PICKAXES, 0).breakByHand(true).luminance((state) -> 15));
 
     public static void init() {
         Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad"), CHARGE_PAD_MK_1);

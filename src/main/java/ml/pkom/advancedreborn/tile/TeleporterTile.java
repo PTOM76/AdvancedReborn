@@ -121,13 +121,13 @@ public class TeleporterTile extends BlockEntity implements BlockEntityTicker<Tel
         return getPos().getZ();
     }
 
-    public NbtCompound writeNbt(NbtCompound nbt) {
+    public void writeNbt(NbtCompound nbt) {
         if (getTeleportPos() != null) {
             nbt.putDouble("tpX", getTeleportPos().getX());
             nbt.putDouble("tpY", getTeleportPos().getY());
             nbt.putDouble("tpZ", getTeleportPos().getZ());
         }
-        return super.writeNbt(nbt);
+        super.writeNbt(nbt);
     }
 
     public void readNbt(NbtCompound tag) {
