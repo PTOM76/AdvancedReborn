@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.9-SNAPSHOT'
+	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -36,8 +36,7 @@ dependencies {
 	modImplementation 'RebornCore:RebornCore-1.17:+'
 	modImplementation 'TechReborn:TechReborn-1.17:+'
 
-	//modCompileOnly "me.shedaniel:RoughlyEnoughItems-fabric-api:6.0.307-alpha"
-	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:6.0.307-alpha"
+	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:6.5.433"
 
 	// CC: Restitched
 	modApi 'com.electronwill.night-config:core:3.6.3'
@@ -53,7 +52,7 @@ dependencies {
 	// Cloth Config API
 	// 1.16 => 4.11.26
 	// 1.17 => 5.0.38
-	modApi("me.shedaniel.cloth:cloth-config-fabric:5.0.38") {
+	modApi("me.shedaniel.cloth:cloth-config-fabric:5.3.58") {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 
