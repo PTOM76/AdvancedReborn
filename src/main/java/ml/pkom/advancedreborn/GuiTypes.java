@@ -2,7 +2,6 @@ package ml.pkom.advancedreborn;
 
 import ml.pkom.advancedreborn.tile.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.util.Identifier;
 import techreborn.blockentity.GuiType;
 
 public class GuiTypes {
@@ -14,7 +13,7 @@ public class GuiTypes {
     public static GuiType<SingularityCompressorTile> SINGULARITY_COMPRESSOR = register(AdvancedReborn.MOD_ID + "__singularity_compressor_machine");
 
     public static <T extends BlockEntity> GuiType<T> register(String id) {
-        return GuiType.register(new Identifier(id));
+        return GuiType.register(AdvancedReborn.createID(id));
     }
 
     public static void init() {

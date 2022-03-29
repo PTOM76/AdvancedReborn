@@ -8,6 +8,9 @@
     "MachineBaseBlockEntityAccessor",
     "TechRebornMixin"
   ],
+  "client": [
+    "TechRebornClientMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

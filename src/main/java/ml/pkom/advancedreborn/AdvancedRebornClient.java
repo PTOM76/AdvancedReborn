@@ -1,20 +1,20 @@
 package ml.pkom.advancedreborn;
 
+import ml.pkom.advancedreborn.client.ClientGuiTypes;
 import ml.pkom.advancedreborn.renderer.IndustrialTNTEntityRenderer;
 import ml.pkom.advancedreborn.packet.EntitySpawnPacket;
 import ml.pkom.advancedreborn.screen.CardboardBoxScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
-import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
-import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.particle.EmotionParticle;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
@@ -26,17 +26,17 @@ public class AdvancedRebornClient implements ClientModInitializer {
     public static MinecraftClient client = MinecraftClient.getInstance();
 
     public void onInitializeClient() {
-        GuiTypes.init();
+        //ClientGuiTypes.init(); → TechRebornClientMixin
         ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register(((atlasTexture, registry) -> {
             registry.register(AdvancedReborn.createID("particle/energy"));
         }));
 
         ParticleFactoryRegistry.getInstance().register(Particles.ENERGY, EmotionParticle.HeartFactory::new);
 
-        EntityRendererRegistry.INSTANCE.register(Entities.DYNAMITE, (context) -> new FlyingItemEntityRenderer(context));
-        EntityRendererRegistry.INSTANCE.register(Entities.I_TNT, (context) -> new IndustrialTNTEntityRenderer(context));
+        EntityRendererRegistry.register(Entities.DYNAMITE, (context) -> new FlyingItemEntityRenderer(context));
+        EntityRendererRegistry.register(Entities.I_TNT, (context) -> new IndustrialTNTEntityRenderer(context));
 
-        ScreenRegistry.register(ScreenHandlers.CARDBOARD_BOX_SCREEN_HANDLER, CardboardBoxScreen::new);
+        HandledScreens.register(ScreenHandlers.CARDBOARD_BOX_SCREEN_HANDLER, CardboardBoxScreen::new);
 
         ClientSidePacketRegistry.INSTANCE.register(Defines.SPAWN_PACKET_ID, (ctx, byteBuf) -> {
             EntityType<?> et = Registry.ENTITY_TYPE.get(byteBuf.readVarInt());
