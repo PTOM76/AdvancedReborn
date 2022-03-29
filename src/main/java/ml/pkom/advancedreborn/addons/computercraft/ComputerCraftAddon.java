@@ -19,7 +19,7 @@ public class ComputerCraftAddon {
 
     public static TurtleTool SAPPHIRE_SWORD = new TurtleTool( new Identifier( "techreborn", "sapphire_sword" ), TRContent.SAPPHIRE_SWORD, 5f, ComputerCraftTags.Blocks.TURTLE_SWORD_BREAKABLE);
     public static TurtleTool SAPPHIRE_SHOVEL = new TurtleTool( new Identifier( "techreborn", "sapphire_spade" ), TRContent.SAPPHIRE_SPADE, 1f, ComputerCraftTags.Blocks.TURTLE_SHOVEL_BREAKABLE);
-    public static TurtleTool SAPPHIRE_PICKAXE = new TurtleTool( new Identifier( "techreborn", "ruby_pickaxe" ), TRContent.SAPPHIRE_PICKAXE, 1f, null);
+    public static TurtleTool SAPPHIRE_PICKAXE = new TurtleTool( new Identifier( "techreborn", "sapphire_pickaxe" ), TRContent.SAPPHIRE_PICKAXE, 1f, null);
     public static TurtleTool SAPPHIRE_AXE = new TurtleTool( new Identifier( "techreborn", "sapphire_axe" ), TRContent.SAPPHIRE_AXE, 3f, null);
     public static TurtleTool SAPPHIRE_HOE = new TurtleTool( new Identifier( "techreborn", "sapphire_hoe" ), TRContent.SAPPHIRE_HOE, 1f, ComputerCraftTags.Blocks.TURTLE_HOE_BREAKABLE);
 
