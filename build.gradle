@@ -13,6 +13,10 @@ group = project.maven_group
 repositories {
 	mavenLocal()
 	mavenCentral()
+	maven {
+		name "SquidDev"
+		url "https://squiddev.cc/maven"
+	}
 	maven { url 'https://jitpack.io' }
 	maven { url "https://maven.shedaniel.me/" }
 	maven { url "https://maven.terraformersmc.com/releases" }
@@ -39,12 +43,12 @@ dependencies {
 	modApi 'com.electronwill.night-config:core:3.6.3'
 	modApi 'com.electronwill.night-config:toml:3.6.3'
 
-	modApi "com.github.Merith-TK:cc-restitched:${project.cc_version}"
+	modApi "com.github.cc-tweaked:cc-restitched:${project.cc_version}"
 
 	// Mod Menu
 	// 1.16 => 1.16.19
 	// 1.17 => 2.0.14
-	modImplementation "com.terraformersmc:modmenu:2.0.14"
+	//modApi "com.terraformersmc:modmenu:2.0.10"
 
 	// Cloth Config API
 	// 1.16 => 4.11.26

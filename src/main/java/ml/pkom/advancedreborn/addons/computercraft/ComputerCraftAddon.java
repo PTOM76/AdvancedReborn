@@ -3,6 +3,7 @@ package ml.pkom.advancedreborn.addons.computercraft;
 import dan200.computercraft.api.ComputerCraftAPI;
 import dan200.computercraft.api.turtle.ITurtleUpgrade;
 import dan200.computercraft.shared.ComputerCraftRegistry;
+import dan200.computercraft.shared.computer.items.ItemComputer;
 import dan200.computercraft.shared.turtle.upgrades.*;
 import ml.pkom.advancedreborn.AdvancedReborn;
 import net.minecraft.util.Identifier;
@@ -35,7 +36,6 @@ public class ComputerCraftAddon {
 
 
 
-
     public static void init() {
         AdvancedReborn.LOGGER.info("Found ComputerCraft");
         ComputerCraftAPI.registerTurtleUpgrade(RUBY_SWORD);
@@ -61,6 +61,11 @@ public class ComputerCraftAddon {
         ComputerCraftAPI.registerTurtleUpgrade(BRONZE_PICKAXE);
         ComputerCraftAPI.registerTurtleUpgrade(BRONZE_AXE);
         ComputerCraftAPI.registerTurtleUpgrade(BRONZE_HOE);
+
+        // あまりいい方法とは言えませんが、ここで静的変数を読み込んでおくことによりエラーを防ぎます。
+        ItemComputer computerNormal = ComputerCraftRegistry.ModItems.COMPUTER_NORMAL;
+        //　変数は不要なので捨てる
+        computerNormal = null;
 
         addRightUpgradeForNormalAsStack(RUBY_SWORD);
         addRightUpgradeForNormalAsStack(RUBY_SHOVEL);
@@ -106,10 +111,12 @@ public class ComputerCraftAddon {
     }
 
     public static void addRightUpgradeForNormalAsStack(ITurtleUpgrade upgrade) {
+        //AdvancedReborn.addStacksIG.add(ComputerCraftRegistry.ModItems.TURTLE_NORMAL.create(-1, null, -1, null, upgrade, 0, null));
         AdvancedReborn.addStacksIG.add(ComputerCraftRegistry.ModItems.TURTLE_NORMAL.create(-1, null, -1, null, upgrade, 0, null));
     }
 
     public static void addRightUpgradeForAdvancedAsStack(ITurtleUpgrade upgrade) {
+        //AdvancedReborn.addStacksIG.add(ComputerCraftRegistry.ModItems.TURTLE_ADVANCED.create(-1, null, -1, null, upgrade, 0, null));
         AdvancedReborn.addStacksIG.add(ComputerCraftRegistry.ModItems.TURTLE_ADVANCED.create(-1, null, -1, null, upgrade, 0, null));
     }
 }
