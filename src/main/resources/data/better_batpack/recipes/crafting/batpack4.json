@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YYY",
+    "YXY",
+    "YYY"
+  ],
+  "key": {
+    "X": {
+      "item": "techreborn:lithium_ion_batpack"
+    },
+    "Y": {
+      "item": "techreborn:red_cell_battery"
+    }
+  },
+  "result": {
+    "item": "better_batpack:batpack4",
+    "count": 1
+  }
+}

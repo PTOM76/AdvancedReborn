@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+	"layer0": "better_batpack:item/batpack128"
+  },
+  "overrides": [
+	{
+	  "predicate": {
+		"techreborn:empty": 1
+	  },
+	  "model": "better_batpack:item/batpack128_empty"
+	}
+  ]
+}
