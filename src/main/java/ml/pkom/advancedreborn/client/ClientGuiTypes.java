@@ -1,6 +1,5 @@
 package ml.pkom.advancedreborn.client;
 
-import ml.pkom.advancedreborn.AdvancedReborn;
 import ml.pkom.advancedreborn.GuiTypes;
 import ml.pkom.advancedreborn.gui.*;
 import ml.pkom.advancedreborn.tile.*;

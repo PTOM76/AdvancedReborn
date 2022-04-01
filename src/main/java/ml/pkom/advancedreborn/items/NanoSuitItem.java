@@ -45,35 +45,42 @@ public class NanoSuitItem extends TRArmourItem implements ItemStackModifiers, Ar
             return amount;
         }));
     }
-
+    @Override
     public long getEnergyCapacity() {
         return 1_000_000;
     }
 
+    @Override
     public RcEnergyTier getTier() {
         return RcEnergyTier.EXTREME;
     }
 
+    @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
         return false;
     }
 
-    public double getDurability(ItemStack stack) {
-        return 1 - ItemUtils.getPowerForDurabilityBar(stack);
+    @Override
+    public int getItemBarStep(ItemStack stack) {
+        return ItemUtils.getPowerForDurabilityBar(stack);
     }
 
-    public int getDurabilityColor(ItemStack stack) {
-        return PowerSystem.getDisplayPower().colour;
-    }
-
-    public boolean showDurability(ItemStack stack) {
+    @Override
+    public boolean isItemBarVisible(ItemStack stack) {
         return true;
     }
 
+    @Override
+    public int getItemBarColor(ItemStack stack) {
+        return ItemUtils.getColorForDurabilityBar(stack);
+    }
+
+    @Override
     public boolean isEnchantable(ItemStack stack) {
         return true;
     }
 
+    @Override
     public void appendStacks(ItemGroup group, DefaultedList<ItemStack> itemList) {
         if (!isIn(group)) {
             return;
@@ -81,6 +88,7 @@ public class NanoSuitItem extends TRArmourItem implements ItemStackModifiers, Ar
         InitUtils.initPoweredItems(this, itemList);
     }
 
+    @Override
     public void getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack stack, Multimap<EntityAttribute, EntityAttributeModifier> attributes) {
         if (equipmentSlot == this.slot && Energy.of(stack).getStoredEnergy(stack) > 0) {
             attributes.put(EntityAttributes.GENERIC_ARMOR, new EntityAttributeModifier(MODIFIERS[slot.getEntitySlotId()], "Armor modifier", 2, EntityAttributeModifier.Operation.ADDITION));
@@ -89,10 +97,12 @@ public class NanoSuitItem extends TRArmourItem implements ItemStackModifiers, Ar
         }
     }
 
+    @Override
     public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
         return HashMultimap.create();
     }
 
+    @Override
     public void tickArmor(ItemStack stack, PlayerEntity player) {
         if (stack.getItem().equals(Items.NANO_SUIT_HELMET)) {
             if (Energy.of(stack).getStoredEnergy(stack) > 0) {

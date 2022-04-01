@@ -1,5 +1,6 @@
 package ml.pkom.advancedreborn;
 
+import ml.pkom.advancedreborn.armormaterials.BBArmorMaterial;
 import ml.pkom.advancedreborn.armormaterials.NanoArmorMaterial;
 import ml.pkom.advancedreborn.items.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -13,7 +14,7 @@ import techreborn.config.TechRebornConfig;
 
 public class Items {
     public static FabricItemSettings baseSettings = new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(64);
-    public static FabricItemSettings baseSettingsMaxOne = new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(1);
+    public static FabricItemSettings baseSettingsMaxOne = new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(1).maxDamage(-1);
     public static FabricItemSettings nothingSettings = new FabricItemSettings();
 
     public static Item CHARGE_PAD_MK_1 = new BlockItem(Blocks.CHARGE_PAD_MK_1, baseSettings);
@@ -90,6 +91,13 @@ public class Items {
     //public static Item FISH_CAN = new Item(new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(128).recipeRemainder(EMPTY_CAN).food(new FoodComponent.Builder().snack().hunger(2).build()));
     //public static Item BREAD_CAN = new Item(new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(128).recipeRemainder(EMPTY_CAN).food(new FoodComponent.Builder().snack().hunger(2).build()));
 
+    // Better Batpack
+    public static Item BATPACK_4 = new BetterBatpackItem(baseSettingsMaxOne, TechRebornConfig.lithiumBatpackCharge * 4, new BBArmorMaterial("batpack4"), RcEnergyTier.MEDIUM);
+    public static Item BATPACK_16 = new BetterBatpackItem(baseSettingsMaxOne, TechRebornConfig.lithiumBatpackCharge * 16, new BBArmorMaterial("batpack16"), RcEnergyTier.MEDIUM);
+    public static Item BATPACK_64 = new BetterBatpackItem(baseSettingsMaxOne, TechRebornConfig.lithiumBatpackCharge * 64, new BBArmorMaterial("batpack64"), RcEnergyTier.MEDIUM);
+    public static Item BATPACK_128 = new BetterBatpackItem(baseSettingsMaxOne, TechRebornConfig.lithiumBatpackCharge * 128, new BBArmorMaterial("batpack128"), RcEnergyTier.MEDIUM);
+
+
 
     // 素材アイテム
     public static Item DUCT_TAPE = new Item(baseSettings);
@@ -159,7 +167,11 @@ public class Items {
         Registry.register(Registry.ITEM, AdvancedReborn.createID("cardboard_sheet"), CARDBOARD_SHEET);
         Registry.register(Registry.ITEM, AdvancedReborn.createID("duct_tape"), DUCT_TAPE);
 
-        Registry.register(Registry.ITEM, AdvancedReborn.createID("z_add_items"), ADD_ITEMS);
+        Registry.register(Registry.ITEM, "better_batpack:batpack4", BATPACK_4);
+        Registry.register(Registry.ITEM, "better_batpack:batpack16", BATPACK_16);
+        Registry.register(Registry.ITEM, "better_batpack:batpack64", BATPACK_64);
+        Registry.register(Registry.ITEM, "better_batpack:batpack128", BATPACK_128);
 
+        Registry.register(Registry.ITEM, AdvancedReborn.createID("z_add_items"), ADD_ITEMS);
     }
 }

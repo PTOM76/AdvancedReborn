@@ -3,6 +3,7 @@ package ml.pkom.advancedreborn.addons.rei;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
+import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.Display;
 import me.shedaniel.rei.api.common.entry.EntryStack;
@@ -43,10 +44,15 @@ public class REIAddon implements REIClientPlugin {
 
     public void registerCategories(CategoryRegistry recipeHelper) {
         recipeHelper.add(new TwoInputRightOutputCategory<>(Recipes.CANNING_MACHINE));
+        registerOthers();
     }
 
     private void addWorkstations(Identifier identifier, EntryStack<?>... stacks) {
         CategoryRegistry.getInstance().addWorkstations(CategoryIdentifier.of(identifier), stacks);
+    }
+
+    public void registerDisplays(DisplayRegistry registry) {
+        registerRecipeDisplays(registry);
     }
 
     public void registerRecipeDisplays(DisplayRegistry recipeHelper) {

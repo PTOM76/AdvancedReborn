@@ -1,6 +1,5 @@
 package ml.pkom.advancedreborn;
 
-import ml.pkom.advancedreborn.client.ClientGuiTypes;
 import ml.pkom.advancedreborn.renderer.IndustrialTNTEntityRenderer;
 import ml.pkom.advancedreborn.packet.EntitySpawnPacket;
 import ml.pkom.advancedreborn.screen.CardboardBoxScreen;
