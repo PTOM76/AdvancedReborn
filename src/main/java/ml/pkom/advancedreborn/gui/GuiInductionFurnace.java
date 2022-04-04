@@ -7,7 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.TranslatableText;
 import reborncore.client.gui.builder.GuiBase;
 import reborncore.client.gui.guibuilder.GuiBuilder;
-import reborncore.common.screen.BuiltScreenHandler;
+import reborncore.client.screen.builder.BuiltScreenHandler;
 
 public class GuiInductionFurnace extends GuiBase<BuiltScreenHandler> {
 

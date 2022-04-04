@@ -5,7 +5,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
 import reborncore.client.gui.builder.GuiBase;
 import reborncore.client.gui.guibuilder.GuiBuilder;
-import reborncore.common.screen.BuiltScreenHandler;
+import reborncore.client.screen.builder.BuiltScreenHandler;
 
 public class GuiCanningMachine extends GuiBase<BuiltScreenHandler> {
 

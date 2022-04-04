@@ -50,8 +50,8 @@ public class CardboardBoxScreen extends HandledScreen<CardboardBoxScreenHandler>
         addSelectableChild(getNoteBox());
     }
 
-    public void close() {
-        super.close();
+    public void onClose() {
+        super.onClose();
         PacketByteBuf buf = PacketByteBufs.create();
         NbtCompound data = new NbtCompound();
         data.putString("note", getNote());
