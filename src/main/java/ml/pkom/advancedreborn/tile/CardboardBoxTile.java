@@ -91,6 +91,7 @@ public class CardboardBoxTile extends BlockEntity implements IInventory, SidedIn
         this.customName = customName;
     }
 
+
     public void readInventoryNbt(NbtCompound nbt) {
         this.inventory = DefaultedList.ofSize(this.size(), ItemStack.EMPTY);
         if (nbt.contains("Items", 9)) {

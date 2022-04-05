@@ -1,5 +1,5 @@
 package ml.pkom.advancedreborn.blocks;
-
+import ml.pkom.advancedreborn.Tiles;
 import ml.pkom.advancedreborn.event.TileCreateEvent;
 import ml.pkom.advancedreborn.tile.CardboardBoxTile;
 import net.fabricmc.api.EnvType;
@@ -107,15 +107,17 @@ public class CardboardBox extends BlockWithEntity {
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if (state.getBlock() != newState.getBlock()) {
-            BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof CardboardBoxTile) {
-                world.updateComparators(pos,this);
-            }
-            super.onStateReplaced(state, world, pos, newState, moved);
+        if (state.isOf(newState.getBlock())) {
+            return;
         }
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if (blockEntity instanceof CardboardBoxTile) {
+            world.updateComparators(pos,this);
+        }
+        super.onStateReplaced(state, world, pos, newState, moved);
     }
 
+    @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
         if(placer != null) {
             setFacing(placer.getHorizontalFacing().getOpposite(), world, pos);
@@ -129,6 +131,7 @@ public class CardboardBox extends BlockWithEntity {
         super.onPlaced(world, pos, state, placer, itemStack);
     }
 
+    @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (world.isClient) {
             return ActionResult.SUCCESS;
@@ -148,15 +151,10 @@ public class CardboardBox extends BlockWithEntity {
         }
     }
 
-    @Environment(EnvType.CLIENT)
+    @Override
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
         ItemStack itemStack = super.getPickStack(world, pos, state);
-        CardboardBoxTile tile = (CardboardBoxTile)world.getBlockEntity(pos);
-        NbtCompound nbtCompound = tile.writeInventoryNbt(new NbtCompound());
-        if (!nbtCompound.isEmpty()) {
-            itemStack.setSubNbt("BlockEntityTag", nbtCompound);
-        }
-
+        world.getBlockEntity(pos, Tiles.CARDBOARD_BOX_TILE).ifPresent(blockEntity -> blockEntity.setStackNbt(itemStack));
         return itemStack;
     }
 
