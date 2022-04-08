@@ -46,7 +46,7 @@ public class AdvancedBattery extends Item implements RcEnergyItem {
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        ItemUtils.switchActive(stack, 1, MessageIDs.poweredToolID, entity);
+        ItemUtils.checkActive(stack, 1, MessageIDs.poweredToolID, entity);
         if (world.isClient) {
             return;
         }
@@ -59,7 +59,6 @@ public class AdvancedBattery extends Item implements RcEnergyItem {
     }
 
     @Override
-    @Environment(EnvType.CLIENT)
     public void appendTooltip(ItemStack stack, @Nullable World worldIn, List<Text> tooltip, TooltipContext flagIn) {
         ItemUtils.buildActiveTooltip(stack, tooltip);
     }

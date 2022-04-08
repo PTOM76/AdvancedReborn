@@ -40,6 +40,7 @@ public class RaySolarTile extends PowerAcceptorBlockEntity implements IToolDrop 
         this(new TileCreateEvent(pos, state));
     }
 
+    @Override
     public void tick(World world, BlockPos pos, BlockState state, MachineBaseBlockEntity blockEntity2) {
         super.tick(world, pos, state, blockEntity2);
         if (world == null) {

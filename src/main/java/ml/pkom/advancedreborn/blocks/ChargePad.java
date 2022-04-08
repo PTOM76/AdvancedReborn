@@ -24,6 +24,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.tick.OrderedTick;
 import org.jetbrains.annotations.Nullable;
 import reborncore.common.blockentity.MachineBaseBlockEntity;
+import team.reborn.energy.api.base.SimpleBatteryItem;
 import techreborn.blockentity.storage.energy.EnergyStorageBlockEntity;
 
 import java.util.Random;
@@ -112,6 +113,7 @@ public class ChargePad extends Block {
 
                 if (Energy.isHolder(invStack)) {
                     long energy = Energy.of(invStack).getStoredEnergy(invStack);
+                    if (energy >= Energy.of(invStack).getEnergyCapacity()) continue;
                     Energy.of(invStack).setStoredEnergy(invStack, energy + storageEU);
                     storageEU -= Energy.of(invStack).getStoredEnergy(invStack) - energy;
                 }
