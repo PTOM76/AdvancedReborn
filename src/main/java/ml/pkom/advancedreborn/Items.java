@@ -87,7 +87,7 @@ public class Items {
     // 缶
     public static Item EMPTY_CAN = new Item(baseSettings);
     public static Item FUEL_CAN = new FuelCanItem(new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(64).recipeRemainder(EMPTY_CAN));
-    public static Item FOOD_CAN = new FoodCanItem(new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(64).recipeRemainder(EMPTY_CAN).food(new FoodComponent.Builder().snack().hunger(2).build()));
+    public static Item FOOD_CAN = new FoodCanItem(new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(64).recipeRemainder(EMPTY_CAN).food(new FoodComponent.Builder().snack().hunger(2).saturationModifier(2).build()));
     //public static Item FISH_CAN = new Item(new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(128).recipeRemainder(EMPTY_CAN).food(new FoodComponent.Builder().snack().hunger(2).build()));
     //public static Item BREAD_CAN = new Item(new FabricItemSettings().group(AdvancedReborn.AR_GROUP).maxCount(128).recipeRemainder(EMPTY_CAN).food(new FoodComponent.Builder().snack().hunger(2).build()));
 
