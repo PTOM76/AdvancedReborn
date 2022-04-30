@@ -1,6 +1,8 @@
 package ml.pkom.advancedreborn.items;
 
+import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultimap;
+import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import ml.pkom.advancedreborn.Items;
 import ml.pkom.advancedreborn.api.Energy;
@@ -17,15 +19,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 import reborncore.api.events.ApplyArmorToDamageCallback;
 import reborncore.api.items.ArmorBlockEntityTicker;
-import reborncore.api.items.ItemStackModifiers;
-import reborncore.common.powerSystem.PowerSystem;
 import reborncore.common.powerSystem.RcEnergyItem;
 import reborncore.common.powerSystem.RcEnergyTier;
 import reborncore.common.util.ItemUtils;
 import techreborn.items.armor.TRArmourItem;
 import techreborn.utils.InitUtils;
 
-public class NanoSuitItem extends TRArmourItem implements ItemStackModifiers, ArmorBlockEntityTicker, RcEnergyItem {
+public class NanoSuitItem extends TRArmourItem implements ArmorBlockEntityTicker, RcEnergyItem {
     public NanoSuitItem(ArmorMaterial material, EquipmentSlot slot, Settings settings) {
 
         super(material, slot, settings);
@@ -89,12 +89,16 @@ public class NanoSuitItem extends TRArmourItem implements ItemStackModifiers, Ar
     }
 
     @Override
-    public void getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack stack, Multimap<EntityAttribute, EntityAttributeModifier> attributes) {
+    public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(ItemStack stack, EquipmentSlot equipmentSlot) {
+        ArrayListMultimap<EntityAttribute, EntityAttributeModifier> attributes = ArrayListMultimap.create(super.getAttributeModifiers(stack, slot));
+
         if (equipmentSlot == this.slot && Energy.of(stack).getStoredEnergy(stack) > 0) {
             attributes.put(EntityAttributes.GENERIC_ARMOR, new EntityAttributeModifier(MODIFIERS[slot.getEntitySlotId()], "Armor modifier", 2, EntityAttributeModifier.Operation.ADDITION));
         } else if (equipmentSlot == this.slot) {
             attributes.put(EntityAttributes.GENERIC_ARMOR, new EntityAttributeModifier(MODIFIERS[slot.getEntitySlotId()], "Armor modifier", -1, EntityAttributeModifier.Operation.ADDITION));
         }
+
+        return ImmutableMultimap.copyOf(attributes);
     }
 
     @Override
