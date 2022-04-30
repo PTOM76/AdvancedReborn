@@ -10,7 +10,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -25,6 +28,8 @@ import reborncore.common.screen.BuiltScreenHandler;
 import reborncore.common.screen.BuiltScreenHandlerProvider;
 import reborncore.common.util.RebornInventory;
 import techreborn.init.ModRecipes;
+import techreborn.init.TRContent;
+import techreborn.items.DynamicCellItem;
 
 public class CentrifugalExtractorTile extends HeatMachineTile implements IToolDrop, InventoryProvider, IRecipeCrafterProvider, BuiltScreenHandlerProvider {
     public Block toolDrop;
@@ -109,6 +114,15 @@ public class CentrifugalExtractorTile extends HeatMachineTile implements IToolDr
                 getStack(3).increment(2);
                 getStack(2).decrement(2);
             } else if (getStack(3).isEmpty()) {
+                if (getStack(2).getItem() instanceof DynamicCellItem) {
+                    DynamicCellItem cellItem = (DynamicCellItem) getStack(2).getItem();
+                    Fluid fluid = cellItem.getFluid(getStack(2));
+                    if (fluid == Fluids.EMPTY) {
+                        setStack(3, new ItemStack(getStack(2).getItem(), 1));
+                        getStack(2).decrement(1);
+                        return;
+                    }
+                }
                 setStack(3, new ItemStack(getStack(2).getItem(), 2));
                 getStack(2).decrement(2);
             }

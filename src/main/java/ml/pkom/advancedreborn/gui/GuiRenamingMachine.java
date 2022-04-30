@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.text.LiteralText;
+import org.lwjgl.glfw.GLFW;
 import reborncore.client.gui.builder.GuiBase;
 import reborncore.client.gui.guibuilder.GuiBuilder;
 import reborncore.common.screen.BuiltScreenHandler;
@@ -40,18 +41,16 @@ public class GuiRenamingMachine extends GuiBase<BuiltScreenHandler> {
     }
 
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        if (keyCode == 256) {
+        if (keyCode == GLFW.GLFW_KEY_ESCAPE) {
             if (client != null) client.player.closeHandledScreen();
             return true;
         }
+        if (this.getFieldBox().keyPressed(keyCode, scanCode, modifiers) || this.getFieldBox().isActive()) {
+            tile.setNameClient(getFieldBox().getText());
+            sendPacket();
+            return true;
+        }
         return super.keyPressed(keyCode, scanCode, modifiers);
-    }
-
-    public boolean keyReleased(int keyCode, int scanCode, int modifiers) {
-        tile.setNameClient(getFieldBox().getText());
-        sendPacket();
-        //System.out.println(keyCode);
-        return super.keyReleased(keyCode, scanCode, modifiers);
     }
 
     public void sendPacket() {
