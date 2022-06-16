@@ -48,7 +48,7 @@ public class AdvancedRebornClient implements ClientModInitializer {
                 if (client.world == null) return;
                 Entity entity = et.create(client.world);
                 if (entity == null) return;
-                entity.updateTrackedPosition(pos);
+                entity.updateTrackedPosition(pos.x, pos.y, pos.z);
                 entity.setPos(pos.x, pos.y, pos.z);
                 entity.setYaw(pitch);
                 entity.setYaw(yaw);
