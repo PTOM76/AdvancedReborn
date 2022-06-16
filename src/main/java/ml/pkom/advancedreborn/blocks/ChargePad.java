@@ -27,7 +27,7 @@ import reborncore.common.blockentity.MachineBaseBlockEntity;
 import team.reborn.energy.api.base.SimpleBatteryItem;
 import techreborn.blockentity.storage.energy.EnergyStorageBlockEntity;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class ChargePad extends Block {
 
@@ -79,7 +79,7 @@ public class ChargePad extends Block {
         super.appendProperties(builder);
     }
 
-    Random random = new Random(256);
+    Random random = Random.create(256);
 
     @SuppressWarnings("deprecation")
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {

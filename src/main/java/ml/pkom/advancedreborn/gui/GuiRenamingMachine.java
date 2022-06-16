@@ -10,7 +10,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.text.LiteralText;
+import ml.pkom.mcpitanlib.api.text.TextUtil;
 import org.lwjgl.glfw.GLFW;
 import reborncore.client.gui.builder.GuiBase;
 import reborncore.client.gui.guibuilder.GuiBuilder;
@@ -31,8 +31,8 @@ public class GuiRenamingMachine extends GuiBase<BuiltScreenHandler> {
 
     public void init() {
         super.init();
-        //fieldBox = new TextFieldWidget(textRenderer, x + 98,  y + 7, 70, 9, new LiteralText(""));
-        fieldBox = new TextFieldWidget(textRenderer, x + 55,  y + 20, 98, 15, new LiteralText(""));
+        //fieldBox = new TextFieldWidget(textRenderer, x + 98,  y + 7, 70, 9, TextUtil.literal(""));
+        fieldBox = new TextFieldWidget(textRenderer, x + 55,  y + 20, 98, 15, TextUtil.literal(""));
         getFieldBox().setText(tile.getName());
         getFieldBox().setFocusUnlocked(false);
         getFieldBox().setTextFieldFocused(true);

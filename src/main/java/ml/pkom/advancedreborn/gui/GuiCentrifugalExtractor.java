@@ -4,7 +4,7 @@ import ml.pkom.advancedreborn.tile.CentrifugalExtractorTile;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.TranslatableText;
+import ml.pkom.mcpitanlib.api.text.TextUtil;
 import reborncore.client.gui.builder.GuiBase;
 import reborncore.client.gui.guibuilder.GuiBuilder;
 import reborncore.common.screen.BuiltScreenHandler;
@@ -33,7 +33,7 @@ public class GuiCentrifugalExtractor extends GuiBase<BuiltScreenHandler> {
         drawSlot(matrixStack, 55, 45, layer);
         drawOutputThreeLongSlot(matrixStack, 101, 45, layer);
         drawSlot(matrixStack, 8, 72, layer);
-        drawText(matrixStack, new TranslatableText("advanced_reborn.advanced_machine.text.speed", tile.getHeatPer() + "%"), 75, 70, 0, layer);
+        drawText(matrixStack, TextUtil.translatable("advanced_reborn.advanced_machine.text.speed", tile.getHeatPer() + "%"), 75, 70, 0, layer);
     }
 
     public void drawOutputThreeLongSlot(MatrixStack matrixStack, int x, int y, Layer layer) {

@@ -18,8 +18,8 @@ import net.minecraft.util.Identifier;
 import reborncore.common.crafting.RebornRecipe;
 import reborncore.common.crafting.RebornRecipeType;
 import reborncore.common.crafting.RecipeManager;
-import techreborn.compat.rei.MachineRecipeDisplay;
-import techreborn.compat.rei.ReiPlugin;
+import techreborn.client.compat.rei.MachineRecipeDisplay;
+import techreborn.client.compat.rei.ReiPlugin;
 import techreborn.init.ModRecipes;
 import techreborn.init.TRContent;
 
