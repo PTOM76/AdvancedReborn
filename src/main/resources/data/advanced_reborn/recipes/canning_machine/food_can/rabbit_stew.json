@@ -7,7 +7,8 @@
       "item": "minecraft:rabbit_stew"
     },
     {
-      "item": "advanced_reborn:empty_can"
+      "item": "advanced_reborn:empty_can",
+      "count": 4
     }
   ],
   "results": [

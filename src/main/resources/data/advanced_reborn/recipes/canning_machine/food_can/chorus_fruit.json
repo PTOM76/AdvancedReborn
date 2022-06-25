@@ -7,7 +7,8 @@
       "item": "minecraft:chorus_fruit"
     },
     {
-      "item": "advanced_reborn:empty_can"
+      "item": "advanced_reborn:empty_can",
+      "count": 2
     }
   ],
   "results": [

@@ -7,7 +7,8 @@
       "item": "minecraft:cake"
     },
     {
-      "item": "advanced_reborn:empty_can"
+      "item": "advanced_reborn:empty_can",
+      "count": 7
     }
   ],
   "results": [
