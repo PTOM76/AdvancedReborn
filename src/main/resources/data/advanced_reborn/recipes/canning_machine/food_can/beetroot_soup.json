@@ -7,7 +7,8 @@
       "item": "minecraft:beetroot_soup"
     },
     {
-      "item": "advanced_reborn:empty_can"
+      "item": "advanced_reborn:empty_can",
+      "count": 3
     }
   ],
   "results": [

@@ -7,7 +7,8 @@
       "item": "minecraft:cooked_beef"
     },
     {
-      "item": "advanced_reborn:empty_can"
+      "item": "advanced_reborn:empty_can",
+      "count": 8
     }
   ],
   "results": [

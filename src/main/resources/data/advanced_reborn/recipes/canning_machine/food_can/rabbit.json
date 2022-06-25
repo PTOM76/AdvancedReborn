@@ -7,7 +7,8 @@
       "item": "minecraft:rabbit"
     },
     {
-      "item": "advanced_reborn:empty_can"
+      "item": "advanced_reborn:empty_can",
+      "count": 1
     }
   ],
   "results": [
