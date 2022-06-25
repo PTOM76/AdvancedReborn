@@ -1,5 +1,6 @@
 package ml.pkom.advancedreborn.gui;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import ml.pkom.advancedreborn.tile.InductionFurnaceTile;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.math.MatrixStack;
@@ -30,9 +31,10 @@ public class GuiInductionFurnace extends GuiBase<BuiltScreenHandler> {
     public void drawBackground(MatrixStack matrixStack, float lastFrameDuration, int mouseX, int mouseY) {
         super.drawBackground(matrixStack, lastFrameDuration, mouseX, mouseY);
         Layer layer = Layer.BACKGROUND;
+        // 本当はリソースロケーションを指定しないといけないが、今回はdrawSlot内の処理で指定しているためとりあえず指定せずにおいておく
+        drawSlot(matrixStack, 8, 72, layer);
         drawTwoLongSlot(matrixStack, 55 - 18, 45, layer);
         drawOutputTwoLongSlot(matrixStack, 101, 45, layer);
-        drawSlot(matrixStack, 8, 72, layer);
         drawText(matrixStack, TextUtil.translatable("advanced_reborn.advanced_machine.text.speed", tile.getHeatPer() + "%"), 75, 70, 0, layer);
     }
 
