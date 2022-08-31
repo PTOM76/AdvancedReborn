@@ -46,11 +46,7 @@ public class FoodCanItem extends Item {
             }
 
             if (playerEntity != null) {
-                ItemStack emptyCan = new ItemStack(Items.EMPTY_CAN);
-                boolean inserted = playerEntity.getInventory().insertStack(emptyCan);
-                if (!inserted) {
-                    playerEntity.dropItem(emptyCan, false);
-                }
+                playerEntity.getInventory().insertStack(new ItemStack(Items.EMPTY_CAN));
                 if (playerEntity.canConsume(false)) finishUsing(stack, world, user);
             }
         }
