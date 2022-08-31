@@ -30,9 +30,9 @@ public class GuiInductionFurnace extends GuiBase<BuiltScreenHandler> {
     public void drawBackground(MatrixStack matrixStack, float lastFrameDuration, int mouseX, int mouseY) {
         super.drawBackground(matrixStack, lastFrameDuration, mouseX, mouseY);
         Layer layer = Layer.BACKGROUND;
+        drawSlot(matrixStack, 8, 72, layer);
         drawTwoLongSlot(matrixStack, 55 - 18, 45, layer);
         drawOutputTwoLongSlot(matrixStack, 101, 45, layer);
-        drawSlot(matrixStack, 8, 72, layer);
         drawText(matrixStack, new TranslatableText("advanced_reborn.advanced_machine.text.speed", tile.getHeatPer() + "%"), 75, 70, 0, layer);
     }
 
