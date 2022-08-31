@@ -1,7 +1,7 @@
 package ml.pkom.advancedreborn.packet;
 
 import io.netty.buffer.Unpooled;
-import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketByteBuf;
@@ -23,7 +23,7 @@ public class EntitySpawnPacket {
         PacketBufUtil.writeVec3d(byteBuf, entity.getPos());
         PacketBufUtil.writeAngle(byteBuf, entity.getPitch());
         PacketBufUtil.writeAngle(byteBuf, entity.getYaw());
-        return ServerSidePacketRegistry.INSTANCE.toPacket(packetID, byteBuf);
+        return ServerPlayNetworking.createS2CPacket(packetID, byteBuf);
     }
 
     public static final class PacketBufUtil {

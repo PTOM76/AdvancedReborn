@@ -27,20 +27,21 @@ import techreborn.utils.InitUtils;
 
 public class NanoSuitItem extends TRArmourItem implements ArmorBlockEntityTicker, RcEnergyItem {
     public NanoSuitItem(ArmorMaterial material, EquipmentSlot slot, Settings settings) {
-
         super(material, slot, settings);
+
         ApplyArmorToDamageCallback.EVENT.register(((player, source, amount) -> {
             for (ItemStack stack : player.getArmorItems()) {
                 if (!(stack.getItem() instanceof NanoSuitItem)) {
                     continue;
                 }
-                long stackEnergy = Energy.of(stack).getStoredEnergy(stack);
-                if (stackEnergy == 0) {
+                long stackEnergy = getStoredEnergy(stack);
+                if (stackEnergy <= 0) {
                     continue;
                 }
                 //System.out.println(amount);
-                long damageToAbsorb = (long) Math.min(stackEnergy, amount * 2500);
-                Energy.of(stack).tryUseEnergy(stack, damageToAbsorb);
+                float damageToAbsorb = Math.min(stackEnergy, amount * 2500);
+                tryUseEnergy(stack, (long) damageToAbsorb);
+                return damageToAbsorb / 2500;
             }
             return amount;
         }));
@@ -92,7 +93,7 @@ public class NanoSuitItem extends TRArmourItem implements ArmorBlockEntityTicker
     public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(ItemStack stack, EquipmentSlot equipmentSlot) {
         ArrayListMultimap<EntityAttribute, EntityAttributeModifier> attributes = ArrayListMultimap.create(super.getAttributeModifiers(stack, slot));
 
-        if (equipmentSlot == this.slot && Energy.of(stack).getStoredEnergy(stack) > 0) {
+        if (equipmentSlot == this.slot && getStoredEnergy(stack) > 0) {
             attributes.put(EntityAttributes.GENERIC_ARMOR, new EntityAttributeModifier(MODIFIERS[slot.getEntitySlotId()], "Armor modifier", 2, EntityAttributeModifier.Operation.ADDITION));
         } else if (equipmentSlot == this.slot) {
             attributes.put(EntityAttributes.GENERIC_ARMOR, new EntityAttributeModifier(MODIFIERS[slot.getEntitySlotId()], "Armor modifier", -1, EntityAttributeModifier.Operation.ADDITION));
@@ -109,7 +110,7 @@ public class NanoSuitItem extends TRArmourItem implements ArmorBlockEntityTicker
     @Override
     public void tickArmor(ItemStack stack, PlayerEntity player) {
         if (stack.getItem().equals(Items.NANO_SUIT_HELMET)) {
-            if (Energy.of(stack).getStoredEnergy(stack) > 0) {
+            if (getStoredEnergy(stack) > 0) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300, 3));
             }
         }
