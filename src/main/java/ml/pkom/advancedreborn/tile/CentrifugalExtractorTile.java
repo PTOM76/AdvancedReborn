@@ -96,9 +96,7 @@ public class CentrifugalExtractorTile extends HeatMachineTile implements IToolDr
         if (world == null || world.isClient) {
             return;
         }
-        // Charge
         charge(energySlot);
-
         if (!getInventory().getStack(1).isEmpty()) {
             if (getStack(1).getItem().equals(getStack(2).getItem())) {
                 if (getStack(2).getCount() == getStack(2).getMaxCount()) return;
