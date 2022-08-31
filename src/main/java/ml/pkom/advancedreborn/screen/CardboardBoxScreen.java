@@ -12,7 +12,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
-import ml.pkom.mcpitanlib.api.text.TextUtil;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -41,7 +41,7 @@ public class CardboardBoxScreen extends HandledScreen<CardboardBoxScreenHandler>
 
     public void init() {
         super.init();
-        noteBox = new TextFieldWidget(textRenderer, x + 98,  y + 7, 70, 9, TextUtil.literal(""));
+        noteBox = new TextFieldWidget(textRenderer, x + 98,  y + 7, 70, 9, new LiteralText(""));
         getNoteBox().setText(handler.tmpNote);
         getNoteBox().setDrawsBackground(false);
         getNoteBox().setFocusUnlocked(false);

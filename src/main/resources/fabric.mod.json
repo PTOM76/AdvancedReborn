@@ -24,7 +24,7 @@
     "client": [
       "ml.pkom.advancedreborn.AdvancedRebornClient"
     ],
-    "rei_common": [
+    "rei_plugins_v0": [
       "ml.pkom.advancedreborn.addons.rei.REIAddon"
     ]
   },

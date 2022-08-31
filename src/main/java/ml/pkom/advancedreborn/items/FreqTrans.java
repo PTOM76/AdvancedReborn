@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.nbt.NbtCompound;
-import ml.pkom.mcpitanlib.api.text.TextUtil;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
@@ -32,7 +32,7 @@ public class FreqTrans extends Item {
                     if (!tag.contains("tpX") || !tag.contains("tpY") || !tag.contains("tpZ")) return ActionResult.FAIL;
                     TeleporterTile machine = (TeleporterTile) tile;
                     machine.setTeleportPos(new BlockPos(tag.getDouble("tpX"), tag.getDouble("tpY"), tag.getDouble("tpZ")));
-                    player.sendMessage(TextUtil.literal("Loaded Teleport Pos from The Frequency Transmitter.(" + tag.getDouble("tpX") + "," + tag.getDouble("tpY") + "," + tag.getDouble("tpZ") + ")"), false);
+                    player.sendMessage(new LiteralText("Loaded Teleport Pos from The Frequency Transmitter.(" + tag.getDouble("tpX") + "," + tag.getDouble("tpY") + "," + tag.getDouble("tpZ") + ")"), false);
                     return ActionResult.SUCCESS;
                 }
             }
@@ -57,17 +57,17 @@ public class FreqTrans extends Item {
         tag.putDouble("tpY", machine.getY());
         tag.putDouble("tpZ", machine.getZ());
         stack.setNbt(tag);
-        context.getPlayer().sendMessage(TextUtil.literal("Saved Machine's Pos to The Frequency Transmitter.(" + tag.getDouble("tpX") + "," + tag.getDouble("tpY") + "," + tag.getDouble("tpZ") + ")"), false);
+        context.getPlayer().sendMessage(new LiteralText("Saved Machine's Pos to The Frequency Transmitter.(" + tag.getDouble("tpX") + "," + tag.getDouble("tpY") + "," + tag.getDouble("tpZ") + ")"), false);
         return ActionResult.SUCCESS;
     }
 
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(TextUtil.literal("Save pos to Wrench when Right Click with Teleporter."));
-        tooltip.add(TextUtil.literal("Load pos from Wrench when Left Click with Teleporter."));
+        tooltip.add(new LiteralText("Save pos to Wrench when Right Click with Teleporter."));
+        tooltip.add(new LiteralText("Load pos from Wrench when Left Click with Teleporter."));
         if (stack.hasNbt()) {
             NbtCompound nbt = stack.getNbt();
             if (nbt != null) if (nbt.contains("tpX") && nbt.contains("tpY") && nbt.contains("tpZ"))
-                tooltip.add(TextUtil.literal("Pos(" + nbt.getDouble("tpX") + "," + nbt.getDouble("tpY") + "," + nbt.getDouble("tpZ") + ")"));
+                tooltip.add(new LiteralText("Pos(" + nbt.getDouble("tpX") + "," + nbt.getDouble("tpY") + "," + nbt.getDouble("tpZ") + ")"));
         }
         super.appendTooltip(stack, world, tooltip, context);
     }

@@ -3,7 +3,7 @@ package ml.pkom.advancedreborn.gui;
 import ml.pkom.advancedreborn.tile.SingularityCompressorTile;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
-import ml.pkom.mcpitanlib.api.text.TextUtil;
+import net.minecraft.text.TranslatableText;
 import reborncore.client.gui.builder.GuiBase;
 import reborncore.client.gui.guibuilder.GuiBuilder;
 import reborncore.common.screen.BuiltScreenHandler;
@@ -32,7 +32,7 @@ public class GuiSingularityCompressor extends GuiBase<BuiltScreenHandler> {
         drawSlot(matrixStack, 55, 45, layer);
         drawOutputSlot(matrixStack, 101, 45, layer);
         drawSlot(matrixStack, 8, 72, layer);
-        drawText(matrixStack, TextUtil.translatable("advanced_reborn.advanced_machine.text.speed", tile.getHeatPer() + "%"), 75, 70, 0, layer);
+        drawText(matrixStack, new TranslatableText("advanced_reborn.advanced_machine.text.speed", tile.getHeatPer() + "%"), 75, 70, 0, layer);
     }
 
     public void drawForeground(MatrixStack matrixStack, int mouseX, int mouseY) {

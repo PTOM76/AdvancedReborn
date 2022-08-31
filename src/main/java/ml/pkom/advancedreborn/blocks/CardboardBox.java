@@ -25,10 +25,10 @@ import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
-import ml.pkom.mcpitanlib.api.text.TextUtil;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import ml.pkom.mcpitanlib.api.text.TextUtil;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
@@ -164,10 +164,10 @@ public class CardboardBox extends BlockWithEntity {
         NbtCompound nbtCompound = stack.getSubNbt("BlockEntityTag");
         if (nbtCompound != null) {
             if (nbtCompound.contains("note")) {
-                tooltip.add(TextUtil.literal(nbtCompound.getString("note")));
+                tooltip.add(new LiteralText(nbtCompound.getString("note")));
             }
             if (nbtCompound.contains("LootTable", 8)) {
-                tooltip.add(TextUtil.literal("???????"));
+                tooltip.add(new LiteralText("???????"));
             }
             if (nbtCompound.contains("Items", 9)) {
                 DefaultedList<ItemStack> defaultedList = DefaultedList.ofSize(27, ItemStack.EMPTY);
@@ -182,14 +182,14 @@ public class CardboardBox extends BlockWithEntity {
                         ++j;
                         if (i <= 4) {
                             ++i;
-                            MutableText mutableText = itemStack.getName().copy();
+                            MutableText mutableText = itemStack.getName().shallowCopy();
                             mutableText.append(" x").append(String.valueOf(itemStack.getCount()));
                             tooltip.add(mutableText);
                         }
                     }
                 }
                 if (j - i > 0) {
-                    tooltip.add((TextUtil.translatable("container.advanced_reborn.cardboard_box.more", new Object[]{j - i})).copy().formatted(Formatting.ITALIC));
+                    tooltip.add((new TranslatableText("container.advanced_reborn.cardboard_box.more", new Object[]{j - i})).formatted(Formatting.ITALIC));
                 }
             }
         }

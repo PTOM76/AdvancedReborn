@@ -3,7 +3,6 @@ package ml.pkom.advancedreborn.renderer;
 import ml.pkom.advancedreborn.Blocks;
 import ml.pkom.advancedreborn.entities.IndustrialTNTEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.block.BlockRenderManager;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -15,12 +14,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3f;
 
 public class IndustrialTNTEntityRenderer extends EntityRenderer<IndustrialTNTEntity> {
-
-    private final BlockRenderManager blockRenderManager;
-
     public IndustrialTNTEntityRenderer(EntityRendererFactory.Context context) {
         super(context);
-        blockRenderManager = context.getBlockRenderManager();
         this.shadowRadius = 0.5F;
     }
 
@@ -39,7 +34,7 @@ public class IndustrialTNTEntityRenderer extends EntityRenderer<IndustrialTNTEnt
         matrixStack.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(-90.0F));
         matrixStack.translate(-0.5D, -0.5D, 0.5D);
         matrixStack.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(90.0F));
-        TntMinecartEntityRenderer.renderFlashingBlock(this.blockRenderManager, Blocks.INDUSTRIAL_TNT.getDefaultState(), matrixStack, vertexConsumerProvider, i, entity.getFuse() / 5 % 2 == 0);
+        TntMinecartEntityRenderer.renderFlashingBlock(Blocks.INDUSTRIAL_TNT.getDefaultState(), matrixStack, vertexConsumerProvider, i, entity.getFuse() / 5 % 2 == 0);
         matrixStack.pop();
         super.render(entity, f, g, matrixStack, vertexConsumerProvider, i);
     }

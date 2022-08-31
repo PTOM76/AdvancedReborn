@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.nbt.NbtCompound;
-import ml.pkom.mcpitanlib.api.text.TextUtil;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
@@ -42,7 +42,7 @@ public class ConfigWrench extends Item {
                         accessor.getFluidConfiguration().read(config.getCompound("fluid"));
                     if (config.contains("redstone"))
                         accessor.getRedstoneConfiguration().read(config.getCompound("redstone"));
-                    player.sendMessage(TextUtil.literal("Loaded Configuration from The Config Wrench."), false);
+                    player.sendMessage(new LiteralText("Loaded Configuration from The Config Wrench."), false);
                     return ActionResult.SUCCESS;
                 }
             }
@@ -80,14 +80,14 @@ public class ConfigWrench extends Item {
             config.put("redstone", redstoneConfig.write());
         tag.put("configs", config);
         stack.setNbt(tag);
-        context.getPlayer().sendMessage(TextUtil.literal("Saved Configuration to The Config Wrench."), false);
+        context.getPlayer().sendMessage(new LiteralText("Saved Configuration to The Config Wrench."), false);
         return ActionResult.SUCCESS;
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(TextUtil.literal("Save TR Machine configurations to Wrench when Right Click with TR Machine."));
-        tooltip.add(TextUtil.literal("Load TR Machine configurations from Wrench when Left Click with TR Machine."));
+        tooltip.add(new LiteralText("Save TR Machine configurations to Wrench when Right Click with TR Machine."));
+        tooltip.add(new LiteralText("Load TR Machine configurations from Wrench when Left Click with TR Machine."));
         super.appendTooltip(stack, world, tooltip, context);
     }
 }
