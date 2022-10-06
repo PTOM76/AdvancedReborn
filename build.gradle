@@ -20,7 +20,7 @@ repositories {
 	maven { url 'https://jitpack.io' }
 	maven { url "https://maven.shedaniel.me/" }
 	maven { url "https://maven.terraformersmc.com/releases" }
-
+	maven { url "https://maven.pkom.ml/" }
 }
 
 dependencies {
@@ -59,8 +59,11 @@ dependencies {
 	modApi "me.sargunvohra.mcmods:autoconfig1u:3.4.0"
 	include "me.sargunvohra.mcmods:autoconfig1u:3.4.0"
 
-	modImplementation 'com.github.PTOM76:MCPitanLib:1.19-SNAPSHOT'
-	include 'com.github.PTOM76:MCPitanLib:1.19-SNAPSHOT'
+	//modImplementation 'com.github.PTOM76:MCPitanLib:1.19-SNAPSHOT'
+	//include 'com.github.PTOM76:MCPitanLib:1.19-SNAPSHOT'
+
+	modApi "ml.pkom:mcpitanlibarch-common${rootProject.mcpitanlib_version}"
+	modImplementation "ml.pkom:mcpitanlibarch-fabric${rootProject.mcpitanlib_version}"
 }
 
 processResources {
