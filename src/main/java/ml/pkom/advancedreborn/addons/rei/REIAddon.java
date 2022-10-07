@@ -26,7 +26,7 @@ import java.util.function.Function;
 
 public class REIAddon implements REIClientPlugin {
 
-    public static Identifier PLUGIN = AdvancedReborn.createID("advanced_plugin");
+    public static Identifier PLUGIN = AdvancedReborn.id("advanced_plugin");
 
     //public static Map<RebornRecipeType<?>, ItemConvertible> iconMap = new HashMap<>();
 

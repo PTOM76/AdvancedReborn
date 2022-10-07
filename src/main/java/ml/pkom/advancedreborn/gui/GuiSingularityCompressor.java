@@ -3,8 +3,7 @@ package ml.pkom.advancedreborn.gui;
 import ml.pkom.advancedreborn.tile.SingularityCompressorTile;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
-import ml.pkom.mcpitanlib.api.text.TextUtil;
-import reborncore.client.gui.builder.GuiBase;
+import ml.pkom.mcpitanlibarch.api.util.TextUtil;import reborncore.client.gui.builder.GuiBase;
 import reborncore.client.gui.guibuilder.GuiBuilder;
 import reborncore.common.screen.BuiltScreenHandler;
 

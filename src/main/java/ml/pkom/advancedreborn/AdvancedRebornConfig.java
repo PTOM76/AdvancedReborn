@@ -60,4 +60,21 @@ public class AdvancedRebornConfig implements ConfigData {
     @Comment("If you make a mistake in setting the teleporter and you get an infinite loop, you can fix it by disabling it.")
     @ConfigEntry.Category("teleporter")
     public boolean teleporterEnabled = true;
+
+    @Comment("Farming Machine Max Input (Value in EU)")
+    @ConfigEntry.Category("farming_machine")
+    public int farmingMachineMaxInput = 32;
+
+    @Comment("Farming Machine Max Energy (Value in EU)")
+    @ConfigEntry.Category("farming_machine")
+    public int farmingMachineMaxEnergy = 1000;
+
+    @Comment("Logging Machine Max Input (Value in EU)")
+    @ConfigEntry.Category("logging_machine")
+    public int loggingMachineMaxInput = 32;
+
+    @Comment("Logging Machine Max Energy (Value in EU)")
+    @ConfigEntry.Category("logging_machine")
+    public int loggingMachineMaxEnergy = 1000;
+
 }

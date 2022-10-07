@@ -12,12 +12,12 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
-import ml.pkom.mcpitanlib.api.text.TextUtil;
+import ml.pkom.mcpitanlibarch.api.util.TextUtil;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class CardboardBoxScreen extends HandledScreen<CardboardBoxScreenHandler> {
-    private static Identifier TEXTURE = AdvancedReborn.createID("textures/gui/cardboard_box.png");
+    private static Identifier TEXTURE = AdvancedReborn.id("textures/gui/cardboard_box.png");
     private TextFieldWidget noteBox;
 
     public CardboardBoxScreen(CardboardBoxScreenHandler handler, PlayerInventory inventory, Text title) {
