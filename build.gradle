@@ -62,7 +62,6 @@ dependencies {
 	//modImplementation 'com.github.PTOM76:MCPitanLib:1.19-SNAPSHOT'
 	//include 'com.github.PTOM76:MCPitanLib:1.19-SNAPSHOT'
 
-	modApi "ml.pkom:mcpitanlibarch-common${rootProject.mcpitanlib_version}"
 	modImplementation "ml.pkom:mcpitanlibarch-fabric${rootProject.mcpitanlib_version}"
 }
 
