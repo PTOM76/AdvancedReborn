@@ -17,7 +17,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class CardboardBoxScreen extends HandledScreen<CardboardBoxScreenHandler> {
-    private static Identifier TEXTURE = AdvancedReborn.createID("textures/gui/cardboard_box.png");
+    private static Identifier TEXTURE = AdvancedReborn.id("textures/gui/cardboard_box.png");
     private TextFieldWidget noteBox;
 
     public CardboardBoxScreen(CardboardBoxScreenHandler handler, PlayerInventory inventory, Text title) {

@@ -27,7 +27,7 @@ public class AdvancedRebornClient implements ClientModInitializer {
     public void onInitializeClient() {
         //ClientGuiTypes.init(); → TechRebornClientMixin
         ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register(((atlasTexture, registry) -> {
-            registry.register(AdvancedReborn.createID("particle/energy"));
+            registry.register(AdvancedReborn.id("particle/energy"));
         }));
 
         ParticleFactoryRegistry.getInstance().register(Particles.ENERGY, EmotionParticle.HeartFactory::new);
