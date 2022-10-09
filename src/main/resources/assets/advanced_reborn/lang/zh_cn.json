@@ -51,6 +51,10 @@
     "block.advanced_reborn.cardboard_box_nothing_logo": "纸箱 (无logo)",
     "block.advanced_reborn.canning_machine": "食物罐装机",
     "block.advanced_reborn.renaming_machine": "命名仪",
+    "block.advanced_reborn.farming_machine": "自动农机",
+    "block.advanced_reborn.logging_machine": "自动种植者",
+    "block.advanced_reborn.fertilizer_spreader": "施肥机",
+    "block.advanced_reborn.enchantment_extractor": "附魔提取器",
     "block.advanced_reborn.teleporter": "传送器",
     "item.advanced_reborn.freq_trans": "频率同步器",
 

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RER",
+    "TFT",
+    "RER"
+  ],
+  "key": {
+    "R": {
+      "tag": "c:refined_iron_ingots"
+    },
+    "F": {
+      "item": "techreborn:basic_machine_frame"
+    },
+    "E": {
+      "item": "techreborn:electronic_circuit"
+    },
+    "T": {
+      "item": "minecraft:iron_hoe"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:farming_machine",
+    "count": 1
+  }
+}

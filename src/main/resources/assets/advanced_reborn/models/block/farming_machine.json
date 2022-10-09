@@ -1,0 +1,12 @@
+{
+    "parent": "minecraft:block/cube",
+    "textures": {
+        "particle": "advanced_reborn:blocks/farming_machine/top",
+        "up": "advanced_reborn:blocks/farming_machine/top",
+        "down": "advanced_reborn:blocks/farming_machine/bottom",
+        "north": "advanced_reborn:blocks/farming_machine/front_off",
+        "east": "advanced_reborn:blocks/farming_machine/side",
+        "south": "advanced_reborn:blocks/farming_machine/side",
+        "west": "advanced_reborn:blocks/farming_machine/side"
+    }
+}

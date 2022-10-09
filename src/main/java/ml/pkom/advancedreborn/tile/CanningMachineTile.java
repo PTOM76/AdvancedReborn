@@ -93,7 +93,6 @@ public class CanningMachineTile extends PowerAcceptorBlockEntity implements IToo
             return;
         }
         charge(energySlot);
-        //BlockState state = getWorld().getBlockState(getPos());
         BlockMachineBase block = (BlockMachineBase) state.getBlock();
         block.setActive(!inventory.getStack(0).isEmpty() && !inventory.getStack(1).isEmpty(), world, getPos());
     }

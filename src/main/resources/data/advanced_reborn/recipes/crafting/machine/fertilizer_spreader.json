@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RER",
+    "BFB",
+    "RRR"
+  ],
+  "key": {
+    "R": {
+      "tag": "c:refined_iron_ingots"
+    },
+    "F": {
+      "item": "techreborn:basic_machine_frame"
+    },
+    "E": {
+      "item": "techreborn:electronic_circuit"
+    },
+    "B": {
+      "item": "minecraft:bone_meal"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:fertilizer_spreader",
+    "count": 1
+  }
+}
