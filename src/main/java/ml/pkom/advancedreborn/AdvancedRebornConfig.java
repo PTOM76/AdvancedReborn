@@ -69,6 +69,18 @@ public class AdvancedRebornConfig implements ConfigData {
     @ConfigEntry.Category("farming_machine")
     public int farmingMachineMaxEnergy = 1000;
 
+    @Comment("Farming Machine Energy used to plant (Value in EU)")
+    @ConfigEntry.Category("farming_machine")
+    public int farmingMachinePlantUseEnergy = 4;
+
+    @Comment("Farming Machine Energy used to harvest (Value in EU)")
+    @ConfigEntry.Category("farming_machine")
+    public int farmingMachineHarvestUseEnergy = 8;
+
+    @Comment("Farming Machine Range")
+    @ConfigEntry.Category("farming_machine")
+    public int farmingMachineRange = 3;
+
     @Comment("Logging Machine Max Input (Value in EU)")
     @ConfigEntry.Category("logging_machine")
     public int loggingMachineMaxInput = 32;
@@ -76,5 +88,48 @@ public class AdvancedRebornConfig implements ConfigData {
     @Comment("Logging Machine Max Energy (Value in EU)")
     @ConfigEntry.Category("logging_machine")
     public int loggingMachineMaxEnergy = 1000;
+
+    @Comment("Logging Machine Energy used to plant (Value in EU)")
+    @ConfigEntry.Category("logging_machine")
+    public int loggingMachinePlantUseEnergy = 4;
+
+    @Comment("Logging Machine Energy used to logging (Value in EU)")
+    @ConfigEntry.Category("logging_machine")
+    public int loggingMachineLoggingUseEnergy = 8;
+
+    @Comment("Logging Machine Range")
+    @ConfigEntry.Category("logging_machine")
+    public int loggingMachineRange = 3;
+
+
+    @Comment("Fertilizer Spreader Max Input (Value in EU)")
+    @ConfigEntry.Category("fertilizer_spreader")
+    public int fertilizerSpreaderMaxInput = 32;
+
+    @Comment("Fertilizer Spreader Max Energy (Value in EU)")
+    @ConfigEntry.Category("fertilizer_spreader")
+    public int fertilizerSpreaderMaxEnergy = 1000;
+
+    @Comment("Fertilizer Spreader Use Energy (Value in EU)")
+    @ConfigEntry.Category("fertilizer_spreader")
+    public int fertilizerSpreaderUseEnergy = 4;
+
+    @Comment("Fertilizer Spreader Range")
+    @ConfigEntry.Category("fertilizer_spreader")
+    public int fertilizerSpreaderRange = 3;
+
+
+    @Comment("Enchantment Extractor Max Input (Value in EU)")
+    @ConfigEntry.Category("enchantment_extractor")
+    public int enchantmentExtractorMaxInput = 32;
+
+    @Comment("Enchantment Extractor Max Energy (Value in EU)")
+    @ConfigEntry.Category("enchantment_extractor")
+    public int enchantmentExtractorMaxEnergy = 1000;
+
+    @Comment("Enchantment Extractor Use Energy (Value in EU)")
+    @ConfigEntry.Category("enchantment_extractor")
+    public int enchantmentExtractorUseEnergy = 4;
+
 
 }

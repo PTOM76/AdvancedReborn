@@ -23,6 +23,8 @@ public class RaySolarTile extends PowerAcceptorBlockEntity implements IToolDrop 
 
     public RaySolarTile(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
+        this.solar = (RaySolar) state.getBlock();
+        this.energy = solar.energy;
     }
 
     public RaySolarTile(TileCreateEvent event, RaySolar solar) {

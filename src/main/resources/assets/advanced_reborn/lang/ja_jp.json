@@ -51,6 +51,10 @@
     "block.advanced_reborn.cardboard_box_nothing_logo": "ダンボール箱 (ロゴなし)",
     "block.advanced_reborn.canning_machine": "缶詰マシン",
     "block.advanced_reborn.renaming_machine": "名前変更マシン",
+    "block.advanced_reborn.farming_machine": "自動農業機",
+    "block.advanced_reborn.logging_machine": "自動栽培機",
+    "block.advanced_reborn.fertilizer_spreader": "肥料散布機",
+    "block.advanced_reborn.enchantment_extractor": "エンチャント抽出機",
     "block.advanced_reborn.teleporter": "テレポーター",
     "item.advanced_reborn.freq_trans": "周波数送信機",
 

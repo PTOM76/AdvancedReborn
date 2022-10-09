@@ -22,6 +22,8 @@ public class Tiles {
     public static BlockEntityType<TeleporterTile> TELEPORTER_TILE = Registry.register(Registry.BLOCK_ENTITY_TYPE, AdvancedReborn.id("teleporter"), create(TeleporterTile::new, Blocks.TELEPORTER));
     public static BlockEntityType<FarmingMachineTile> FARMING_MACHINE_TILE = Registry.register(Registry.BLOCK_ENTITY_TYPE, AdvancedReborn.id("farming_machine"), create(FarmingMachineTile::new, Blocks.FARMING_MACHINE));
     public static BlockEntityType<LoggingMachineTile> LOGGING_MACHINE_TILE = Registry.register(Registry.BLOCK_ENTITY_TYPE, AdvancedReborn.id("logging_machine"), create(LoggingMachineTile::new, Blocks.LOGGING_MACHINE));
+    public static BlockEntityType<FertilizerSpreaderTile> FERTILIZER_SPREADER_TILE = Registry.register(Registry.BLOCK_ENTITY_TYPE, AdvancedReborn.id("fertilizer_spreader"), create(FertilizerSpreaderTile::new, Blocks.FERTILIZER_SPREADER));
+    public static BlockEntityType<EnchantmentExtractorTile> ENCHANTMENT_EXTRACTOR_TILE = Registry.register(Registry.BLOCK_ENTITY_TYPE, AdvancedReborn.id("enchantment_extractor"), create(EnchantmentExtractorTile::new, Blocks.ENCHANTMENT_EXTRACTOR));
 
     public static void init() {
 

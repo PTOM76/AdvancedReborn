@@ -1,0 +1,12 @@
+{
+    "parent": "minecraft:block/cube",
+    "textures": {
+        "particle": "advanced_reborn:blocks/enchantment_extractor/top",
+        "up": "advanced_reborn:blocks/enchantment_extractor/top",
+        "down": "advanced_reborn:blocks/enchantment_extractor/bottom",
+        "north": "advanced_reborn:blocks/enchantment_extractor/front_on",
+        "east": "advanced_reborn:blocks/enchantment_extractor/side",
+        "south": "advanced_reborn:blocks/enchantment_extractor/side",
+        "west": "advanced_reborn:blocks/enchantment_extractor/side"
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GRG",
+    "BFB",
+    "GDG"
+  ],
+  "key": {
+    "R": {
+      "tag": "c:refined_iron_ingots"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "F": {
+      "item": "techreborn:basic_machine_frame"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "B": {
+      "item": "minecraft:book"
+    }
+  },
+  "result": {
+    "item": "advanced_reborn:enchantment_extractor",
+    "count": 1
+  }
+}

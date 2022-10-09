@@ -15,6 +15,10 @@ public class ClientGuiTypes {
     public static ClientGuiType<RotaryGrinderTile> ROTARY_GRINDER = register(GuiTypes.ROTARY_GRINDER, GuiRotaryGrinder::new);
     public static ClientGuiType<CentrifugalExtractorTile> CENTRIFUGAL_EXTRACTOR = register(GuiTypes.CENTRIFUGAL_EXTRACTOR, GuiCentrifugalExtractor::new);
     public static ClientGuiType<SingularityCompressorTile> SINGULARITY_COMPRESSOR = register(GuiTypes.SINGULARITY_COMPRESSOR, GuiSingularityCompressor::new);
+    public static ClientGuiType<FarmingMachineTile> FARMING_MACHINE = register(GuiTypes.FARMING_MACHINE, GuiFarmingMachine::new);
+    public static ClientGuiType<LoggingMachineTile> LOGGING_MACHINE = register(GuiTypes.LOGGING_MACHINE, GuiLoggingMachine::new);
+    public static ClientGuiType<FertilizerSpreaderTile> FERTILIZER_SPREADER = register(GuiTypes.FERTILIZER_SPREADER, GuiFertilizerSpreader::new);
+    public static ClientGuiType<EnchantmentExtractorTile> ENCHANTMENT_EXTRACTOR = register(GuiTypes.ENCHANTMENT_EXTRACTOR, GuiEnchantmentExtractor::new);
 
     public static <T extends BlockEntity> ClientGuiType<T> register(GuiType<T> type, GuiFactory<T> factory) {
         return new ClientGuiType<>(type, factory);

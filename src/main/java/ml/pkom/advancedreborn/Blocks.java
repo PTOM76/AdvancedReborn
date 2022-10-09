@@ -41,6 +41,11 @@ public class Blocks {
     public static Block CANNING_MACHINE = new CanningMachine(baseSetting);
     public static Block RENAMING_MACHINE = new RenamingMachine(baseSetting);
     public static Block TELEPORTER = new Teleporter(baseSetting);
+    public static Block FARMING_MACHINE = new FarmingMachine(baseSetting);
+    public static Block LOGGING_MACHINE = new LoggingMachine(baseSetting);
+    public static Block FERTILIZER_SPREADER = new FertilizerSpreader(baseSetting);
+    public static Block ENCHANTMENT_EXTRACTOR = new EnchantmentExtractor(baseSetting);
+
 
     //breakByHand
     public static Block CARDBOARD_BOX = new CardboardBox(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(1, 3));
@@ -53,43 +58,47 @@ public class Blocks {
 
     public static Block INDUSTRIAL_TNT = new IndustrialTNT(FabricBlockSettings.copyOf(net.minecraft.block.Blocks.TNT));
 
-
     public static void init() {
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad"), CHARGE_PAD_MK_1);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad_2"), CHARGE_PAD_MK_2);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad_3"), CHARGE_PAD_MK_3);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad_4"), CHARGE_PAD_MK_4);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("charge_pad_final"), CHARGE_PAD_MK_FINAL);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("charge_pad"), CHARGE_PAD_MK_1);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("charge_pad_2"), CHARGE_PAD_MK_2);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("charge_pad_3"), CHARGE_PAD_MK_3);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("charge_pad_4"), CHARGE_PAD_MK_4);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("charge_pad_final"), CHARGE_PAD_MK_FINAL);
 
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_solar_panel"), RAY_SOLAR_1);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_solar_panel_2"), RAY_SOLAR_2);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_solar_panel_3"), RAY_SOLAR_3);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_solar_panel_4"), RAY_SOLAR_4);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator"), RAY_GENERATOR_1);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_2"), RAY_GENERATOR_2);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_3"), RAY_GENERATOR_3);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_4"), RAY_GENERATOR_4);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_5"), RAY_GENERATOR_5);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_6"), RAY_GENERATOR_6);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_7"), RAY_GENERATOR_7);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_8"), RAY_GENERATOR_8);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_9"), RAY_GENERATOR_9);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("ray_generator_10"), RAY_GENERATOR_10);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_solar_panel"), RAY_SOLAR_1);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_solar_panel_2"), RAY_SOLAR_2);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_solar_panel_3"), RAY_SOLAR_3);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_solar_panel_4"), RAY_SOLAR_4);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_generator"), RAY_GENERATOR_1);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_generator_2"), RAY_GENERATOR_2);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_generator_3"), RAY_GENERATOR_3);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_generator_4"), RAY_GENERATOR_4);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_generator_5"), RAY_GENERATOR_5);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_generator_6"), RAY_GENERATOR_6);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_generator_7"), RAY_GENERATOR_7);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_generator_8"), RAY_GENERATOR_8);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_generator_9"), RAY_GENERATOR_9);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("ray_generator_10"), RAY_GENERATOR_10);
 
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("induction_furnace"), INDUCTION_FURNACE);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("rotary_grinder"), ROTARY_GRINDER);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("centrifugal_extractor"), CENTRIFUGAL_EXTRACTOR);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("singularity_compressor"), SINGULARITY_COMPRESSOR);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("canning_machine"), CANNING_MACHINE);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("renaming_machine"), RENAMING_MACHINE);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("teleporter"), TELEPORTER);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("induction_furnace"), INDUCTION_FURNACE);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("rotary_grinder"), ROTARY_GRINDER);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("centrifugal_extractor"), CENTRIFUGAL_EXTRACTOR);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("singularity_compressor"), SINGULARITY_COMPRESSOR);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("canning_machine"), CANNING_MACHINE);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("renaming_machine"), RENAMING_MACHINE);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("teleporter"), TELEPORTER);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("farming_machine"), FARMING_MACHINE);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("logging_machine"), LOGGING_MACHINE);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("fertilizer_spreader"), FERTILIZER_SPREADER);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("enchantment_extractor"), ENCHANTMENT_EXTRACTOR);
 
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("industrial_tnt"), INDUSTRIAL_TNT);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("light"), LIGHT);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("cardboard_box"), CARDBOARD_BOX);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("cardboard_box_minetaro"), CARDBOARD_BOX_MINETARO);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("cardboard_box_minezon"), CARDBOARD_BOX_MINEZON);
-        Registry.register(Registry.BLOCK, AdvancedReborn.createID("cardboard_box_nothing_logo"), CARDBOARD_BOX_NOTHING);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("industrial_tnt"), INDUSTRIAL_TNT);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("light"), LIGHT);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("cardboard_box"), CARDBOARD_BOX);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("cardboard_box_minetaro"), CARDBOARD_BOX_MINETARO);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("cardboard_box_minezon"), CARDBOARD_BOX_MINEZON);
+        Registry.register(Registry.BLOCK, AdvancedReborn.id("cardboard_box_nothing_logo"), CARDBOARD_BOX_NOTHING);
+
 
     }
 }
