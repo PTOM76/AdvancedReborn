@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.12-SNAPSHOT'
+	id 'fabric-loom' version '1.0-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -39,8 +39,8 @@ dependencies {
 	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:9.0.484"
 
 	// CC: Restitched
-	modApi 'com.electronwill.night-config:core:3.6.3'
-	modApi 'com.electronwill.night-config:toml:3.6.3'
+	modApi 'com.electronwill.night-config:core:3.6.6'
+	modApi 'com.electronwill.night-config:toml:3.6.6'
 
 	modApi "com.github.cc-tweaked:cc-restitched:${project.cc_version}"
 
