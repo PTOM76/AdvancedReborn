@@ -36,6 +36,7 @@
     "fabricloader": "*",
     "fabric": "*",
     "minecraft": "*",
-    "techreborn": "*"
+    "techreborn": "*",
+    "mcpitanlibarch": "*"
   }
 }
