@@ -5,7 +5,6 @@ import ml.pkom.advancedreborn.Blocks;
 import ml.pkom.advancedreborn.Tiles;
 import ml.pkom.advancedreborn.addons.autoconfig.AutoConfigAddon;
 import ml.pkom.advancedreborn.event.TileCreateEvent;
-import ml.pkom.mcpitanlibarch.api.entity.Player;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
@@ -33,7 +32,6 @@ import reborncore.common.screen.BuiltScreenHandler;
 import reborncore.common.screen.BuiltScreenHandlerProvider;
 import reborncore.common.util.RebornInventory;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,8 +64,7 @@ public class LoggingMachineTile extends PowerAcceptorBlockEntity implements IToo
         this(event.getBlockPos(), event.getBlockState());
     }
 
-    public BuiltScreenHandler createScreenHandler(int syncID, PlayerEntity playerEntity) {
-        Player player = new Player(playerEntity);
+    public BuiltScreenHandler createScreenHandler(int syncID, PlayerEntity player) {
         return new ScreenHandlerBuilder(AdvancedReborn.MOD_ID + "__LOGGING_MACHINE").player(player.getInventory()).inventory().hotbar().addInventory()
                 .blockEntity(this)
                 .slot(0, 55, 50)
@@ -160,7 +157,7 @@ public class LoggingMachineTile extends PowerAcceptorBlockEntity implements IToo
         world.spawnEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack));
     }
 
-    public static boolean tryLogging(World world, BlockPos pos, Direction direction, int range, @Nullable List<ItemStack> drops) {
+    public static boolean tryLogging(World world, BlockPos pos, Direction direction, int range, List<ItemStack> drops) {
         for (int x = -range; x < range + 1; x++) {
             for (int z = -range; z < range + 1; z++) {
                 for (int y = 0; y < range * 2 + 1; y++) {

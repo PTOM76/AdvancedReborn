@@ -32,7 +32,6 @@ import reborncore.common.screen.BuiltScreenHandler;
 import reborncore.common.screen.BuiltScreenHandlerProvider;
 import reborncore.common.util.RebornInventory;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -185,7 +184,7 @@ public class FarmingMachineTile extends PowerAcceptorBlockEntity implements IToo
         }
     }
 
-    public static boolean tryHarvest(World world, BlockPos pos, int range, @Nullable List<ItemStack> drops) {
+    public static boolean tryHarvest(World world, BlockPos pos, int range, List<ItemStack> drops) {
         for (int x = -range; x < range + 1; x++) {
             for (int z = -range; z < range + 1; z++) {
                 BlockPos executePos = new BlockPos(pos.getX() + x, pos.getY(), pos.getZ() + z);
