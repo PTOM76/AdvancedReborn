@@ -32,6 +32,7 @@ import reborncore.common.screen.BuiltScreenHandlerProvider;
 import reborncore.common.screen.builder.ScreenHandlerBuilder;
 import reborncore.common.util.RebornInventory;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class EnchantmentExtractorTile extends PowerAcceptorBlockEntity implements IToolDrop, InventoryProvider, BuiltScreenHandlerProvider {
@@ -142,7 +143,10 @@ public class EnchantmentExtractorTile extends PowerAcceptorBlockEntity implement
                         if (bookStack.getCount() >= enchantments.size()) {
                             for (Map.Entry<Enchantment, Integer> entry : enchantments.entrySet()) {
                                 ItemStack itemStack = new ItemStack(Items.ENCHANTED_BOOK, 1);
-                                itemStack.addEnchantment(entry.getKey(), entry.getValue());
+                                Map<Enchantment, Integer> map = new HashMap<>();
+                                map.put(entry.getKey(), entry.getValue());
+                                EnchantmentHelper.set(map, itemStack);
+                                //itemStack.addEnchantment(entry.getKey(), entry.getValue());
                                 bookStack.decrement(1);
                                 insertStack(itemStack);
                             }

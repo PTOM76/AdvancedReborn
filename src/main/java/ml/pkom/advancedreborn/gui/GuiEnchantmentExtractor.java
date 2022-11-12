@@ -33,9 +33,8 @@ public class GuiEnchantmentExtractor extends GuiBase<BuiltScreenHandler> {
         Layer layer = Layer.BACKGROUND;
 
         RenderSystem.setShaderTexture(0, GuiBuilder.defaultTextureSheet);
-        //drawSlot(matrixStack, 60, 25, layer);//Book
-        drawSlot(matrixStack, 40, 25, layer); //Input
-        drawSlot(matrixStack, 40, 65, layer); // output
+        drawSlot(matrixStack, 40, 25, layer); // Input slot
+        drawSlot(matrixStack, 40, 65, layer); // Output slot
 
         drawSlot(matrixStack, 82, 40, layer);
         drawSlot(matrixStack, 100, 40, layer);
@@ -49,6 +48,7 @@ public class GuiEnchantmentExtractor extends GuiBase<BuiltScreenHandler> {
         drawSlot(matrixStack, 8, 72, layer);
 
         RenderSystem.setShaderTexture(0, GUI);
+        // Book slot
         drawTexture(matrixStack, 60 + this.x - 1, 25 + this.y - 1, 0, 0, 18, 18);
     }
 
