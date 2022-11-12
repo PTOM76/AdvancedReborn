@@ -1,3 +1,1 @@
-# Advanced Reborn
-Tech Rebornのアドオンです。
-IC2にあったナノスーツや充電パッド、永久光発電機MODにあった永久光発電や圧縮ソーラーパネル、おまけで設定用のレンチ、上級バッテリーを追加します。
+# Moved to https://github.com/Pitan76/AdvancedReborn
