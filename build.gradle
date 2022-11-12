@@ -37,7 +37,7 @@ dependencies {
 	modImplementation 'TechReborn:TechReborn-1.18:+'
 
 	//modCompileOnly "me.shedaniel:RoughlyEnoughItems-fabric-api:6.0.307-alpha"
-	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:8.0.442"
+	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:8.3.567"
 
 	// CC: Restitched
 	modApi 'com.electronwill.night-config:core:3.6.3'
@@ -53,7 +53,7 @@ dependencies {
 	// Cloth Config API
 	// 1.16 => 4.11.26
 	// 1.17 => 5.0.38
-	modApi("me.shedaniel.cloth:cloth-config-fabric:6.2.57") {
+	modApi("me.shedaniel.cloth:cloth-config-fabric:6.4.90") {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 
